@@ -64,7 +64,7 @@
           <div class="ibox-content">
             <div class="row">
               <form class="" action="{{ route('home') }}" method="GET">
-                <div class="col-sm-2 m-b-xs">
+                <div class="col-sm-2 col-xs-12 m-b-xs">
                   <label class="control-label" for="year">Year</label>
                   <select class="input-sm form-control input-s-sm inline" name="year" onchange="this.form.submit()">
                       <option value="">None</option>
@@ -73,7 +73,7 @@
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 m-b-xs">
+                <div class="col-sm-2 col-xs-12 m-b-xs">
                   <label class="control-label" for="project_type">Project Type</label>
                   <select class="input-sm form-control input-s-sm inline" name="project_type" onchange="this.form.submit()">
                       <option value="">None</option>
@@ -82,7 +82,7 @@
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 m-b-xs">
+                <div class="col-sm-2 col-xs-12 m-b-xs">
                   <label class="control-label" for="country">Country</label>
                   <select class="input-sm form-control input-s-sm inline" name="country" onchange="this.form.submit()">
                       <option value="">None</option>
@@ -91,7 +91,7 @@
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 m-b-xs">
+                <div class="col-sm-2 col-xs-12 m-b-xs">
                   <label class="control-label" for="officer">Officer</label>
                   <select class="input-sm form-control input-s-sm inline" name="officer" onchange="this.form.submit()">
                       <option value="">None</option>
@@ -100,7 +100,7 @@
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 m-b-xs">
+                <div class="col-sm-2 col-xs-12 m-b-xs">
                   <label class="control-label" for="price_type">Price Type</label>
                   <select class="input-sm form-control input-s-sm inline" name="price_type" onchange="this.form.submit()">
                       <option value="">None</option>
@@ -109,7 +109,7 @@
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 m-b-xs">
+                <div class="col-sm-2 col-xs-12 m-b-xs">
                   <label class="control-label" for="technology">Technology</label>
                   <select class="input-sm form-control input-s-sm inline" name="technology" onchange="this.form.submit()">
                       <option value="">None</option>
@@ -121,24 +121,27 @@
               </form>
             </div>
             <div class="table-responsive">
-              <table class="table table-striped">
+              <table class="footable table" data-page-size="5">
                 <thead>
                   <tr>
-                    <th>Project </th>
-                    <th class="hidden-xs">Project Type </th>
-                    <th class="hidden-xs">Officer</th>
-                    <th class="hidden-xs">Total Reached</th>
-                    <th>Details</th>
+                    <th data-sort-ignore="true">Project </th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Project Type </th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Officer</th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Total Reached</th>
+                    <th data-sort-ignore="true" data-hide="phone">Details</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach ($projects as $key => $value)
                     <tr>
                       <td>{{ $value->project_name }}</td>
-                      <td class="hidden-xs">{{ $value->project_type }}</td>
-                      <td class="hidden-xs">{{ $value->officer }}</td>
-                      <td class="hidden-xs">{{DB::table('project_technology')->whereIn('project_id',[$value->id])->sum('total_reach')}}</td>
-                      <td><a href="#" class="btn btn-primary btn-xs">View</a></td>
+                      <td>{{ $value->project_type }}</td>
+                      <td>{{ $value->officer }}</td>
+                      <td>{{DB::table('project_technology')->whereIn('project_id',[$value->id])->sum('total_reach')}}</td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="#" class="btn btn-primary btn-xs">View</a>
+                      </td>
                     </tr>
                   @endforeach
                   <tr>
@@ -180,3 +183,17 @@
     </div>
 </div> --}}
 @endsection
+
+@push('b-scripts')
+  <!-- Page-Level Scripts -->
+  <script>
+      $(document).ready(function() {
+
+          $('.footable').footable(
+
+          );
+
+      });
+
+  </script>
+@endpush

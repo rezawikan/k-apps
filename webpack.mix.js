@@ -23,8 +23,11 @@ mix.js('resources/assets/js/app.js', 'public/js')
     'resources/assets/css/animate.css',
   ], 'public/css/animate.min.css')
   .styles([
-    'resources/assets/css/style.css',
+    'resources/assets/css/style.css'
   ], 'public/css/style.min.css')
+  .styles([
+    'resources/assets/css/plugins/footable/footable.core.css'
+  ], 'public/css/footable.min.css')
   // .scripts([
   //   'resources/assets/js/jquery-3.1.1.min.js',
   // ], 'public/js/jquery-3.1.1.min.js')
@@ -46,9 +49,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .scripts([
     'resources/assets/js/plugins/pace/pace.min.js',
   ], 'public/js/plugins/pace/pace.min.js')
+  .scripts([
+    'resources/assets/js/plugins/footable/footable.all.min.js',
+  ], 'public/js/plugins/footable/footable.all.min.js')
 mix.copyDirectory('resources/assets/font-awesome/fonts', 'public/font-awesome/fonts')
 mix.copyDirectory('resources/assets/img', 'public/img')
 mix.copyDirectory('resources/assets/css/patterns', 'public/css/patterns')
+mix.copyDirectory('resources/assets/css/plugins/footable/fonts', 'public/css/fonts')
   .options({
     processCssUrls: false
   });

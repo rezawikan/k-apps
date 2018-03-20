@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ mix('font-awesome/css/font-awesome.min.css') }}">
 
     <!-- Vendor styles -->
-    {{-- <link rel="stylesheet" href="{{ mix('css/vendor.min.css') }}" /> --}}
+    <link rel="stylesheet" href="{{ mix('css/footable.min.css') }}" />
     <link rel="stylesheet" href="{{ mix('css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
 
@@ -55,6 +55,9 @@
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('js/plugins/metisMenu/jquery.metisMenu.min.js') }}"></script>
     <script src="{{ mix('js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+
+    <!-- FooTable -->
+    <script src="{{ mix('js/plugins/footable/footable.all.min.js') }}"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{ mix('js/inspinia.min.js') }}"></script>
