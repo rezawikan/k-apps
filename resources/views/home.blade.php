@@ -121,7 +121,7 @@
               </form>
             </div>
             <div class="table-responsive">
-              <table class="footable table" data-page-size="5">
+              <table class="footable table">
                 <thead>
                   <tr>
                     <th data-sort-ignore="true">Project </th>
@@ -144,17 +144,19 @@
                       </td>
                     </tr>
                   @endforeach
-                  <tr>
-                    <td colspan="5">{{ $projects->appends([
-                      'year' => $getYear,
-                      'project_type' => $getProjectType,
-                      'country' => $getCountry,
-                      'officer' => $getOfficer,
-                      'price_type' => $getPriceType,
-                      'technology' => $getTechnology,
-                      ])->links() }}</td>
-                  </tr>
                 </tbody>
+              </table>
+              <table class="table">
+                <tr>
+                  <td colspan="5">{{ $projects->appends([
+                    'year' => $getYear,
+                    'project_type' => $getProjectType,
+                    'country' => $getCountry,
+                    'officer' => $getOfficer,
+                    'price_type' => $getPriceType,
+                    'technology' => $getTechnology,
+                    ])->links() }}</td>
+                </tr>
               </table>
             </div>
           </div>
