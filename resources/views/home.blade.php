@@ -145,18 +145,22 @@
                     </tr>
                   @endforeach
                 </tbody>
-              </table>
-              <table class="table">
-                <tr>
-                  <td colspan="5">{{ $projects->appends([
-                    'year' => $getYear,
-                    'project_type' => $getProjectType,
-                    'country' => $getCountry,
-                    'officer' => $getOfficer,
-                    'price_type' => $getPriceType,
-                    'technology' => $getTechnology,
-                    ])->links() }}</td>
-                </tr>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                      <div class="text-center">
+                        {{ $projects->appends([
+                        'year' => $getYear,
+                        'project_type' => $getProjectType,
+                        'country' => $getCountry,
+                        'officer' => $getOfficer,
+                        'price_type' => $getPriceType,
+                        'technology' => $getTechnology,
+                        ])->links() }}
+                      </div>
+                    </td>
+                  </tr>
+                </tfoot>
               </table>
             </div>
           </div>
@@ -190,11 +194,7 @@
   <!-- Page-Level Scripts -->
   <script>
       $(document).ready(function() {
-
-          $('.footable').footable(
-
-          );
-
+          $('.footable').footable({paginate: false});
       });
 
   </script>

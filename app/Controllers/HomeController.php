@@ -30,9 +30,6 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-
-
-
         $yearList           = Project::distinct()->orderBy('year', 'desc')->get(['year']);
         $projectTypeList    = ProjectType::select('name')->orderBy('name', 'asc')->get();
         $countryList        = Project::distinct()->orderBy('country', 'asc')->get(['country']);
@@ -91,7 +88,6 @@ class HomeController extends Controller
                $total_reach  = DB::table('project_technology')->sum('total_reach');
                $distributed  = DB::table('project_technology')->sum('distribution_unit');
          }
-
 
         $projects = $projects->paginate(15);
 
