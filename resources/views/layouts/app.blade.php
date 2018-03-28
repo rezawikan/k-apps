@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSPINIA - @yield('title') </title>
+    <title>Kopernik - @yield('title') </title>
+
+    <!-- Icon -->
+    <link rel="shortcut icon" type="image/png" href="{{ asset('img/k-icon.png') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

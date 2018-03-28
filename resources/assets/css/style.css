@@ -47,7 +47,7 @@ h5 {
   color: #999c9e;
 }
 .nav > li.active > a {
-  color: #ffffff;
+  color: #ff9900;
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
@@ -169,8 +169,8 @@ h5 {
 }
 .nav-header {
   padding: 33px 25px;
-  background-color: #2f4050;
-  background-image: url("patterns/header-profile.png");
+  background-color: #000;
+  background-image: url("../patterns/header-profile.png");
 }
 .pace-done .nav-header {
   transition: all 0.4s;
@@ -179,7 +179,7 @@ ul.nav-second-level {
   background: #293846;
 }
 .nav > li.active {
-  border-left: 4px solid #19aa8d;
+  border-left: 4px solid #FF9900;
   background: #293846;
 }
 .nav.nav-second-level > li.active {
@@ -1891,6 +1891,7 @@ div.dt-button-info {
   border-radius: 1px;
   color: inherit;
   display: block;
+  padding: 6px 12px;
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
   width: 100%;
 }
@@ -4698,6 +4699,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
 .loginscreen.middle-box {
   width: 300px;
 }
+
 .loginColumns {
   max-width: 800px;
   margin: 0 auto;
@@ -8559,3 +8561,21 @@ body.md-skin {
     margin: 0;
   }
 }
+
+/* Kopernik added */
+.pad-10 {
+	padding: 10px;
+}
+.pad-20 {
+	padding: 20px;
+}
+.pad-20-50 {
+	padding: 20px 50px;
+}
+.loginscreen.middle-box.xl {
+	margin-top: 100px;
+  	width: 400px;
+  	color: #333;
+  	background-color: #F9F9F9;
+}
+

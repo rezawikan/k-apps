@@ -63,7 +63,7 @@
           </div>
           <div class="ibox-content">
             <div class="row">
-              <form class="" action="{{ route('home') }}" method="GET">
+              <form class="" action="{{ route('default') }}" method="GET">
                 <div class="col-sm-2 col-xs-12 m-b-xs">
                   <label class="control-label" for="year">Year</label>
                   <select class="input-sm form-control input-s-sm inline" name="year" onchange="this.form.submit()">

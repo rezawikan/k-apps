@@ -3,6 +3,6 @@
         K-Apps
     </div>
     <div>
-        <strong>Copyright</strong> Kopernik Solutions &copy; 2018
+        <strong>Copyright</strong> Kopernik &copy; 2018
     </div>
 </div>

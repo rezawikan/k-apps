@@ -6,6 +6,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- Icon -->
+        <link rel="shortcut icon" type="image/png" href="{{ asset('images/k-icon.png') }}">
+
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -17,6 +20,7 @@
 
         <link rel="stylesheet" href="{{ mix('css/animate.min.css') }}">
         <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
+
     </head>
 
     <body class="gray-bg">

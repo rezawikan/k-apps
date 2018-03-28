@@ -4,14 +4,9 @@
   <div class="middle-box text-center loginscreen animated fadeInDown">
       <div>
           <div>
-
-              <h1 class="logo-name">IN+</h1>
-
+              <img src="{{ asset('img/logo.png')}}" class="img-responsive" alt="">
           </div>
-          <h3>Welcome to IN+</h3>
-          <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
-              <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
-          </p>
+          <h4>Intranet System</h4>
           <p>Login in. To see it in action.</p>
           <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
@@ -30,7 +25,7 @@
               <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
               <a href="{{ route('password.request') }}"><small>Forgot password?</small></a>
           </form>
-          <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+          <p class="m-t"> <small>K-apps, we app framework base on Bootstrap 3 &copy; 2014</small> </p>
       </div>
   </div>
 @endsection

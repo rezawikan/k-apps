@@ -2,12 +2,16 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
           <li class="nav-header">
-              <div class="dropdown profile-element"> <span>
-                  <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}}" />
-                   </span>
-                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                  <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
-                  {{-- </span> <span class="text-muted text-xs block">{{ Auth::guard('admin')->user()->roles()->first()->name }}<b class="caret"></b></span> </span> </a> --}}
+              <div class="dropdown profile-element">
+                  <span>
+                    <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}}" />
+                  </span>
+                  <span class="clear">
+                    <span class="block m-t-xs">
+                      <strong class="font-bold">{{ Auth::user()->name }}</strong>
+                    </span>
+                    <span class="text-muted text-xs block">Art Director </span>
+                  </span>
                   <ul class="dropdown-menu animated fadeInRight m-t-xs">
                       <li><a href="profile.html">Profile</a></li>
                       <li><a href="contacts.html">Contacts</a></li>
@@ -20,8 +24,29 @@
                   IN+
               </div>
           </li>
-            <li class="{{ isActiveRoute('home') }}">
-                <a href="{{ url('home') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+            <li class="{{ isActiveRoute('dashboard') }}">
+                <a href="{{ route('default') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+            <li class="{{ isActiveRoute('impact-tracker') }}">
+                <a href="{{ route('impact-tracker.index') }}"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Impact Tracker</span></a>
+            </li>
+            <li class="{{ isActiveRoute('travel') }}">
+                <a href="{{ route('travel.index') }}"><i class="fa fa-plane"></i> <span class="nav-label">Travel</span></a>
+            </li>
+            <li class="{{ isActiveRoute('procurment') }}">
+                <a href="{{ route('procurment.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurment</span></a>
+            </li>
+            <li class="{{ isActiveRoute('ops-manual') }}">
+                <a href="{{ route('ops-manual.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">OPS Manual</span></a>
+            </li>
+            <li class="{{ isActiveRoute('hr-related') }}">
+                <a href="{{ route('hr-related.index') }}"><i class="fa fa-users"></i> <span class="nav-label">HR Related</span></a>
+            </li>
+            <li class="{{ isActiveRoute('k-nowledge') }}">
+                <a href="{{ route('k-nowledge.index') }}"><i class="fa fa-rocket"></i> <span class="nav-label">K-nowledge</span></a>
+            </li>
+            <li class="{{ isActiveRoute('photo-stock') }}">
+                <a href="{{ route('photo-stock.index') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Photo Stock</span></a>
             </li>
             {{-- <li class="{{ isActiveRoute(['master/products']) }}">
                 <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Products</span><span class="fa arrow"></span></a>
