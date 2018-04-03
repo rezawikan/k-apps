@@ -63,60 +63,69 @@
           </div>
           <div class="ibox-content">
             <div class="row">
-              <form class="" action="{{ route('default') }}" method="GET">
-                <div class="col-sm-2 col-xs-12 m-b-xs">
+              <form class="" action="{{ route('dashboard') }}" method="GET">
+                <div class="col-sm-4 col-xs-12 m-b-sm">
                   <label class="control-label" for="year">Year</label>
-                  <select class="input-sm form-control input-s-sm inline" name="year" onchange="this.form.submit()">
+                  <select class="input-sm form-control input-s-sm inline" name="year">
                       <option value="">None</option>
                       @foreach ($yearList as $value)
                         <option value="{{ $value->year }}" {{isQueryString(['year' => $value->year]) ? 'selected' : ''}}>{{ $value->year }}</option>
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 col-xs-12 m-b-xs">
+                <div class="col-sm-4 col-xs-12 m-b-sm">
                   <label class="control-label" for="project_type">Project Type</label>
-                  <select class="input-sm form-control input-s-sm inline" name="project_type" onchange="this.form.submit()">
+                  <select class="input-sm form-control input-s-sm inline" name="project_type">
                       <option value="">None</option>
                       @foreach ($projectTypeList as $value)
                         <option value="{{ str_slug($value->name) }}" {{isQueryString(['name' => str_slug($value->name)]) ? 'selected' : ''}}>{{ $value->name }}</option>
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 col-xs-12 m-b-xs">
+                <div class="col-sm-4 col-xs-12 m-b-sm">
                   <label class="control-label" for="country">Country</label>
-                  <select class="input-sm form-control input-s-sm inline" name="country" onchange="this.form.submit()">
+                  <select class="input-sm form-control input-s-sm inline" name="country">
                       <option value="">None</option>
                       @foreach ($countryList as $value)
                         <option value="{{ $value->country }}" {{ isQueryString(['country' => $value->country]) ? 'selected' : '' }}>{{ $value->country }}</option>
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 col-xs-12 m-b-xs">
+                <div class="col-sm-4 col-xs-12 m-b-sm">
                   <label class="control-label" for="officer">Officer</label>
-                  <select class="input-sm form-control input-s-sm inline" name="officer" onchange="this.form.submit()">
+                  <select class="input-sm form-control input-s-sm inline" name="officer">
                       <option value="">None</option>
                       @foreach ($officerList as $value)
                         <option value="{{ str_slug($value->name) }}" {{ isQueryString(['officer' => str_slug($value->name)]) ? 'selected' : '' }}>{{ $value->name }}</option>
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 col-xs-12 m-b-xs">
+                <div class="col-sm-4 col-xs-12 m-b-sm">
                   <label class="control-label" for="price_type">Price Type</label>
-                  <select class="input-sm form-control input-s-sm inline" name="price_type" onchange="this.form.submit()">
+                  <select class="input-sm form-control input-s-sm inline" name="price_type">
                       <option value="">None</option>
                       @foreach ($priceTypeList as $value)
                         <option value="{{ $value->name }}" {{ isQueryString(['price_type' => $value->name]) ? 'selected' : '' }}>{{ $value->name }}</option>
                       @endforeach
                   </select>
                 </div>
-                <div class="col-sm-2 col-xs-12 m-b-xs">
+                <div class="col-sm-4 col-xs-12 m-b-sm">
                   <label class="control-label" for="technology">Technology</label>
-                  <select class="input-sm form-control input-s-sm inline" name="technology" onchange="this.form.submit()">
+                  <select class="input-sm form-control input-s-sm inline" name="technology">
                       <option value="">None</option>
                       @foreach ($technologyList as $value)
                         <option value="{{ str_slug($value->name) }}" {{ isQueryString(['technology' => str_slug($value->name)]) ? 'selected' : '' }}>{{ $value->name }}</option>
                       @endforeach
                   </select>
+                </div>
+                <div class="col-sm-4 col-xs-12 m-b-sm">
+                  <label class="control-label" for="price_type">Search</label>
+                  <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ $search }}">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Search</button>
+                    </span>
+                  </div>
                 </div>
               </form>
             </div>
@@ -125,8 +134,8 @@
                 <thead>
                   <tr>
                     <th data-sort-ignore="true">Project </th>
-                    <th data-sort-ignore="true" data-hide="phone,tablet">Project Type </th>
-                    <th data-sort-ignore="true" data-hide="phone,tablet">Officer</th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Project Type</th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Total Distributed</th>
                     <th data-sort-ignore="true" data-hide="phone,tablet">Total Reached</th>
                     <th data-sort-ignore="true" data-hide="phone">Details</th>
                   </tr>
@@ -136,7 +145,7 @@
                     <tr>
                       <td>{{ $value->project_name }}</td>
                       <td>{{ $value->project_type }}</td>
-                      <td>{{ $value->officer }}</td>
+                      <td>{{ DB::table('project_technology')->whereIn('project_id',[$value->id])->sum('distribution_unit') }}</td>
                       <td>{{DB::table('project_technology')->whereIn('project_id',[$value->id])->sum('total_reach')}}</td>
                       <td>
                         <a href="#" class="btn btn-primary btn-xs">Edit</a>

@@ -43,7 +43,7 @@ class HomeController extends Controller
         $getOfficer      = $request->get('officer');
         $getPriceType    = $request->get('price_type');
         $getTechnology   = $request->get('technology');
-        $search = '';
+        $search          = $request->get('search');
 
         $projects = Project::where('project_name', 'like', '%'.$search.'%');
 
@@ -91,6 +91,6 @@ class HomeController extends Controller
 
         $projects = $projects->paginate(15);
 
-        return view('home')->with(compact('country', 'total_reach', 'distributed', 'projects', 'yearList', 'projectTypeList', 'countryList', 'officerList', 'priceTypeList', 'technologyList', 'getYear', 'getProjectType', 'getCountry', 'getOfficer', 'getPriceType', 'getTechnology'));
+        return view('home')->with(compact('country', 'total_reach', 'distributed', 'projects', 'yearList', 'projectTypeList', 'countryList', 'officerList', 'priceTypeList', 'technologyList', 'getYear', 'getProjectType', 'getCountry', 'getOfficer', 'getPriceType', 'getTechnology','search'));
     }
 }
