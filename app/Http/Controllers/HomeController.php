@@ -36,6 +36,7 @@ class HomeController extends Controller
         $officerList        = Officer::distinct()->orderBy('name', 'asc')->get(['name']);
         $priceTypeList      = PriceType::select('name')->orderBy('name', 'asc')->get();
         $technologyList     = Technology::select('name')->orderBy('name', 'asc')->get();
+        $technologyType     = Technology::select('type')->orderBy('name', 'asc')->get();
 
         $getYear         = $request->get('year');
         $getProjectType  = $request->get('project_type');
@@ -43,6 +44,7 @@ class HomeController extends Controller
         $getOfficer      = $request->get('officer');
         $getPriceType    = $request->get('price_type');
         $getTechnology   = $request->get('technology');
+        $getTypeTech     = $request->get('typetech');
         $search          = $request->get('search');
 
         $projects = Project::where('project_name', 'like', '%'.$search.'%');
@@ -69,12 +71,31 @@ class HomeController extends Controller
             $projects->where('price_type', $getPriceType);
         }
 
-        if ($request->has('technology')) {
+        if ($request->has('technology') or $request->has('typetech')) {
             $getTechnology = str_replace('-', ' ', $getTechnology);
-            // return title_case($getTechnology);
-            $projects->whereHas('technologies', function ($query) use ($getTechnology) {
-                $query->where('name', title_case($getTechnology));
-            });
+            $getTypeTech   = str_replace('-', ' ', $getTypeTech);
+
+            if ($getTechnology != "" && $getTypeTech == "") {
+              $projects->whereHas('technologies', function ($query) use ($getTechnology) {
+                  $query->where('name', title_case($getTechnology));
+              });
+            }
+
+
+            if ($getTypeTech != "" && $getTechnology == "") {
+              $projects->whereHas('technologies', function ($query) use ($getTypeTech) {
+                  $query->where('type', title_case($getTypeTech));
+              });
+            }
+
+            if ($getTypeTech != "" && $getTechnology != "") {
+              $projects->whereHas('technologies', function ($query) use ($getTypeTech, $getTechnology) {
+                  $query->where([
+                    ['type', title_case($getTypeTech)],
+                    ['name', title_case($getTechnology)]
+                  ]);
+              });
+            }
         }
 
          $filteredID = $projects->pluck('id');
@@ -91,6 +112,6 @@ class HomeController extends Controller
 
         $projects = $projects->paginate(15);
 
-        return view('home')->with(compact('country', 'total_reach', 'distributed', 'projects', 'yearList', 'projectTypeList', 'countryList', 'officerList', 'priceTypeList', 'technologyList', 'getYear', 'getProjectType', 'getCountry', 'getOfficer', 'getPriceType', 'getTechnology','search'));
+        return view('home')->with(compact('country', 'total_reach', 'distributed', 'projects', 'yearList', 'projectTypeList', 'countryList', 'officerList', 'priceTypeList', 'technologyList','technologyType','getYear', 'getProjectType', 'getCountry', 'getOfficer', 'getPriceType', 'getTechnology','search','getTypeTech'));
     }
 }

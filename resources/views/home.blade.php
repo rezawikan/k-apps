@@ -119,6 +119,15 @@
                   </select>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
+                  <label class="control-label" for="technology">Technology Type</label>
+                  <select class="input-sm form-control input-s-sm inline" name="typetech">
+                      <option value="">None</option>
+                      @foreach ($technologyType as $value)
+                        <option value="{{ str_slug($value->type) }}" {{ isQueryString(['typetech' => str_slug($value->type)]) ? 'selected' : '' }}>{{ $value->type }}</option>
+                      @endforeach
+                  </select>
+                </div>
+                <div class="col-sm-4 col-xs-12 m-b-sm">
                   <label class="control-label" for="price_type">Search</label>
                   <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ $search }}">
