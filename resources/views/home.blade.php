@@ -174,6 +174,7 @@
                         'officer' => $getOfficer,
                         'price_type' => $getPriceType,
                         'technology' => $getTechnology,
+                        'typetech' => $getTypeTech,
                         ])->links() }}
                       </div>
                     </td>
