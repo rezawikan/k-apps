@@ -36,7 +36,7 @@ class HomeController extends Controller
         $officerList        = Officer::distinct()->orderBy('name', 'asc')->get(['name']);
         $priceTypeList      = PriceType::select('name')->orderBy('name', 'asc')->get();
         $technologyList     = Technology::select('name')->orderBy('name', 'asc')->get();
-        $technologyType     = Technology::select('type')->orderBy('name', 'asc')->get();
+        $technologyType     = Technology::select('type')->orderBy('type', 'asc')->distinct()->get();
 
         $getYear         = $request->get('year');
         $getProjectType  = $request->get('project_type');
@@ -47,7 +47,7 @@ class HomeController extends Controller
         $getTypeTech     = $request->get('typetech');
         $search          = $request->get('search');
 
-        $projects = Project::where('project_name', 'like', '%'.$search.'%');
+        $projects = Project::where('project_name', 'like', '%'.$search.'%')->orderBy('year','desc');
 
         if ($request->has('year')) {
             $projects->where('year', $getYear);
