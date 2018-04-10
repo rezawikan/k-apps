@@ -33,14 +33,14 @@
             <li class="{{ isActiveRoute('travel') }}">
                 <a href="{{ route('travel.index') }}"><i class="fa fa-plane"></i> <span class="nav-label">Travel</span></a>
             </li>
-            <li class="{{ isActiveRoute('procurment') }}">
-                <a href="{{ route('procurment.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurment</span></a>
+            <li class="{{ isActiveRoute('procurement') }}">
+                <a href="{{ route('procurement.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement </span></a>
             </li>
             <li class="{{ isActiveRoute('ops-manual') }}">
                 <a href="{{ route('ops-manual.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">OPS Manual</span></a>
             </li>
-            <li class="{{ isActiveRoute('hr-related') }}">
-                <a href="{{ route('hr-related.index') }}"><i class="fa fa-users"></i> <span class="nav-label">HR Related</span></a>
+            <li class="{{ isActiveRoute('human-resources') }}">
+                <a href="{{ route('human-resources.index') }}"><i class="fa fa-users"></i> <span class="nav-label">Human Resources</span></a>
             </li>
             <li class="{{ isActiveRoute('k-nowledge') }}">
                 <a href="{{ route('k-nowledge.index') }}"><i class="fa fa-rocket"></i> <span class="nav-label">K-nowledge</span></a>

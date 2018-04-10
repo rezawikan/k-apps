@@ -38,6 +38,28 @@ function appendQueryString($params)
     return Request::url() . '?' . http_build_query($query);
 }
 
+
+function in($value, $array)
+{
+
+    if (is_array($array)) {
+        $a = title_case($value);
+        return in_array($a, $array);
+    }
+
+    return false;
+}
+
+function ins($value, $array)
+{
+
+    if (is_array($array)) {
+        return in_array($value, $array);
+    }
+
+    return false;
+}
+
 function isQueryString($params)
 {
     return !array_diff($params, Request::all());

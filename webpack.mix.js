@@ -28,12 +28,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .styles([
     'resources/assets/css/plugins/footable/footable.core.css'
   ], 'public/css/footable.min.css')
-  // .scripts([
-  //   'resources/assets/js/jquery-3.1.1.min.js',
-  // ], 'public/js/jquery-3.1.1.min.js')
-  // .scripts([
-  //   'resources/assets/js/bootstrap.js',
-  // ], 'public/js/bootstrap.min.js')
+  .styles([
+    'resources/assets/css/plugins/chosen/bootstrap-chosen.css'
+  ], 'public/css/chosen.min.css')
   .scripts([
     'resources/assets/js/plugins/metisMenu/jquery.metisMenu.js',
   ], 'public/js/plugins/metisMenu/jquery.metisMenu.min.js')
@@ -52,9 +49,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .scripts([
     'resources/assets/js/plugins/footable/footable.all.min.js',
   ], 'public/js/plugins/footable/footable.all.min.js')
+  .scripts([
+    'resources/assets/js/plugins/chosen/chosen.jquery.js',
+  ], 'public/js/plugins/chosen/chosen.all.min.js')
 mix.copyDirectory('resources/assets/font-awesome/fonts', 'public/font-awesome/fonts')
 mix.copyDirectory('resources/assets/img', 'public/img')
 mix.copyDirectory('resources/assets/css/patterns', 'public/css/patterns')
+mix.copyDirectory('resources/assets/css/plugins/chosen', 'public/css/img')
 mix.copyDirectory('resources/assets/css/plugins/footable/fonts', 'public/css/fonts')
   .options({
     processCssUrls: false

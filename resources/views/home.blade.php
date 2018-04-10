@@ -12,7 +12,6 @@
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($country,0,',','.') }}</h1>
-            <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
             <small>Total Country</small>
           </div>
         </div>
@@ -25,7 +24,6 @@
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($total_reach,0,',',',') }}</h1>
-            <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
             <small>Total Reached</small>
           </div>
         </div>
@@ -38,7 +36,6 @@
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($distributed,0,',',',') }}</h1>
-            <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
             <small>Total Distributed</small>
           </div>
         </div>
@@ -65,75 +62,114 @@
             <div class="row">
               <form class="" action="{{ route('dashboard') }}" method="GET">
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="year">Year</label>
-                  <select class="input-sm form-control input-s-sm inline" name="year">
-                      <option value="">None</option>
-                      @foreach ($yearList as $value)
-                        <option value="{{ $value->year }}" {{isQueryString(['year' => $value->year]) ? 'selected' : ''}}>{{ $value->year }}</option>
-                      @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label class="control-label" for="year">Year</label>
+                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="year[]">
+                        @foreach ($yearList as $value)
+                          @if (in($value->year, $getYear))
+                            <option value="{{ $value->year }}" selected>{{ $value->year }}</option>
+                          @else
+                            <option value="{{ $value->year }}">{{ $value->year }}</option>
+                          @endif
+                        @endforeach
+                    </select>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="project_type">Project Type</label>
-                  <select class="input-sm form-control input-s-sm inline" name="project_type">
-                      <option value="">None</option>
-                      @foreach ($projectTypeList as $value)
-                        <option value="{{ str_slug($value->name) }}" {{isQueryString(['name' => str_slug($value->name)]) ? 'selected' : ''}}>{{ $value->name }}</option>
-                      @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label class="control-label" for="project_type">Project Type</label>
+                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="project_type[]">
+                        @foreach ($projectTypeList as $value)
+                          @if (in($value->name, $getProjectType))
+                            <option value="{{ str_slug($value->name) }}" selected>{{ $value->name }}</option>
+                          @else
+                            <option value="{{ str_slug($value->name) }}">{{ $value->name }}</option>
+                          @endif
+                        @endforeach
+                    </select>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="country">Country</label>
-                  <select class="input-sm form-control input-s-sm inline" name="country">
-                      <option value="">None</option>
-                      @foreach ($countryList as $value)
-                        <option value="{{ $value->country }}" {{ isQueryString(['country' => $value->country]) ? 'selected' : '' }}>{{ $value->country }}</option>
-                      @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label class="control-label" for="country">Country</label>
+                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="country[]">
+                        @foreach ($countryList as $value)
+                          @if (in($value->country, $getCountry))
+                            <option value="{{ $value->country}}" selected>{{ $value->country }}</option>
+                          @else
+                            <option value="{{ $value->country }}">{{ $value->country }}</option>
+                          @endif
+                        @endforeach
+                    </select>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="officer">Officer</label>
-                  <select class="input-sm form-control input-s-sm inline" name="officer">
-                      <option value="">None</option>
-                      @foreach ($officerList as $value)
-                        <option value="{{ str_slug($value->name) }}" {{ isQueryString(['officer' => str_slug($value->name)]) ? 'selected' : '' }}>{{ $value->name }}</option>
-                      @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label class="control-label" for="officer">Officer</label>
+                    <select data-placeholder="Choose one" class="chosen-select" name="officer">
+                        <option value="">
+                        @foreach ($officerList as $value)
+                          @if (in($value->name, $getOfficer))
+                            <option value="{{ str_slug($value->name) }}" selected >{{ $value->name }}</option>
+                          @else
+                            <option value="{{ str_slug($value->name) }}" >{{ $value->name }}</option>
+                          @endif
+                        @endforeach
+                    </select>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="price_type">Price Type</label>
-                  <select class="input-sm form-control input-s-sm inline" name="price_type">
-                      <option value="">None</option>
-                      @foreach ($priceTypeList as $value)
-                        <option value="{{ $value->name }}" {{ isQueryString(['price_type' => $value->name]) ? 'selected' : '' }}>{{ $value->name }}</option>
-                      @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label class="control-label" for="price_type">Price Type</label>
+                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="price_type[]">
+                        @foreach ($priceTypeList as $value)
+                          @if (ins($value->name, $getPriceType))
+                            <option value="{{ str_slug($value->name) }}" selected >{{ $value->name }}</option>
+                          @else
+                            <option value="{{ str_slug($value->name) }}" >{{ $value->name }}</option>
+                          @endif
+                        @endforeach
+                    </select>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="technology">Technology</label>
-                  <select class="input-sm form-control input-s-sm inline" name="technology">
-                      <option value="">None</option>
-                      @foreach ($technologyList as $value)
-                        <option value="{{ str_slug($value->name) }}" {{ isQueryString(['technology' => str_slug($value->name)]) ? 'selected' : '' }}>{{ $value->name }}</option>
-                      @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label class="control-label" for="technology">Technology</label>
+                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="technology[]">
+                        @foreach ($technologyList as $value)
+                          @if (in($value->name, $getTechnology))
+                            <option value="{{ str_slug($value->name) }}" selected >{{ $value->name }}</option>
+                          @else
+                            <option value="{{ str_slug($value->name) }}" >{{ $value->name }}</option>
+                          @endif
+                        @endforeach
+                    </select>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="technology">Technology Type</label>
-                  <select class="input-sm form-control input-s-sm inline" name="typetech">
-                      <option value="">None</option>
-                      @foreach ($technologyType as $value)
-                        <option value="{{ str_slug($value->type) }}" {{ isQueryString(['typetech' => str_slug($value->type)]) ? 'selected' : '' }}>{{ $value->type }}</option>
-                      @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label class="control-label" for="technology">Technology Type</label>
+                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="typetech[]">
+
+                        @foreach ($technologyType as $value)
+                          @if (in($value->type, $getTypeTech))
+                            <option value="{{ str_slug($value->type) }}" selected >{{ $value->type }}</option>
+                          @else
+                            <option value="{{ str_slug($value->type) }}" >{{ $value->type }}</option>
+                          @endif
+                        @endforeach
+                    </select>
+                  </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 m-b-sm">
-                  <label class="control-label" for="price_type">Search</label>
-                  <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ $search }}">
-                    <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">Search</button>
-                    </span>
+                  <div class="form-group">
+                    <label class="control-label" for="price_type">Search</label>
+                    <div class="input-group">
+                      <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ $search }}">
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -214,6 +250,7 @@
   <script>
       $(document).ready(function() {
           $('.footable').footable({paginate: false});
+          $('.chosen-select').chosen();
       });
 
   </script>

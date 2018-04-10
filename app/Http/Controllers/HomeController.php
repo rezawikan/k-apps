@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Technology;
@@ -38,6 +39,7 @@ class HomeController extends Controller
         $technologyList     = Technology::select('name')->orderBy('name', 'asc')->get();
         $technologyType     = Technology::select('type')->orderBy('type', 'asc')->distinct()->get();
 
+
         $getYear         = $request->get('year');
         $getProjectType  = $request->get('project_type');
         $getCountry      = $request->get('country');
@@ -47,19 +49,26 @@ class HomeController extends Controller
         $getTypeTech     = $request->get('typetech');
         $search          = $request->get('search');
 
+
         $projects = Project::where('project_name', 'like', '%'.$search.'%')->orderBy('year','desc');
 
         if ($request->has('year')) {
-            $projects->where('year', $getYear);
+            $projects->whereIn('year', $getYear);
         }
 
         if ($request->has('project_type')) {
-            $getProjectType = str_replace('-', ' ', $getProjectType);
-            $projects->where('project_type', title_case($getProjectType));
+            $getProjectType = array_map(function($pt, $index){
+              $pt = title_case(str_replace('-', ' ', $pt));
+              return $pt;
+            }, $getProjectType, array_keys($getProjectType));
+
+            $projects->whereIn('project_type', $getProjectType);
         }
 
+        // dd($getProjectType);
+
         if ($request->has('country')) {
-            $projects = $projects->where('country', $getCountry);
+            $projects = $projects->whereIn('country', $getCountry);
         }
 
         if ($request->has('officer')) {
@@ -68,42 +77,79 @@ class HomeController extends Controller
         }
 
         if ($request->has('price_type')) {
-            $projects->where('price_type', $getPriceType);
+            $getPriceType = str_replace('-', ' ', $getPriceType);
+            $getPriceType = array_map(function($pt, $index){
+              $pt = title_case($pt);
+              return $pt;
+            }, $getPriceType, array_keys($getPriceType));
+
+            $projects->whereIn('price_type', $getPriceType);
         }
 
         if ($request->has('technology') or $request->has('typetech')) {
-            $getTechnology = str_replace('-', ' ', $getTechnology);
-            $getTypeTech   = str_replace('-', ' ', $getTypeTech);
+
+            $getTechnology = str_replace('-', ' ', $getTechnology) ?? null;
+            $getTypeTech   = str_replace('-', ' ', $getTypeTech) ?? null;
+
+            // dd($getTechnology);
+
+            if ($getTechnology != null) {
+              $getTechnology = array_map(function($gt, $index){
+                $gt = title_case($gt);
+                return $gt;
+              }, $getTechnology, array_keys($getTechnology));
+            }
+
+            if ($getTypeTech != null) {
+              $getTypeTech = array_map(function($tt, $index){
+                $tt = title_case($tt);
+                return $tt;
+              }, $getTypeTech, array_keys($getTypeTech));
+            }
 
             if ($getTechnology != "" && $getTypeTech == "") {
               $projects->whereHas('technologies', function ($query) use ($getTechnology) {
-                  $query->where('name', title_case($getTechnology));
+                  $query->whereIn('name', $getTechnology);
               });
             }
 
 
             if ($getTypeTech != "" && $getTechnology == "") {
               $projects->whereHas('technologies', function ($query) use ($getTypeTech) {
-                  $query->where('type', title_case($getTypeTech));
+                  $query->whereIn('type', $getTypeTech);
               });
             }
 
             if ($getTypeTech != "" && $getTechnology != "") {
               $projects->whereHas('technologies', function ($query) use ($getTypeTech, $getTechnology) {
-                  $query->where([
-                    ['type', title_case($getTypeTech)],
-                    ['name', title_case($getTechnology)]
-                  ]);
+                  $query->whereIn('type', $getTypeTech)->whereIn('name', $getTechnology);
               });
             }
         }
 
+
+
+
          $filteredID = $projects->pluck('id');
+         $type       = Technology::whereIn('type', [$getTypeTech])->pluck('id');
 
          if ($filteredID != null) {
               $country      = DB::table('projects')->whereIn('id',$filteredID)->distinct()->count('country');
-              $total_reach  = DB::table('project_technology')->whereIn('project_id',$filteredID)->sum('total_reach');
-              $distributed  = DB::table('project_technology')->whereIn('project_id',$filteredID)->sum('distribution_unit');
+              $total_reach  = DB::table('project_technology')
+                              ->whereIn('project_id',$filteredID)
+                              ->when($getTypeTech,  function ($query) use ($type){
+                                $query->whereIn('technology_id', $type);
+                              },function ($query) {
+                                    return $query;
+                                })->sum('total_reach');
+
+              $distributed  = DB::table('project_technology')
+                              ->whereIn('project_id',$filteredID)
+                              ->when($getTypeTech,  function ($query) use ($type){
+                                  $query->whereIn('technology_id', $type);
+                                },function ($query) {
+                                      return $query;
+                                  })->sum('distribution_unit');
          } else {
                $country      = DB::table('projects')->distinct()->count('country');
                $total_reach  = DB::table('project_technology')->sum('total_reach');

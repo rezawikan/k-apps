@@ -18,6 +18,7 @@
     <!-- Vendor styles -->
     <link rel="stylesheet" href="{{ mix('css/footable.min.css') }}" />
     <link rel="stylesheet" href="{{ mix('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/chosen.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
 
 
@@ -61,6 +62,9 @@
 
     <!-- FooTable -->
     <script src="{{ mix('js/plugins/footable/footable.all.min.js') }}"></script>
+
+    <!-- FooTable -->
+    <script src="{{ mix('js/plugins/chosen/chosen.all.min.js') }}"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{ mix('js/inspinia.min.js') }}"></script>

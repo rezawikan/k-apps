@@ -6,9 +6,11 @@
     "/css/animate.min.css": "/css/animate.min.css",
     "/css/style.min.css": "/css/style.min.css",
     "/css/footable.min.css": "/css/footable.min.css",
+    "/css/chosen.min.css": "/css/chosen.min.css",
     "/js/plugins/metisMenu/jquery.metisMenu.min.js": "/js/plugins/metisMenu/jquery.metisMenu.min.js",
     "/js/plugins/slimscroll/jquery.slimscroll.min.js": "/js/plugins/slimscroll/jquery.slimscroll.min.js",
     "/js/inspinia.min.js": "/js/inspinia.min.js",
     "/js/plugins/pace/pace.min.js": "/js/plugins/pace/pace.min.js",
-    "/js/plugins/footable/footable.all.min.js": "/js/plugins/footable/footable.all.min.js"
+    "/js/plugins/footable/footable.all.min.js": "/js/plugins/footable/footable.all.min.js",
+    "/js/plugins/chosen/chosen.all.min.js": "/js/plugins/chosen/chosen.all.min.js"
 }

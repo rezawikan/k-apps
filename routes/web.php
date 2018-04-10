@@ -20,15 +20,15 @@ Route::get('/impact-tracker', 'HomeController@index')->name('impact-tracker.inde
 Route::get('/travel', function () {
     return view('travel.index');
 })->name('travel.index');
-Route::get('/procurment', function () {
-    return view('procurment.index');
-})->name('procurment.index');
+Route::get('/procurement', function () {
+    return view('procurement.index');
+})->name('procurement.index');
 Route::get('/ops-manual', function () {
     return view('ops-manual.index');
 })->name('ops-manual.index');
-Route::get('/hr-related', function () {
-    return view('hr-related.index');
-})->name('hr-related.index');
+Route::get('/human-resources', function () {
+    return view('human-resources.index');
+})->name('human-resources.index');
 Route::get('/k-nowledge', function () {
     return view('k-nowledge.index');
 })->name('k-nowledge.index');
