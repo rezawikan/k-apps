@@ -16,7 +16,7 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('default');
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::get('/impact-tracker', 'HomeController@index')->name('impact-tracker.index');
+Route::get('/impact-tracker', 'ImpactTrackerController@index')->name('impact-tracker.index');
 Route::get('/travel', function () {
     return view('travel.index');
 })->name('travel.index');
