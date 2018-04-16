@@ -11,5 +11,12 @@ class ProjectTechnology extends Model
    *
    * @var array
    */
-  protected $fillable = ['project_id','technology_id'];
+  protected $fillable = ['project_id','technology_id','distribution_target','distribution_unit','per_unit','total_reach'];
+
+  /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'project_technology';
 }

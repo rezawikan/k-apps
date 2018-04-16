@@ -13,7 +13,7 @@
             <h5>Country</h5>
           </div>
           <div class="ibox-content">
-            <h1 class="no-margins">{{ number_format($country,0,',','.') }}</h1>
+            <h1 class="no-margins">{{ number_format($calculations['country'],0,',','.') }}</h1>
             <small>Total Country</small>
           </div>
         </div>
@@ -25,7 +25,7 @@
             <h5>Reached</h5>
           </div>
           <div class="ibox-content">
-            <h1 class="no-margins">{{ number_format($total_reach,0,',',',') }}</h1>
+            <h1 class="no-margins">{{ number_format($calculations['reached'],0,',',',') }}</h1>
             <small>Total Reached</small>
           </div>
         </div>
@@ -37,7 +37,7 @@
             <h5>Distributed</h5>
           </div>
           <div class="ibox-content">
-            <h1 class="no-margins">{{ number_format($distributed,0,',',',') }}</h1>
+            <h1 class="no-margins">{{ number_format($calculations['distributed'],0,',',',') }}</h1>
             <small>Total Distributed</small>
           </div>
         </div>
@@ -49,30 +49,18 @@
           <div class="ibox-title">
             <h5>Projects</h5>
             <div class="ibox-tools">
-              <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-              {{-- <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-wrench"></i></a>
-              <ul class="dropdown-menu dropdown-user">
-                <li><a href="#">Config option 1</a>
-                </li>
-                <li><a href="#">Config option 2</a>
-                </li>
-              </ul>
-              <a class="close-link"><i class="fa fa-times"></i></a> --}}
+              <a href="{{ route('impact-tracker.create') }}" class="btn btn-xs btn-primary">Add Project</a>
             </div>
           </div>
           <div class="ibox-content">
             <div class="row">
-              <form class="" action="{{ route('dashboard') }}" method="GET">
+              <form class="" action="{{ route('impact-tracker.index') }}" method="GET">
                 <div class="col-sm-4 col-xs-12 m-b-sm">
                   <div class="form-group">
                     <label class="control-label" for="year">Year</label>
                     <select data-placeholder="Choose one or more" class="chosen-select" multiple name="year[]">
-                        @foreach ($yearList as $value)
-                          @if (in($value->year, $getYear))
-                            <option value="{{ $value->year }}" selected>{{ $value->year }}</option>
-                          @else
-                            <option value="{{ $value->year }}">{{ $value->year }}</option>
-                          @endif
+                        @foreach ($mappings['filters']['years'] as $value)
+                            <option value="{{ $value['year'] }}" {{ convertSlug($value['year'], request('year')) }}>{{ $value['year'] }}</option>
                         @endforeach
                     </select>
                   </div>
@@ -81,12 +69,8 @@
                   <div class="form-group">
                     <label class="control-label" for="project_type">Project Type</label>
                     <select data-placeholder="Choose one or more" class="chosen-select" multiple name="project_type[]">
-                        @foreach ($projectTypeList as $value)
-                          @if (in($value->name, $getProjectType))
-                            <option value="{{ str_slug($value->name) }}" selected>{{ $value->name }}</option>
-                          @else
-                            <option value="{{ str_slug($value->name) }}">{{ $value->name }}</option>
-                          @endif
+                        @foreach ($mappings['filters']['project_type'] as $value)
+                            <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('project_type')) }}>{{ $value['name'] }}</option>
                         @endforeach
                     </select>
                   </div>
@@ -95,12 +79,8 @@
                   <div class="form-group">
                     <label class="control-label" for="country">Country</label>
                     <select data-placeholder="Choose one or more" class="chosen-select" multiple name="country[]">
-                        @foreach ($countryList as $value)
-                          @if (in($value->country, $getCountry))
-                            <option value="{{ $value->country}}" selected>{{ $value->country }}</option>
-                          @else
-                            <option value="{{ $value->country }}">{{ $value->country }}</option>
-                          @endif
+                        @foreach ($mappings['filters']['countries'] as $value)
+                          <option value="{{  str_slug($value['country']) }}" {{ convertSlugPlus($value['country'], request('country')) }}>{{ $value['country'] }}</option>
                         @endforeach
                     </select>
                   </div>
@@ -109,14 +89,10 @@
                   <div class="form-group">
                     <label class="control-label" for="officer">Officer</label>
                     <select data-placeholder="Choose one" class="chosen-select" name="officer">
-                        <option value="">
-                        @foreach ($officerList as $value)
-                          @if (in($value->name, $getOfficer))
-                            <option value="{{ str_slug($value->name) }}" selected >{{ $value->name }}</option>
-                          @else
-                            <option value="{{ str_slug($value->name) }}" >{{ $value->name }}</option>
-                          @endif
-                        @endforeach
+                        <option value="">All</option>
+                          @foreach ($mappings['filters']['officer'] as $value)
+                            <option value="{{ str_slug($value['name']) }}" {{ convertSlugSingle($value['name'], request('officer')) }}>{{ $value['name'] }}</option>
+                          @endforeach
                     </select>
                   </div>
                 </div>
@@ -124,12 +100,8 @@
                   <div class="form-group">
                     <label class="control-label" for="price_type">Price Type</label>
                     <select data-placeholder="Choose one or more" class="chosen-select" multiple name="price_type[]">
-                        @foreach ($priceTypeList as $value)
-                          @if (ins($value->name, $getPriceType))
-                            <option value="{{ str_slug($value->name) }}" selected >{{ $value->name }}</option>
-                          @else
-                            <option value="{{ str_slug($value->name) }}" >{{ $value->name }}</option>
-                          @endif
+                        @foreach ($mappings['filters']['pricetype'] as $value)
+                          <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('price_type')) }}>{{ $value['name'] }}</option>
                         @endforeach
                     </select>
                   </div>
@@ -138,12 +110,8 @@
                   <div class="form-group">
                     <label class="control-label" for="technology">Technology</label>
                     <select data-placeholder="Choose one or more" class="chosen-select" multiple name="technology[]">
-                        @foreach ($technologyList as $value)
-                          @if (in($value->name, $getTechnology))
-                            <option value="{{ str_slug($value->name) }}" selected >{{ $value->name }}</option>
-                          @else
-                            <option value="{{ str_slug($value->name) }}" >{{ $value->name }}</option>
-                          @endif
+                        @foreach ($mappings['filters']['technologies'] as $value)
+                          <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('technology')) }}>{{ $value['name'] }}</option>
                         @endforeach
                     </select>
                   </div>
@@ -151,15 +119,10 @@
                 <div class="col-sm-4 col-xs-12 m-b-sm">
                   <div class="form-group">
                     <label class="control-label" for="technology">Technology Type</label>
-                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="typetech[]">
-
-                        @foreach ($technologyType as $value)
-                          @if (in($value->type, $getTypeTech))
-                            <option value="{{ str_slug($value->type) }}" selected >{{ $value->type }}</option>
-                          @else
-                            <option value="{{ str_slug($value->type) }}" >{{ $value->type }}</option>
-                          @endif
-                        @endforeach
+                    <select data-placeholder="Choose one or more" class="chosen-select" multiple name="techtype[]">
+                      @foreach ($mappings['filters']['techtype'] as $value)
+                        <option value="{{ str_slug($value['type']) }}" {{ convertSlugPlus($value['type'], request('techtype')) }}>{{ $value['type'] }}</option>
+                      @endforeach
                     </select>
                   </div>
                 </div>
@@ -167,7 +130,7 @@
                   <div class="form-group">
                     <label class="control-label" for="price_type">Search</label>
                     <div class="input-group">
-                      <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ $search }}">
+                      <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ request('search') }}">
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-primary">Search</button>
                       </span>
@@ -192,11 +155,10 @@
                     <tr>
                       <td>{{ $value->project_name }}</td>
                       <td>{{ $value->project_type }}</td>
-                      <td>{{ DB::table('project_technology')->whereIn('project_id',[$value->id])->sum('distribution_unit') }}</td>
-                      <td>{{DB::table('project_technology')->whereIn('project_id',[$value->id])->sum('total_reach')}}</td>
+                      <td>{{ sumProjects($value->technologies, 'total_reach') }}</td>
+                      <td>{{ sumProjects($value->technologies, 'distribution_unit') }}</td>
                       <td>
-                        <a href="#" class="btn btn-primary btn-xs">Edit</a>
-                        <a href="#" class="btn btn-primary btn-xs">View</a>
+                        <a href="{{ route('impact-tracker.show',$value->id) }}" class="btn btn-primary btn-xs">View</a>
                       </td>
                     </tr>
                   @endforeach
@@ -205,15 +167,7 @@
                   <tr>
                     <td colspan="5">
                       <div class="text-center">
-                        {{ $projects->appends([
-                        'year' => $getYear,
-                        'project_type' => $getProjectType,
-                        'country' => $getCountry,
-                        'officer' => $getOfficer,
-                        'price_type' => $getPriceType,
-                        'technology' => $getTechnology,
-                        'typetech' => $getTypeTech,
-                        ])->links() }}
+                        {{ $projects->appends(request()->query())->links() }}
                       </div>
                     </td>
                   </tr>
@@ -225,26 +179,6 @@
       </div>
     </div>
   </div>
-
-{{-- <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 @endsection
 
 @push('b-scripts')

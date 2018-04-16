@@ -11,7 +11,7 @@ class Technology extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name','type'];
 
     /**
        * Get the projects record associated with the technology.

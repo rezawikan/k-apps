@@ -39,25 +39,80 @@ function appendQueryString($params)
 }
 
 
-function in($value, $array)
+function convertSlugPlus($value, $array)
 {
-
     if (is_array($array)) {
-        $a = title_case($value);
-        return in_array($a, $array);
+        $value = title_case(str_replace('-', ' ', $value));
+        $array = array_map(function ($val) {
+            $val =  title_case(str_replace('-', ' ', $val));
+            return $val;
+        }, $array);
+
+        return in_array($value, $array) ? 'selected' : false;
     }
 
     return false;
 }
 
-function ins($value, $array)
+function convertSlug($value, $array)
 {
-
     if (is_array($array)) {
-        return in_array($value, $array);
+        return in_array($value, $array) ? 'selected' : false;
     }
 
     return false;
+}
+
+function convertSlugSingle($value, $request)
+{
+    $value = str_slug($value);
+
+    return $value == $request ? 'selected' : false;
+}
+
+function con($array)
+{
+    if (is_array($array)) {
+        $array = array_map(function ($val) {
+            $val =  title_case(str_replace('-', ' ', $val));
+            return $val;
+        }, $array);
+
+        return $array;
+    }
+
+    return false;
+}
+
+function checkMatch($val1, $val2)
+{
+   if ($val1 == $val2) {
+      return 'selected';
+   }
+
+   return false;
+}
+
+function checkOldValue($source = null, $value, $param)
+{
+  if ($source != null) {
+      return $source == $value ? 'selected' : '';
+  } else {
+      return old($param) == $value ? 'selected' : '';
+  }
+}
+
+function sumProjects($values, $string)
+{
+    $values = $values->toArray();
+
+    $values = array_map(function ($value) use ($string) {
+        $value[$string] = 0;
+        $value[$string] += $value['pivot'][$string];
+        return $value[$string];
+    }, $values);
+
+    return array_sum($values);
 }
 
 function isQueryString($params)

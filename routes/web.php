@@ -16,7 +16,15 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('default');
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::get('/impact-tracker', 'ImpactTrackerController@index')->name('impact-tracker.index');
+Route::resource('impact-tracker', 'ProjectController');
+Route::get('/impact-tracker/{id}/create', 'ProjectTechnologyController@create')->name('impact-tracker-tech.create');
+Route::post('/impact-tracker/{id}/store', 'ProjectTechnologyController@store')->name('impact-tracker-tech.store');
+Route::get('/impact-tracker/{id}/{idTech}/edit', 'ProjectTechnologyController@edit')->name('impact-tracker-tech.edit');
+Route::put('/impact-tracker/{id}/{idTech}/update', 'ProjectTechnologyController@update')->name('impact-tracker-tech.update');
+Route::delete('/impact-tracker/{id}/{idTech}/delete', 'ProjectTechnologyController@destroy')->name('impact-tracker-tech.destroy');
+
+
+
 Route::get('/travel', function () {
     return view('travel.index');
 })->name('travel.index');
