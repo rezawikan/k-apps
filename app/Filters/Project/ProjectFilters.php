@@ -60,7 +60,7 @@ class ProjectFilters extends FiltersAbstract
         $country      = implode(request('country') ?? ['empty']);
         $technology   = implode(request('technology') ?? ['empty']);
         $techtype     = implode(request('techtype') ?? ['empty']);
-        $page         = implode(request('page') ?? ['empty']);
+        $page         = request('page') ?? 'empty';
 
         $values = md5(vsprintf('%s.%s.%s.%s.%s.%s.%s.%s.%s', [
             $officer,

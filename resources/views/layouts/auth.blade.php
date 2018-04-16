@@ -12,7 +12,8 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name') }} @yield('title')</title>
+        {{-- <title>{{ config('app.name') }} @yield('title')</title> --}}
+        <title>K-Apps</title>
 
         <!-- App styles -->
         <link rel="stylesheet" href="{{ mix('css/bootstrap.min.css') }}">
