@@ -23,6 +23,12 @@ function isActiveRoute($uri, $output = 'active')
 }
 
 
+function sidebar($uri = 'dashboard')
+{
+  return Route::current()->uri == $uri ? 'sidebar-content'  : '';
+}
+
+
 /*
 * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * SYSTEM

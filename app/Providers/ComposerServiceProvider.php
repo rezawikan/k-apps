@@ -24,6 +24,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         View::composer([
           'impact-tracker.index',
+          'home',
         ], ProjectCalculationsComposer::class);
     }
 

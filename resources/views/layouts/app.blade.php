@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
 
 
-
     @stack('t-scripts')
 
 </head>
@@ -36,7 +35,7 @@
           @include('layouts.navigation')
 
           <!-- Page wraper -->
-          <div id="page-wrapper" class="gray-bg">
+          <div id="page-wrapper" class="gray-bg {{sidebar()}}">
 
               <!-- Page wrapper -->
               @include('layouts.topnavbar')
@@ -59,6 +58,7 @@
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('js/plugins/metisMenu/jquery.metisMenu.min.js') }}"></script>
     <script src="{{ mix('js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ mix('js/plugins/easypiechart/jquery.easypiechart.js') }}"></script>
 
     <!-- FooTable -->
     <script src="{{ mix('js/plugins/footable/footable.all.min.js') }}"></script>

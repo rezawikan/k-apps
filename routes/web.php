@@ -31,15 +31,15 @@ Route::get('/travel', function () {
 Route::get('/procurement', function () {
     return view('procurement.index');
 })->name('procurement.index');
-Route::get('/ops-manual', function () {
-    return view('ops-manual.index');
-})->name('ops-manual.index');
+Route::get('/finance', function () {
+    return view('finance.index');
+})->name('finance.index');
+Route::get('/k-mrp', function () {
+    return view('k-mrp.index');
+})->name('k-mrp.index');
 Route::get('/human-resources', function () {
     return view('human-resources.index');
 })->name('human-resources.index');
-Route::get('/k-nowledge', function () {
-    return view('k-nowledge.index');
-})->name('k-nowledge.index');
 Route::get('/photo-stock', function () {
     return view('photo-stock.index');
 })->name('photo-stock.index');

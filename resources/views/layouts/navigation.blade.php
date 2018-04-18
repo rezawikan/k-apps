@@ -36,14 +36,14 @@
             <li class="{{ isActiveRoute('procurement') }}">
                 <a href="{{ route('procurement.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement </span></a>
             </li>
-            <li class="{{ isActiveRoute('ops-manual') }}">
-                <a href="{{ route('ops-manual.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">OPS Manual</span></a>
+            <li class="{{ isActiveRoute('finance') }}">
+                <a href="{{ route('finance.index') }}"><i class="fa fa fa-money"></i> <span class="nav-label">Finance</span></a>
+            </li>
+            <li class="{{ isActiveRoute('k-mrp') }}">
+                <a href="{{ route('k-mrp.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">K-MRP</span></a>
             </li>
             <li class="{{ isActiveRoute('human-resources') }}">
                 <a href="{{ route('human-resources.index') }}"><i class="fa fa-users"></i> <span class="nav-label">Human Resources</span></a>
-            </li>
-            <li class="{{ isActiveRoute('k-nowledge') }}">
-                <a href="{{ route('k-nowledge.index') }}"><i class="fa fa-rocket"></i> <span class="nav-label">K-nowledge</span></a>
             </li>
             <li class="{{ isActiveRoute('photo-stock') }}">
                 <a href="{{ route('photo-stock.index') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Photo Stock</span></a>

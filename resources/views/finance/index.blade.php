@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Procurement')
+@section('title', 'Finance')
 
 @section('content')
   <div class="wrapper wrapper-content animated fadeInRight">
@@ -8,8 +8,8 @@
       <div class="col-md-4">
         <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
           <div class="m-b-md">
-            <i class="fa fa-shopping-cart fa-3x"></i>
-            <h3 class="m-xs">Procument Request</h3>
+            <i class="fa fa-money fa-3x"></i>
+            <h3 class="m-xs">Fund Advance</h3>
           </div>
         </div>
       </div>
@@ -17,15 +17,16 @@
         <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
           <div class="m-b-md">
             <i class="fa fa-file fa-3x"></i>
-            <h3 class="m-xs">Approval</h3>
+            <h3 class="m-xs">Incoming Payment</h3>
           </div>
         </div>
+
       </div>
       <div class="col-md-4">
         <div class="widget blue-bg p-lg text-center" style="margin-top: 0px;">
           <div class="m-b-md">
             <i class="fa fa-copy fa-3x"></i>
-            <h3 class="m-xs">Payment Request</h3>
+            <h3 class="m-xs">Lost/Missing Receipt</h3>
           </div>
         </div>
       </div>
@@ -33,11 +34,11 @@
     <div class="row">
       <div class="col-md-12">
         <div class="ibox-content">
-          <h2><i class="fa fa-shopping-cart"></i> How to procure stuff</h2>
+          <h2><i class="fa fa-money"></i> Finance Activities</h2>
           <div class="row">
             <div class="col-md-6">
               <div class="ibox-content">
-                <h2><span class="badge badge-warning">1</span> Create Procurement Request</h2>
+                <h2><span class="badge badge-warning">1</span> Fund Advance</h2>
                 <ul class="todo-list m-t small-list">
                   <li><span class="m-l-xs">Filling out the procurement request form</span>
                   </li>
@@ -57,7 +58,7 @@
             </div>
             <div class="col-md-6">
               <div class="ibox-content">
-                <h2><span class="badge badge-warning">2</span> Get approval from your supervisor</h2>
+                <h2><span class="badge badge-warning">2</span> Incoming Payment</h2>
                 <ul class="todo-list m-t small-list">
                   <li>
                     <span class="m-l-xs">Supervisor need to approved the request </span>
@@ -78,7 +79,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="ibox-content">
-                <h2><span class="badge badge-warning">3</span> PO and received by Supply Chain</h2>
+                <h2><span class="badge badge-warning">3</span> Lost/Missing Receipt</h2>
                 <ul class="todo-list m-t small-list">
                   <li>
                     <span class="m-l-xs ">Supply chain will create and send the Purchase Order (PO) to vendor</span>
@@ -94,7 +95,7 @@
             </div>
             <div class="col-md-6">
               <div class="ibox-content">
-                <h2><span class="badge badge-warning">4</span> Payment Request by Supply Chain</h2>
+                <h2><span class="badge badge-warning">4</span> Petty Cash</h2>
                 <ul class="todo-list m-t small-list">
                   <li>
                     <span class="m-l-xs">Supply chain will create a payment request </span>

@@ -6,89 +6,76 @@
   <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
       <div class="col-lg-12">
+        <h2><i class="fa fa-users"></i>Human Resources</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
         <div class="ibox float-e-margins">
-          <div class="ibox-title">
-            <h5>HR Related</h5>
-            <div class="ibox-tools">
-              <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          <div class="ibox-content">
+            <h2>Manulife claim forms</h2>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://drive.google.com/file/d/1PW-Lwnbt1j2QglmwP9ADJ2zvEDePjbpl/view?usp=sharing" target="_blank">Maternity claim form</a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://drive.google.com/file/d/1cnZrxtewP-PXr_ZPxTPqaoi3GEfKjHpL/view?usp=sharing" target="_blank">Accident claim form</a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://drive.google.com/file/d/1r-GitwPUEGc-z6wBIKMXNqM54_L5yD-F/view?usp=sharing" target="_blank">Hospitalization and surgical claim form</a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://drive.google.com/file/d/1P77d1-HfVOgVXWUcoZYvLB-FkiU2dEB1/view?usp=sharing" target="_blank">Outpatient claim form</a></h3>
             </div>
           </div>
           <div class="ibox-content">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="widget navy-bg p-lg text-center">
-                  <div class="m-b-md">
-                    <i class="fa fa-shield fa-4x"></i>
-                    <h1 class="m-xs">BPJS</h1>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="widget yellow-bg p-lg text-center">
-                  <div class="m-b-md">
-                    <i class="fa fa-user-md fa-4x"></i>
-                    <h1 class="m-xs">Manulife</h1>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="widget red-bg p-lg text-center">
-                  <div class="m-b-md">
-                    <i class="fa fa-bell fa-4x"></i>
-                    <h1 class="m-xs">Leave</h1>
-                  </div>
-                </div>
-              </div>
+            <h2>How to claim insurance coverage</h2>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://drive.google.com/file/d/18Z0Ulrre4WBb5zV2TExbj0ZLkIqEwH_x/view?usp=sharing" target="_blank">Manulife claim procedure (from Manulife)</a></h3>
             </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="ibox-content">
-                  <h2>Templates</h2>
-                  <small>Kopernik's templates</small>
-                  <ul class="todo-list m-t">
-                    <li>
-                      <span class="m-l-xs">Buy a milk</span>
-                      <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 mins</small>
-                    </li>
-                    <li>
-                      <span class="m-l-xs">Go to shop and find some products.</span>
-                      <small class="label label-info"><i class="fa fa-clock-o"></i> 3 mins</small>
-                    </li>
-                    <li>
-                      <span class="m-l-xs">Send documents to Mike</span>
-                      <small class="label label-warning"><i class="fa fa-clock-o"></i> 2 mins</small>
-                    </li>
-                    <li>
-                      <span class="m-l-xs">Go to the doctor dr Smith</span>
-                      <small class="label label-danger"><i class="fa fa-clock-o"></i> 42 mins</small>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="ibox-content">
-                  <h2>Policy</h2>
-                  <small>Kopernik's Policy</small>
-                  <ul class="todo-list m-t">
-                    <li>
-                      <span class="m-l-xs">Buy a milk</span>
-                      <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 mins</small>
-                    </li>
-                    <li>
-                      <span class="m-l-xs">Go to shop and find some products.</span>
-                      <small class="label label-info"><i class="fa fa-clock-o"></i> 3 mins</small>
-                    </li>
-                    <li>
-                      <span class="m-l-xs">Send documents to Mike</span>
-                      <small class="label label-warning"><i class="fa fa-clock-o"></i> 2 mins</small>
-                    </li>
-                    <li>
-                      <span class="m-l-xs">Go to the doctor dr Smith</span>
-                      <small class="label label-danger"><i class="fa fa-clock-o"></i> 42 mins</small>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          </div>
+          <div class="ibox-content">
+            <h2>Staff Movement-Related</h2>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://docs.google.com/document/d/1m8zznNYZ3Iu-IdxLP3-5OHhMoXAL15WWCbq62Nb4Ca4/edit?usp=sharing" target="_blank">Staffing request form</a></h3>
+            </div>
+          </div>
+          <div class="ibox-content">
+            <h2>Staff Performance Review</h2>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://docs.google.com/spreadsheets/d/1LH_UwYwqQu6gcEZcQg8mlapI4GwxeaelV0eSeNkbssw/edit?usp=sharing" target="_blank">Template for PMS (spreadsheet)</a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://docs.google.com/document/d/1OgAfYS1ou7wHj8-p0gbKlW24Dkia63x52yb9lK8uA9A/edit?usp=sharing" target="_blank">Template for staff development plan</a></h3>
+            </div>
+          </div>
+          <div class="ibox-content">
+            <h2>Kopernik Culture and MBTI Spirit Animals</h2>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://drive.google.com/file/d/1Tki9tt4nqukAE62WL3nLw6OAPyzp7p7t/view?usp=sharing" target="_blank">Kopernik culture</a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://docs.google.com/spreadsheets/d/1KCtsXd44LdZ2b5xgWkGAdO6JHSXZfynRCn85xmPtwR8/edit?usp=sharing" target="_blank">Spirit animals (EN) </a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://docs.google.com/spreadsheets/d/1cH4q0HWtWnr0vdw07FtJGnA2pdxIjLg_AI7bFCysOzI/edit?usp=sharing" target="_blank">Spirit animals (IN) </a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="search-result">
+              <h3><a href="https://drive.google.com/file/d/1MaKHwrqT_cEZq6qphEW0YlC77NszyR3P/view?usp=sharing" target="_blank">Tips to working with people based on spirit animals (EN)</a></h3>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="text-center">
             </div>
           </div>
         </div>

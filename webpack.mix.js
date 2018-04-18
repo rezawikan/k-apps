@@ -52,11 +52,16 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .scripts([
     'resources/assets/js/plugins/chosen/chosen.jquery.js',
   ], 'public/js/plugins/chosen/chosen.all.min.js')
+  .scripts([
+    'resources/assets/js/plugins/easypiechart/jquery.easypiechart.js',
+  ], 'public/js/plugins//easypiechart/jquery.easypiechart.js')
 mix.copyDirectory('resources/assets/font-awesome/fonts', 'public/font-awesome/fonts')
 mix.copyDirectory('resources/assets/img', 'public/img')
 mix.copyDirectory('resources/assets/css/patterns', 'public/css/patterns')
 mix.copyDirectory('resources/assets/css/plugins/chosen', 'public/css/img')
+mix.copyDirectory('resources/assets/img/gallery/', 'public/img/gallery')
 mix.copyDirectory('resources/assets/css/plugins/footable/fonts', 'public/css/fonts')
+mix.copyDirectory('resources/assets/js/plugins/flot', 'public/js/plugins/flot')
   .options({
     processCssUrls: false
   });

@@ -28,7 +28,7 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $projects = Project::with(['technologies'])->filter($request)->orderBy('year', 'desc')->paginate(5);
+        $projects = Project::with(['technologies'])->filter($request)->orderBy('year', 'desc')->paginate(15);
 
         return view('impact-tracker.index')->with(compact('projects'));
     }
