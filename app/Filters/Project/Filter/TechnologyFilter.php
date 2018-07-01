@@ -20,7 +20,7 @@ class TechnologyFilter extends FilterAbstract
         $value = $this->resolveSlug($value);
 
         if ($value == null) {
-            return $Builder;
+            return $builder;
         }
 
         $builder->whereHas('technologies', function (Builder $builder) use ($value) {

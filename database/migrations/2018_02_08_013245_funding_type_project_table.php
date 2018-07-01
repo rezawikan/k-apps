@@ -15,9 +15,11 @@ class FundingTypeProjectTable extends Migration
     {
       Schema::create('funding_type_project', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('project_id');
-          $table->string('funding_type_id');
+          $table->integer('project_id')->unsigned();
+          $table->integer('funding_type_id')->unsigned();
           $table->timestamps();
+          $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+          $table->foreign('funding_type_id')->references('id')->on('funding_types')->onDelete('cascade');
       });
     }
 

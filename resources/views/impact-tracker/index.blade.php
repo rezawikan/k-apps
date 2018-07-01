@@ -145,18 +145,19 @@
                   <tr>
                     <th data-sort-ignore="true">Project </th>
                     <th data-sort-ignore="true" data-hide="phone,tablet">Project Type</th>
-                    <th data-sort-ignore="true" data-hide="phone,tablet">Total Distributed</th>
                     <th data-sort-ignore="true" data-hide="phone,tablet">Total Reached</th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Total Distributed</th>
                     <th data-sort-ignore="true" data-hide="phone">Details</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {{-- {{ dd(request('techtype'))  }} --}}
                   @foreach ($projects as $key => $value)
                     <tr>
                       <td>{{ $value->project_name }}</td>
                       <td>{{ $value->project_type }}</td>
-                      <td>{{ sumProjects($value->technologies, 'total_reach') }}</td>
-                      <td>{{ sumProjects($value->technologies, 'distribution_unit') }}</td>
+                      <td>{{ $value->additional_total_reached }}</td>
+                      <td>{{ $value->additional_total_distributed }}</td>
                       <td>
                         <a href="{{ route('impact-tracker.show',$value->id) }}" class="btn btn-primary btn-xs">View</a>
                       </td>

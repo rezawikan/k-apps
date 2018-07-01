@@ -15,12 +15,68 @@ class Project extends Model
      */
     protected $fillable = ['project_name','start_date','year','country','price_type','project_type','officer'];
 
-  /**
-     * filter models
-     */
+    protected $appends  = ['additional_total_reached','additional_total_distributed'];
+
+    /**
+       * filter models
+       */
     public function scopeFilter(Builder $builder, $request, array $filters = [])
     {
         return (new ProjectFilters($request))->add($filters)->filter($builder);
+    }
+
+    /**
+ * Get the user's full name.
+ *
+ * @return string
+ */
+    public function getAdditionalTotalReachedAttribute()
+    {
+        $values = $this->technologies->toArray();
+        $string = 'total_reach';
+        $technology = request('technology') ?? [];
+        $techtype   = request('techtype') ?? [];
+
+        $values = array_map(function ($value) use ($string, $technology, $techtype) {
+            $value[$string] = 0;
+            if (!empty($technology) or !empty($techtype)) {
+                if (in_array($value['name'], con($technology)) or in_array($value['type'], con($techtype))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } else {
+                $value[$string] += $value['pivot'][$string];
+            }
+            return $value[$string];
+        }, $values);
+
+        return array_sum($values);
+    }
+
+    /**
+ * Get the user's full name.
+ *
+ * @return string
+ */
+    public function getAdditionalTotalDistributedAttribute()
+    {
+        $values = $this->technologies->toArray();
+        $string = 'distribution_unit';
+        $technology = request('technology') ?? [];
+        $techtype   = request('techtype') ?? [];
+
+        $values = array_map(function ($value) use ($string, $technology, $techtype) {
+            $value[$string] = 0;
+            if (!empty($technology) or !empty($techtype)) {
+                if (in_array($value['name'], con($technology)) or in_array($value['type'], con($techtype))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } else {
+                $value[$string] += $value['pivot'][$string];
+            }
+            return $value[$string];
+        }, $values);
+
+        return array_sum($values);
     }
 
     /**
@@ -52,7 +108,7 @@ class Project extends Model
        */
     public function technologies()
     {
-        return $this->belongsToMany('App\Models\Technology')->withPivot('id','distribution_target', 'per_unit', 'distribution_unit', 'total_reach');
+        return $this->belongsToMany('App\Models\Technology')->withPivot('id', 'distribution_target', 'per_unit', 'distribution_unit', 'total_reach');
     }
 
     /**

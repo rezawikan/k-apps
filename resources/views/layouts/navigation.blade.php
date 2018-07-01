@@ -30,6 +30,26 @@
             <li class="{{ isActiveRoute('impact-tracker') }}">
                 <a href="{{ route('impact-tracker.index') }}"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Impact Tracker</span></a>
             </li>
+            <li class="{{ isActiveRoute(['manage/officer','manage/distribution-target','manage/funding-type','manage/price-type','manage/project-type','manage/technology']) }}">
+                <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Manage</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/funding-type') }}"><a href="{{ route('funding-type.index') }}">Funding Type</a></li>
+                </ul>
+                <ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/distribution-target') }}"><a href="{{ url('master/products/trashes') }}">Distribution Target</a></li>
+                </ul>
+                <ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/officer') }}"><a href="{{ url('master/products') }}">Officer</a></li>
+                </ul>
+                <ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/price-type') }}"><a href="{{ url('master/products/trashes') }}">Price Type</a></li>
+                </ul><ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/project-type') }}"><a href="{{ url('master/products/trashes') }}">Project Type</a></li>
+                </ul>
+                <ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/technology') }}"><a href="{{ url('master/products/trashes') }}">Technology</a></li>
+                </ul>
+            </li>
             <li class="{{ isActiveRoute('travel') }}">
                 <a href="{{ route('travel.index') }}"><i class="fa fa-plane"></i> <span class="nav-label">Travel</span></a>
             </li>

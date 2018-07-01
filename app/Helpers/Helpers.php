@@ -25,7 +25,7 @@ function isActiveRoute($uri, $output = 'active')
 
 function sidebar($uri = 'dashboard')
 {
-  return Route::current()->uri == $uri ? 'sidebar-content'  : '';
+    return Route::current()->uri == $uri ? 'sidebar-content'  : '';
 }
 
 
@@ -76,8 +76,9 @@ function convertSlugSingle($value, $request)
     return $value == $request ? 'selected' : false;
 }
 
-function con($array)
+function con($array, $request = null)
 {
+
     if (is_array($array)) {
         $array = array_map(function ($val) {
             $val =  title_case(str_replace('-', ' ', $val));
@@ -92,22 +93,23 @@ function con($array)
 
 function checkMatch($val1, $val2)
 {
-   if ($val1 == $val2) {
-      return 'selected';
-   }
+    if ($val1 == $val2) {
+        return 'selected';
+    }
 
-   return false;
+    return false;
 }
 
 function checkOldValue($source = null, $value, $param)
 {
-  if ($source != null) {
-      return $source == $value ? 'selected' : '';
-  } else {
-      return old($param) == $value ? 'selected' : '';
-  }
+    if ($source != null) {
+        return $source == $value ? 'selected' : '';
+    } else {
+        return old($param) == $value ? 'selected' : '';
+    }
 }
 
+// function is not used move to get attribute
 function sumProjects($values, $string)
 {
     $values = $values->toArray();
@@ -119,6 +121,7 @@ function sumProjects($values, $string)
     }, $values);
 
     return array_sum($values);
+
 }
 
 function isQueryString($params)
