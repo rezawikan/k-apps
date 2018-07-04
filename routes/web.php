@@ -25,6 +25,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/impact-tracker/{id}/{idTech}/delete', 'ProjectTechnologyController@destroy')->name('impact-tracker-tech.destroy');
     Route::resource('manage/funding-type', 'FundingTypeController');
     Route::resource('manage/distribution-target', 'DistributionTargetController');
+    Route::resource('manage/officer', 'OfficerController');
+    Route::resource('manage/price-type', 'PriceTypeController');
+    Route::resource('manage/project-type', 'ProjectTypeController');
+    Route::resource('manage/technology', 'TechnologyController');
 
     Route::get('/travel', function () {
         return view('travel.index');

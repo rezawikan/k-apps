@@ -11,7 +11,7 @@
           <div class="ibox-title">
             <h5>Distibution Target</h5>
             <div class="ibox-tools">
-              <a href="{{ route('funding-type.create') }}" class="btn btn-xs btn-primary">Add Distibution Target</a>
+              <a href="{{ route('distribution-target.create') }}" class="btn btn-xs btn-primary">Add Distibution Target</a>
             </div>
           </div>
           <div class="ibox-content">
@@ -29,16 +29,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($funding_type as $key => $value)
+                  @foreach ($distributions as $key => $value)
                     <tr>
                       <td>{{ $value->name}}</td>
                       <td>{{ $value->updated_at }}</td>
                       <td>{{ $value->created_at}}</td>
                       <td>
-                        <form class="" action="{{ route('funding-type.destroy', ['id' => $value->id]) }}" method="POST">
+                        <form class="" action="{{ route('distribution-target.destroy', ['id' => $value->id]) }}" method="POST">
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
-                        <a href="{{ route('funding-type.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="{{ route('distribution-target.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
                         <input type="submit" value="Delete"class="btn btn-primary btn-xs">
                         </form>
                       </td>
@@ -49,7 +49,7 @@
                   <tr>
                     <td colspan="5">
                       <div class="text-center">
-                        {{ $projects->appends(request()->query())->links() }}
+                        {{ $distributions->appends(request()->query())->links() }}
                       </div>
                     </td>
                   </tr>

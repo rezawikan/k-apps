@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\FundingType;
-use App\Rules\Titlecase;
+use App\Models\PriceType;
 use Illuminate\Validation\Rule;
 
-class FundingTypeController extends Controller
+class PriceTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class FundingTypeController extends Controller
      */
     public function index()
     {
-        $funding_type = FundingType::paginate(15);
+        $datas = PriceType::paginate(15);
 
-        return view('manage.funding-type.index')->with(compact('funding_type'));
+        return view('manage.price-type.index')->with(compact('datas'));
     }
 
     /**
@@ -28,7 +27,7 @@ class FundingTypeController extends Controller
      */
     public function create()
     {
-        return view('manage.funding-type.create');
+        return view('manage.price-type.create');
     }
 
     /**
@@ -40,12 +39,12 @@ class FundingTypeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'name' => ['required','unique:funding_types,name']
+        'name' => ['required','unique:price_types,name']
       ]);
 
-        $project = FundingType::create($request->all());
+        $data = PriceType::create($request->all());
 
-        return redirect()->route('funding-type.index');
+        return redirect()->route('price-type.index');
     }
 
     /**
@@ -67,8 +66,8 @@ class FundingTypeController extends Controller
      */
     public function edit($id)
     {
-        $data = FundingType::find($id);
-        return view('manage.funding-type.edit')->with(compact('data'));
+        $data = PriceType::find($id);
+        return view('manage.price-type.edit')->with(compact('data'));
     }
 
     /**
@@ -81,13 +80,13 @@ class FundingTypeController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-        'name' => ['required', Rule::unique('funding_types')->ignore($request->name, 'name')],
-      ]);
+          'name' => ['required', Rule::unique('price_types')->ignore($request->name, 'name')],
+        ]);
 
-        $data = FundingType::findOrFail($id);
+        $data = PriceType::findOrFail($id);
         $data->update($request->all());
 
-        return redirect()->route('funding-type.index');
+        return redirect()->route('price-type.index');
     }
 
     /**
@@ -98,8 +97,8 @@ class FundingTypeController extends Controller
      */
     public function destroy($id)
     {
-        $delete = FundingType::find($id)->delete();
+        $delete = PriceType::find($id)->delete();
 
-        return redirect()->route('funding-type.index');
+        return redirect()->route('price-type.index');
     }
 }

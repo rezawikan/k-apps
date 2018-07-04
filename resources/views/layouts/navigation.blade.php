@@ -36,18 +36,19 @@
                     <li class="{{ isActiveRoute('manage/funding-type') }}"><a href="{{ route('funding-type.index') }}">Funding Type</a></li>
                 </ul>
                 <ul class="nav nav-second-level collapse">
-                    <li class="{{ isActiveRoute('manage/distribution-target') }}"><a href="{{ url('master/products/trashes') }}">Distribution Target</a></li>
+                    <li class="{{ isActiveRoute('manage/distribution-target') }}"><a href="{{ route('distribution-target.index') }}">Distribution Target</a></li>
                 </ul>
                 <ul class="nav nav-second-level collapse">
-                    <li class="{{ isActiveRoute('manage/officer') }}"><a href="{{ url('master/products') }}">Officer</a></li>
+                    <li class="{{ isActiveRoute('manage/officer') }}"><a href="{{ route('officer.index') }}">Officer</a></li>
                 </ul>
                 <ul class="nav nav-second-level collapse">
-                    <li class="{{ isActiveRoute('manage/price-type') }}"><a href="{{ url('master/products/trashes') }}">Price Type</a></li>
-                </ul><ul class="nav nav-second-level collapse">
-                    <li class="{{ isActiveRoute('manage/project-type') }}"><a href="{{ url('master/products/trashes') }}">Project Type</a></li>
+                    <li class="{{ isActiveRoute('manage/price-type') }}"><a href="{{ route('price-type.index') }}">Price Type</a></li>
                 </ul>
                 <ul class="nav nav-second-level collapse">
-                    <li class="{{ isActiveRoute('manage/technology') }}"><a href="{{ url('master/products/trashes') }}">Technology</a></li>
+                    <li class="{{ isActiveRoute('manage/project-type') }}"><a href="{{ route('project-type.index') }}">Project Type</a></li>
+                </ul>
+                <ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/technology') }}"><a href="{{ route('technology.index') }}">Technology</a></li>
                 </ul>
             </li>
             <li class="{{ isActiveRoute('travel') }}">

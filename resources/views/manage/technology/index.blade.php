@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Officer')
+@section('title', 'Technology')
 
 @section('content')
 
@@ -9,9 +9,9 @@
       <div class="col-lg-12">
         <div class="ibox float-e-margins">
           <div class="ibox-title">
-            <h5>Officer</h5>
+            <h5>Technology</h5>
             <div class="ibox-tools">
-              <a href="{{ route('officer.create') }}" class="btn btn-xs btn-primary">Add Officer</a>
+              <a href="{{ route('technology.create') }}" class="btn btn-xs btn-primary">Add Tehnology</a>
             </div>
           </div>
           <div class="ibox-content">
@@ -29,16 +29,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($officers as $key => $value)
+                  @foreach ($technologies as $key => $value)
                     <tr>
                       <td>{{ $value->name}}</td>
                       <td>{{ $value->updated_at }}</td>
                       <td>{{ $value->created_at}}</td>
                       <td>
-                        <form class="" action="{{ route('officer.destroy', ['id' => $value->id]) }}" method="POST">
+                        <form class="" action="{{ route('technology.destroy', ['id' => $value->id]) }}" method="POST">
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
-                        <a href="{{ route('officer.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="{{ route('technology.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
                         <input type="submit" value="Delete"class="btn btn-primary btn-xs">
                         </form>
                       </td>
@@ -49,7 +49,7 @@
                   <tr>
                     <td colspan="5">
                       <div class="text-center">
-                        {{ $officers->appends(request()->query())->links() }}
+                        {{ $technologies->appends(request()->query())->links() }}
                       </div>
                     </td>
                   </tr>
