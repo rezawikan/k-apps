@@ -15,7 +15,7 @@ class DistributionTargetController extends Controller
      */
     public function index()
     {
-        $distributions = DistributionTarget::paginate(15);
+        $distributions = DistributionTarget::latest()->paginate(15);
 
         return view('manage.distribution-target.index')->with(compact('distributions'));
     }

@@ -16,7 +16,7 @@ class FundingTypeController extends Controller
      */
     public function index()
     {
-        $funding_type = FundingType::paginate(15);
+        $funding_type = FundingType::latest()->paginate(15);
 
         return view('manage.funding-type.index')->with(compact('funding_type'));
     }

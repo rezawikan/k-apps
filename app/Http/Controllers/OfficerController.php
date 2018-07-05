@@ -15,7 +15,7 @@ class OfficerController extends Controller
      */
     public function index()
     {
-        $officers = Officer::paginate(15);
+        $officers = Officer::latest()->paginate(15);
 
         return view('manage.officer.index')->with(compact('officers'));
     }

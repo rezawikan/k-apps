@@ -4,13 +4,13 @@
           <li class="nav-header">
               <div class="dropdown profile-element">
                   <span>
-                    <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}}" />
+                    {{-- <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}}" /> --}}
                   </span>
                   <span class="clear">
                     <span class="block m-t-xs">
                       <strong class="font-bold">{{ Auth::user()->name }}</strong>
                     </span>
-                    <span class="text-muted text-xs block">Art Director </span>
+                    {{-- <span class="text-muted text-xs block">Art Director </span> --}}
                   </span>
                   <ul class="dropdown-menu animated fadeInRight m-t-xs">
                       <li><a href="profile.html">Profile</a></li>
@@ -30,7 +30,7 @@
             <li class="{{ isActiveRoute('impact-tracker') }}">
                 <a href="{{ route('impact-tracker.index') }}"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Impact Tracker</span></a>
             </li>
-            <li class="{{ isActiveRoute(['manage/officer','manage/distribution-target','manage/funding-type','manage/price-type','manage/project-type','manage/technology']) }}">
+            <li class="{{ isActiveRoute(['manage/officer','manage/distribution-target','manage/funding-type','manage/price-type','manage/project-type','manage/technology','manage/technology-type']) }}">
                 <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Manage</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li class="{{ isActiveRoute('manage/funding-type') }}"><a href="{{ route('funding-type.index') }}">Funding Type</a></li>
@@ -49,6 +49,9 @@
                 </ul>
                 <ul class="nav nav-second-level collapse">
                     <li class="{{ isActiveRoute('manage/technology') }}"><a href="{{ route('technology.index') }}">Technology</a></li>
+                </ul>
+                <ul class="nav nav-second-level collapse">
+                    <li class="{{ isActiveRoute('manage/technology-type') }}"><a href="{{ route('technology-type.index') }}">Technology Type</a></li>
                 </ul>
             </li>
             <li class="{{ isActiveRoute('travel') }}">

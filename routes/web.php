@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('manage/price-type', 'PriceTypeController');
     Route::resource('manage/project-type', 'ProjectTypeController');
     Route::resource('manage/technology', 'TechnologyController');
+    Route::resource('manage/technology-type', 'TechnologyTypeController');
 
     Route::get('/travel', function () {
         return view('travel.index');

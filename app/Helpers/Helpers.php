@@ -9,6 +9,7 @@
 
 function isActiveRoute($uri, $output = 'active')
 {
+
     if (is_array($uri)) {
         foreach ($uri as $value) {
             if (Route::current()->uri == $value) {

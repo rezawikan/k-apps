@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ProjectType;
+use App\Models\TechnologyType;
 use Illuminate\Validation\Rule;
 
-class ProjectTypeController extends Controller
+class TechnologyTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class ProjectTypeController extends Controller
      */
     public function index()
     {
-        $datas = ProjectType::latest()->paginate(15);
+        $datas = TechnologyType::latest()->paginate(15);
 
-        return view('manage.project-type.index')->with(compact('datas'));
+        return view('manage.technology-type.index')->with(compact('datas'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ProjectTypeController extends Controller
      */
     public function create()
     {
-        return view('manage.project-type.create');
+        return view('manage.technology-type.create');
     }
 
     /**
@@ -39,12 +39,12 @@ class ProjectTypeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-          'name' => ['required','unique:project_types,name']
-        ]);
+        'name' => ['required','unique:technology_types,name']
+      ]);
 
-        $data = ProjectType::create($request->all());
+        $data = TechnologyType::create($request->all());
 
-        return redirect()->route('project-type.index');
+        return redirect()->route('technology-type.index');
     }
 
     /**
@@ -66,8 +66,8 @@ class ProjectTypeController extends Controller
      */
     public function edit($id)
     {
-        $data = ProjectType::find($id);
-        return view('manage.project-type.edit')->with(compact('data'));
+        $data = TechnologyType::find($id);
+        return view('manage.technology-type.edit')->with(compact('data'));
     }
 
     /**
@@ -80,13 +80,13 @@ class ProjectTypeController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-          'name' => ['required', Rule::unique('project_types')->ignore($request->name, 'name')],
-        ]);
+        'name' => ['required', Rule::unique('technology_types')->ignore($request->name, 'name')],
+      ]);
 
-        $data = ProjectType::findOrFail($id);
+        $data = TechnologyType::findOrFail($id);
         $data->update($request->all());
 
-        return redirect()->route('project-type.index');
+        return redirect()->route('technology-type.index');
     }
 
     /**
@@ -97,8 +97,8 @@ class ProjectTypeController extends Controller
      */
     public function destroy($id)
     {
-        $delete = ProjectType::find($id)->delete();
+        $delete = TechnologyType::find($id)->delete();
 
-        return redirect()->route('project-type.index');
+        return redirect()->route('technology-type.index');
     }
 }

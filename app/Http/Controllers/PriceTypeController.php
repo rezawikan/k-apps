@@ -15,7 +15,7 @@ class PriceTypeController extends Controller
      */
     public function index()
     {
-        $datas = PriceType::paginate(15);
+        $datas = PriceType::latest()->paginate(15);
 
         return view('manage.price-type.index')->with(compact('datas'));
     }
