@@ -50,7 +50,7 @@
         <div class="ibox float-e-margins">
           <div class="ibox-title">
             <span class="label label-primary pull-right">Impact</span>
-            <h5>#People</h5>
+            <h5>Total People Reached</h5>
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($calculations['distributed'],0,',',',') }}</h1>
@@ -62,7 +62,7 @@
         <div class="ibox float-e-margins">
           <div class="ibox-title">
             <span class="label label-info pull-right">Location</span>
-            <h5>#Country</h5>
+            <h5>Total Countries</h5>
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($calculations['country'],0,',','.') }}</h1>
@@ -73,7 +73,7 @@
         <div class="ibox float-e-margins">
           <div class="ibox-title">
             <span class="label label-warning pull-right">Distributed</span>
-            <h5>#Technology</h5>
+            <h5>Total Technologies</h5>
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($calculations['reached'],0,',',',') }}</h1>

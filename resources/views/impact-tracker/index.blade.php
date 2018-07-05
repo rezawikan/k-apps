@@ -10,11 +10,11 @@
         <div class="ibox float-e-margins">
           <div class="ibox-title">
             <span class="label label-success pull-right">All</span>
-            <h5>Country</h5>
+            <h5>Countries</h5>
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($calculations['country'],0,',','.') }}</h1>
-            <small>Total Country</small>
+            <small>Total Countries</small>
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
           </div>
           <div class="ibox-content">
             <h1 class="no-margins">{{ number_format($calculations['reached'],0,',',',') }}</h1>
-            <small>Total Reached</small>
+            <small>Total People Reached</small>
           </div>
         </div>
       </div>
