@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\CreateSlugTrait;
+use App\Observers\ProjectTypeObserver;
 
 class ProjectType extends Model
 {
-    use CreateSlugTrait;
     /**
      * The attributes that are mass assignable.
      *
@@ -15,4 +14,14 @@ class ProjectType extends Model
      */
     protected $fillable = ['name'];
 
+    /**
+      * Bootstrap any application services.
+      *
+      * @return void
+      */
+    public static function boot()
+    {
+        parent::boot();
+        self::observe(ProjectTypeObserver::class);
+    }
 }

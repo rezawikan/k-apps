@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Filters\Project\ProjectFilters;
 use Illuminate\Database\Eloquent\Builder;
+use App\Observers\ProjectObserver;
 
 class Project extends Model
 {
@@ -16,6 +17,17 @@ class Project extends Model
     protected $fillable = ['project_name','start_date','year','country','price_type','project_type','officer'];
 
     protected $appends  = ['additional_total_reached','additional_total_distributed'];
+
+    /**
+      * Bootstrap any application services.
+      *
+      * @return void
+      */
+    public static function boot()
+    {
+        parent::boot();
+        self::observe(ProjectObserver::class);
+    }
 
     /**
        * filter models

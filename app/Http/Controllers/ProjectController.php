@@ -9,9 +9,11 @@ use App\Models\ProjectTechnology;
 use App\Models\TechnologyType;
 use App\Models\Project;
 use App\Rules\Titlecase;
+use App\Traits\LoggingTrait;
 
 class ProjectController extends Controller
 {
+    use LoggingTrait;
     /**
      * Create a new controller instance.
      *
@@ -20,6 +22,7 @@ class ProjectController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->$resources = 'Project';
     }
 
     /**
@@ -29,7 +32,6 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-
         $projects = Project::with(['technologies'])->filter($request)->orderBy('year', 'desc')->paginate(15);
         // return TechnologyType::select('name')->orderBy('name', 'asc')->distinct()->get();
         return view('impact-tracker.index')->with(compact('projects'));
