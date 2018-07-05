@@ -15,7 +15,8 @@ class PriceTypesTableSeeder extends Seeder
         $list = ['Free', 'Market-based','Subsidized'];
         foreach ($list as $value) {
             PriceType::create([
-            'name' => $value
+            'name' => $value,
+            'slug' => str_slug($value)
           ]);
         }
     }

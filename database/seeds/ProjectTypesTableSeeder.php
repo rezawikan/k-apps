@@ -17,7 +17,7 @@ class ProjectTypesTableSeeder extends Seeder
           'CSR',
           'Emergency Project',
           'Last Mile Consulting',
-          'Sales (Wholesales)',
+          'Wholesales',
           'SolLab',
           'Special Project',
           'Standard Project',
@@ -28,7 +28,8 @@ class ProjectTypesTableSeeder extends Seeder
 
         foreach ($list as $value) {
             ProjectType::create([
-          'name' => $value
+          'name' => $value,
+          'slug' => str_slug($value)
           ]);
         }
     }

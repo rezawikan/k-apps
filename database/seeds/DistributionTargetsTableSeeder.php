@@ -21,7 +21,8 @@ class DistributionTargetsTableSeeder extends Seeder
 
         foreach ($list as $value) {
             DistributionTarget::create([
-          'name' => $value
+          'name' => $value,
+          'slug' => str_slug($value)
           ]);
         }
     }

@@ -33,12 +33,10 @@ abstract class FilterAbstract
      */
     protected function resolveSlug($values)
     {
-        $values = array_map(function ($value) {
+        return $values = array_map(function ($value) {
             $value = title_case(str_replace('-', ' ', $value));
             return $value;
         }, $values);
-
-        return $this->resolveFilterValue($values);
     }
 
     /**

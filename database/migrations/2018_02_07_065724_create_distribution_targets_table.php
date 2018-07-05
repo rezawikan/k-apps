@@ -16,6 +16,7 @@ class CreateDistributionTargetsTable extends Migration
         Schema::create('distribution_targets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug');
             $table->timestamps();
         });
     }

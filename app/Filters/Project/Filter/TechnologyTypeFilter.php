@@ -12,7 +12,7 @@ class TechnologyTypeFilter extends FilterAbstract
     public function mappings()
     {
         return Cache::remember('TechnologyTypeFilter', 20, function () {
-            return Technology::select('type')->orderBy('name', 'asc')->get()->toArray();
+            return  TechnologyType::select('name')->orderBy('name', 'asc')->get()->toArray();
         });
     }
     public function filter(Builder $builder, $value)

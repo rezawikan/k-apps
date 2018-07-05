@@ -23,6 +23,7 @@
                 <thead>
                   <tr>
                     <th data-sort-ignore="true">Name</th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Type</th>
                     <th data-sort-ignore="true" data-hide="phone,tablet">Updated At</th>
                     <th data-sort-ignore="true" data-hide="phone,tablet">Created At</th>
                     <th data-sort-ignore="true" data-hide="phone">Action</th>
@@ -32,6 +33,7 @@
                   @foreach ($technologies as $key => $value)
                     <tr>
                       <td>{{ $value->name}}</td>
+                      <td>{{ $value->type }}</td>
                       <td>{{ $value->updated_at }}</td>
                       <td>{{ $value->created_at}}</td>
                       <td>

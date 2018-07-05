@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\CreateSlugTrait;
 
-class Officer extends Model
+class TechnologyType extends Model
 {
     use CreateSlugTrait;
     /**

@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\CreateSlugTrait;
 
 class Technology extends Model
 {
+    use CreateSlugTrait; 
     /**
      * The attributes that are mass assignable.
      *

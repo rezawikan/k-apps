@@ -8,6 +8,7 @@ use App\Models\ProjectType;
 use App\Models\PriceType;
 use App\Models\Officer;
 use App\Models\DistributionTarget;
+use App\Models\TechnologyType;
 use Illuminate\Support\Facades\Cache;
 use App\Filters\FiltersAbstract;
 use App\Filters\Project\Filter\YearFilter;
@@ -41,8 +42,8 @@ class ProjectFilters extends FiltersAbstract
                     'project_type'  => ProjectType::select('name')->orderBy('name', 'asc')->get(),
                     'countries'     => Project::distinct()->orderBy('country', 'asc')->get(['country']),
                     'officer'       => Officer::select('name')->orderBy('name', 'asc')->get(),
-                    'technologies'  => Technology::select('name', 'id')->orderBy('name', 'asc')->get(),
-                    'techtype'      => Technology::select('type')->orderBy('type', 'asc')->distinct()->get(),
+                    'technologies'  => Technology::select('name', 'id','slug')->orderBy('name', 'asc')->get(),
+                    'techtype'      => TechnologyType::select('name')->orderBy('name', 'asc')->get(),
                     'pricetype'     => PriceType::select('name')->orderBy('name', 'asc')->get(),
                     'distributions' => DistributionTarget::select('name')->orderBy('name', 'asc')->get(),
               ]

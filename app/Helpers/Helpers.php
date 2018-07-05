@@ -78,7 +78,6 @@ function convertSlugSingle($value, $request)
 
 function con($array, $request = null)
 {
-
     if (is_array($array)) {
         $array = array_map(function ($val) {
             $val =  title_case(str_replace('-', ' ', $val));
@@ -121,7 +120,6 @@ function sumProjects($values, $string)
     }, $values);
 
     return array_sum($values);
-
 }
 
 function isQueryString($params)

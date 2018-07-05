@@ -24,6 +24,7 @@
                 <p><strong>Year :</strong> {{ $project->year }}</p>
                 <p><strong>Country :</strong> {{ $project->country }}</p>
                 <p><strong>Project Type :</strong> {{ $project->project_type }}</p>
+                <p><strong>Price Type :</strong> {{ $project->price_type }}</p>
                 <p><strong>Officer :</strong> {{ $project->officer }}</p>
               </div>
             </div>

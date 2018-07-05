@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\ProjectTechnology;
+use App\Models\TechnologyType;
 use App\Models\Project;
 use App\Rules\Titlecase;
 
@@ -30,7 +31,7 @@ class ProjectController extends Controller
     {
 
         $projects = Project::with(['technologies'])->filter($request)->orderBy('year', 'desc')->paginate(15);
-        // return $projects;
+        // return TechnologyType::select('name')->orderBy('name', 'asc')->distinct()->get();
         return view('impact-tracker.index')->with(compact('projects'));
     }
 

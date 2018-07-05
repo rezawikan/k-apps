@@ -20,8 +20,6 @@ class OfficerFilter extends FilterAbstract
     {
         $value = $this->resolveSingleSlug($value);
 
-        // dd($value);
-
         if ($value == null) {
             return $builder;
         }

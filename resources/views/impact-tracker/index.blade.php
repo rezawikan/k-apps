@@ -121,7 +121,7 @@
                     <label class="control-label" for="technology">Technology Type</label>
                     <select data-placeholder="Choose one or more" class="chosen-select" multiple name="techtype[]">
                       @foreach ($mappings['filters']['techtype'] as $value)
-                        <option value="{{ str_slug($value['type']) }}" {{ convertSlugPlus($value['type'], request('techtype')) }}>{{ $value['type'] }}</option>
+                        <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('techtype')) }}>{{ $value['name'] }}</option>
                       @endforeach
                     </select>
                   </div>

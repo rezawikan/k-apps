@@ -24,7 +24,8 @@ class FundingTypesTableSeeder extends Seeder
 
         foreach ($list as $value) {
             FundingType::create([
-            'name' => $value
+            'name' => $value,
+            'slug' => str_slug($value)
             ]);
         }
     }

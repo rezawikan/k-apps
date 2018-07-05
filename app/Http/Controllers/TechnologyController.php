@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Technology;
+use App\Models\TechnologyType;
 use Illuminate\Validation\Rule;
 
 class TechnologyController extends Controller
@@ -27,7 +28,8 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        return view('manage.technology.create');
+        $techtype = TechnologyType::select('name')->orderBy('name', 'asc')->get();
+        return view('manage.technology.create')->with(compact('techtype'));
     }
 
     /**
@@ -66,8 +68,9 @@ class TechnologyController extends Controller
      */
     public function edit($id)
     {
+        $techtype = TechnologyType::select('name')->orderBy('name', 'asc')->get()->toArray();
         $data = Technology::find($id);
-        return view('manage.technology.edit')->with(compact('data'));
+        return view('manage.technology.edit')->with(compact('data','techtype'));
     }
 
     /**

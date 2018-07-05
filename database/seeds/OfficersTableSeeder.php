@@ -16,7 +16,8 @@ class OfficersTableSeeder extends Seeder
       $list = ['Ewa Wojkowska', 'Toshihiro Nakamura'];
       foreach ($list as $value) {
           Officer::create([
-          'name' => $value
+          'name' => $value,
+          'slug' => str_slug($value)
         ]);
       }
     }

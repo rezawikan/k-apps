@@ -26,7 +26,8 @@ class TechnologiesTableSeeder extends Seeder
 
         foreach ($list as $value) {
             Technology::create([
-              'name' => $value
+              'name' => $value,
+              'slug' => str_slug($value)
             ]);
         }
     }
