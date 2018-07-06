@@ -35,7 +35,7 @@
           @include('layouts.navigation')
 
           <!-- Page wraper -->
-          <div id="page-wrapper" class="gray-bg {{sidebar()}}">
+          <div id="page-wrapper" class="gray-bg">
 
               <!-- Page wrapper -->
               @include('layouts.topnavbar')
