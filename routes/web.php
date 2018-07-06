@@ -30,23 +30,25 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('manage/project-type', 'ProjectTypeController');
     Route::resource('manage/technology', 'TechnologyController');
     Route::resource('manage/technology-type', 'TechnologyTypeController');
-
+    Route::get('/k-feedback', function () {
+        return view('k-feedback.index');
+    })->name('k-feedback.index');
     Route::get('/travel', function () {
         return view('travel.index');
     })->name('travel.index');
     Route::get('/procurement', function () {
         return view('procurement.index');
     })->name('procurement.index');
-    Route::get('/finance', function () {
-        return view('finance.index');
-    })->name('finance.index');
+    Route::get('/financial', function () {
+        return view('financial.index');
+    })->name('financial.index');
     Route::get('/k-mrp', function () {
         return view('k-mrp.index');
     })->name('k-mrp.index');
     Route::get('/human-resources', function () {
         return view('human-resources.index');
     })->name('human-resources.index');
-    Route::get('/photo-stock', function () {
-        return view('photo-stock.index');
-    })->name('photo-stock.index');
+    Route::get('/comms-assets', function () {
+        return view('comms-assets.index');
+    })->name('comms-assets.index');
 });

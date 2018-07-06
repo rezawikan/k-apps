@@ -8,7 +8,7 @@
                   </span>
                   <span class="clear">
                     <span class="block m-t-xs">
-                      <strong class="font-bold">{{ Auth::user()->name }}</strong>
+                      <strong class="font-bold">{{ Auth::user()->email }}</strong>
                     </span>
                     {{-- <span class="text-muted text-xs block">Art Director </span> --}}
                   </span>
@@ -26,6 +26,9 @@
           </li>
             <li class="{{ isActiveRoute('dashboard') }}">
                 <a href="{{ route('default') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+            <li class="{{ isActiveRoute('k-feedback') }}">
+                <a href="{{ route('k-feedback.index') }}"><i class="fa fa-comments"></i> <span class="nav-label">K-Feedback</span></a>
             </li>
             <li class="{{ isActiveRoute('impact-tracker') }}">
                 <a href="{{ route('impact-tracker.index') }}"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Impact Tracker</span></a>
@@ -58,10 +61,10 @@
                 <a href="{{ route('travel.index') }}"><i class="fa fa-plane"></i> <span class="nav-label">Travel</span></a>
             </li>
             <li class="{{ isActiveRoute('procurement') }}">
-                <a href="{{ route('procurement.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement </span></a>
+                <a href="{{ route('procurement.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement & Advance</span></a>
             </li>
-            <li class="{{ isActiveRoute('finance') }}">
-                <a href="{{ route('finance.index') }}"><i class="fa fa fa-money"></i> <span class="nav-label">Finance</span></a>
+            <li class="{{ isActiveRoute('financial') }}">
+                <a href="{{ route('financial.index') }}"><i class="fa fa fa-money"></i> <span class="nav-label">Financial</span></a>
             </li>
             <li class="{{ isActiveRoute('k-mrp') }}">
                 <a href="{{ route('k-mrp.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">K-MRP</span></a>
@@ -69,8 +72,8 @@
             <li class="{{ isActiveRoute('human-resources') }}">
                 <a href="{{ route('human-resources.index') }}"><i class="fa fa-users"></i> <span class="nav-label">Human Resources</span></a>
             </li>
-            <li class="{{ isActiveRoute('photo-stock') }}">
-                <a href="{{ route('photo-stock.index') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Photo Stock</span></a>
+            <li class="{{ isActiveRoute('comms-assets') }}">
+                <a href="{{ route('comms-assets.index') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Comms Assets</span></a>
             </li>
             {{-- <li class="{{ isActiveRoute(['master/products']) }}">
                 <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Products</span><span class="fa arrow"></span></a>
