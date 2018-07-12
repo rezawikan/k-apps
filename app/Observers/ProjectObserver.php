@@ -3,7 +3,8 @@
 namespace App\Observers;
 
 use App\Models\Project;
-use Illuminate\Support\Facades\Log;
+use App\Models\Logging;
+use App\Traits\Logging\Logs;
 
 class ProjectObserver
 {
@@ -16,7 +17,8 @@ class ProjectObserver
      */
     public function created(Project $model)
     {
-        Log::info('Project ' . $model->name .' created by: '.auth()->user()->email);
+        $logs = Logs::createLog('Project', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -27,7 +29,8 @@ class ProjectObserver
      */
     public function updated(Project $model)
     {
-        Log::info('Project ' . $model->name .' updated by: '.auth()->user()->email);
+        $logs = Logs::updateLog('Project', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -38,6 +41,7 @@ class ProjectObserver
      */
     public function deleted(Project $model)
     {
-        Log::info('Project ' . $model->name .' deleted by: '.auth()->user()->email);
+        $logs = Logs::deleteLog('Project', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 }

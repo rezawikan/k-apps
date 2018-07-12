@@ -2,8 +2,9 @@
 
 namespace App\Observers;
 
+use App\Models\Logging;
+use App\Traits\Logging\Logs;
 use App\Models\DistributionTarget;
-use Illuminate\Support\Facades\Log;
 
 class DistributionTargetObserver
 {
@@ -26,7 +27,8 @@ class DistributionTargetObserver
      */
     public function created(DistributionTarget $model)
     {
-        Log::info('Distribution Target ' . $model->name .' created by: '.auth()->user()->email);
+        $logs = Logs::createLog('Distribution Target', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -37,7 +39,8 @@ class DistributionTargetObserver
      */
     public function updated(DistributionTarget $model)
     {
-        Log::info('Distribution Target ' . $model->name .' updated by: '.auth()->user()->email);
+        $logs = Logs::updateLog('Distribution Target', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -48,6 +51,7 @@ class DistributionTargetObserver
      */
     public function deleted(DistributionTarget $model)
     {
-        Log::info('Distribution Target ' . $model->name .' deleted by: '.auth()->user()->email);
+        $logs = Logs::deleteLog('Distribution Target', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 }

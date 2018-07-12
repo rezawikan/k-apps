@@ -3,7 +3,8 @@
 namespace App\Observers;
 
 use App\Models\Technology;
-use Illuminate\Support\Facades\Log;
+use App\Models\Logging;
+use App\Traits\Logging\Logs;
 
 class TechnologyObserver
 {
@@ -26,7 +27,8 @@ class TechnologyObserver
      */
     public function created(Technology $model)
     {
-        Log::info('Technology ' . $model->name .' created by: '.auth()->user()->email);
+        $logs = Logs::createLog('Technology', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -37,7 +39,8 @@ class TechnologyObserver
      */
     public function updated(Technology $model)
     {
-        Log::info('Technology ' . $model->name .' updated by: '.auth()->user()->email);
+        $logs = Logs::updateLog('Technology', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -48,6 +51,7 @@ class TechnologyObserver
      */
     public function deleted(Technology $model)
     {
-        Log::info('Technology ' . $model->name .' deleted by: '.auth()->user()->email);
+        $logs = Logs::deleteLog('Technology', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Observers;
 
+use App\Models\Logging;
 use App\Models\PriceType;
-use Illuminate\Support\Facades\Log;
+use App\Traits\Logging\Logs;
 
 class PriceTypeObserver
 {
@@ -26,7 +27,8 @@ class PriceTypeObserver
      */
     public function created(PriceType $model)
     {
-        Log::info('Price Type ' . $model->name .' created by: '.auth()->user()->email);
+        $logs = Logs::createLog('Price Type', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -37,7 +39,8 @@ class PriceTypeObserver
      */
     public function updated(PriceType $model)
     {
-        Log::info('Price Type ' . $model->name .' created by: '.auth()->user()->email);
+        $logs = Logs::updateLog('Price Type', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -48,6 +51,7 @@ class PriceTypeObserver
      */
     public function deleted(PriceType $model)
     {
-        Log::info('Price Type ' . $model->name .' created by: '.auth()->user()->email);
+        $logs = Logs::deleteLog('Price Type', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 }

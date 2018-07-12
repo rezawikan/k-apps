@@ -3,17 +3,18 @@
 namespace App\Observers;
 
 use App\Models\FundingType;
-use Illuminate\Support\Facades\Log;
+use App\Models\Logging;
+use App\Traits\Logging\Logs;
 
 class FundingTypeObserver
 {
-
-  /**
-   * Listen to the Funding Type creating event.
-   *
-   * @param  FundingType  $categories
-   * @return void
-   */
+    use Logs;
+    /**
+     * Listen to the Funding Type creating event.
+     *
+     * @param  FundingType  $categories
+     * @return void
+     */
     public function saving(FundingType $model)
     {
         $model->slug = str_slug($model->name);
@@ -27,7 +28,8 @@ class FundingTypeObserver
      */
     public function created(FundingType $model)
     {
-        Log::info('Funding Type ' . $model->name .' created by: '.auth()->user()->email);
+        $logs = Logs::createLog('Funding Type', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -38,7 +40,8 @@ class FundingTypeObserver
      */
     public function updated(FundingType $model)
     {
-        Log::info('Funding Type ' . $model->name .' updated by: '.auth()->user()->email);
+        $logs = Logs::updateLog('Funding Type', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 
     /**
@@ -49,6 +52,7 @@ class FundingTypeObserver
      */
     public function deleted(FundingType $model)
     {
-        Log::info('Funding Type ' . $model->name .' deleted by: '.auth()->user()->email);
+        $logs = Logs::deleteLog('Funding Type', $model->name, auth()->user()->email);
+        Logging::create($logs);
     }
 }

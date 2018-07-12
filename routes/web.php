@@ -42,13 +42,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/financial', function () {
         return view('financial.index');
     })->name('financial.index');
-    Route::get('/k-mrp', function () {
-        return view('k-mrp.index');
-    })->name('k-mrp.index');
+    Route::get('/k-mrpt', function () {
+        return view('k-mrpt.index');
+    })->name('k-mrpt.index');
     Route::get('/human-resources', function () {
         return view('human-resources.index');
     })->name('human-resources.index');
     Route::get('/comms-assets', function () {
         return view('comms-assets.index');
     })->name('comms-assets.index');
+    Route::get('logging', 'LoggingController@index')->name('logging.index');
 });

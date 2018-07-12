@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Financial')
+@section('title', 'Financial Doc')
 
 @section('content')
 <div class="wrapper wrapper-content animated fadeInRight">

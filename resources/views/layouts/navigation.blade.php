@@ -64,16 +64,19 @@
                 <a href="{{ route('procurement.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement & Advance</span></a>
             </li>
             <li class="{{ isActiveRoute('financial') }}">
-                <a href="{{ route('financial.index') }}"><i class="fa fa fa-money"></i> <span class="nav-label">Financial</span></a>
+                <a href="{{ route('financial.index') }}"><i class="fa fa fa-money"></i> <span class="nav-label">Financial Doc</span></a>
             </li>
-            <li class="{{ isActiveRoute('k-mrp') }}">
-                <a href="{{ route('k-mrp.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">K-MRP</span></a>
+            <li class="{{ isActiveRoute('k-mrpt') }}">
+                <a href="{{ route('k-mrpt.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">K-MRPT</span></a>
             </li>
             <li class="{{ isActiveRoute('human-resources') }}">
                 <a href="{{ route('human-resources.index') }}"><i class="fa fa-users"></i> <span class="nav-label">Human Resources</span></a>
             </li>
             <li class="{{ isActiveRoute('comms-assets') }}">
                 <a href="{{ route('comms-assets.index') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Comms Assets</span></a>
+            </li>
+            <li class="{{ isActiveRoute('logging') }}">
+                <a href="{{ route('logging.index') }}"><i class="fa fa-history"></i> <span class="nav-label">Logging</span></a>
             </li>
             {{-- <li class="{{ isActiveRoute(['master/products']) }}">
                 <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Products</span><span class="fa arrow"></span></a>
