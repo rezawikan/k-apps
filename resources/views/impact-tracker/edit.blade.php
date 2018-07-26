@@ -31,3 +31,18 @@
     </div>
   </div>
 @endsection
+
+@push('b-scripts')
+<script>
+  $(document).ready(function() {
+    $('.input-group.date').datepicker({
+      format: 'yyyy-mm-dd',
+      todayBtn: "linked",
+      keyboardNavigation: false,
+      forceParse: false,
+      calendarWeeks: true,
+      autoclose: true
+    });
+  });
+</script>
+@endpush

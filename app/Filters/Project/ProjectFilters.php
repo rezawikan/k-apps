@@ -6,7 +6,7 @@ use App\Models\Project;
 use App\Models\Technology;
 use App\Models\ProjectType;
 use App\Models\PriceType;
-use App\Models\Officer;
+use App\Models\User;
 use App\Models\DistributionTarget;
 use App\Models\TechnologyType;
 use Illuminate\Support\Facades\Cache;
@@ -35,20 +35,21 @@ class ProjectFilters extends FiltersAbstract
 
     public static function mappings()
     {
-        return Cache::remember('mappingsFilters', 100, function () {
+        // return Cache::remember('mappingsFilters', 100, function () {
             return $map = [
               'filters'     => [
                     'years'         => Project::distinct()->orderBy('year', 'desc')->get(['year']),
                     'project_type'  => ProjectType::select('name')->orderBy('name', 'asc')->get(),
                     'countries'     => Project::distinct()->orderBy('country', 'asc')->get(['country']),
-                    'officer'       => Officer::select('name')->orderBy('name', 'asc')->get(),
+                    'officer'       => Project::select('officer')->orderBy('officer', 'asc')->distinct()->get()->toArray(),
+                    'users'         => User::select()->orderBy('first_name', 'asc')->get()->toArray(),
                     'technologies'  => Technology::select('name', 'id','slug')->orderBy('name', 'asc')->get(),
                     'techtype'      => TechnologyType::select('name')->orderBy('name', 'asc')->get(),
                     'pricetype'     => PriceType::select('name')->orderBy('name', 'asc')->get(),
                     'distributions' => DistributionTarget::select('name')->orderBy('name', 'asc')->get(),
               ]
             ];
-        });
+        // });
     }
 
     public static function calculations()

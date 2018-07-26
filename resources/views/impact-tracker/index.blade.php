@@ -94,14 +94,14 @@
               <div class="col-sm-4 col-xs-12 m-b-sm">
                 <div class="form-group">
                   <label class="control-label" for="officer">Officer
-                    @can('manage project')
+                    @can('hide')
                     - <a href="{{ route('officer.index') }}">manage</a>
                     @endcan
                   </label>
                   <select data-placeholder="Choose one" class="chosen-select" name="officer">
                         <option value="">All</option>
                           @foreach ($mappings['filters']['officer'] as $value)
-                            <option value="{{ str_slug($value['name']) }}" {{ convertSlugSingle($value['name'], request('officer')) }}>{{ $value['name'] }}</option>
+                            <option value="{{ str_slug($value['officer']) }}" {{ convertSlugSingle($value['officer'], request('officer')) }}>{{ $value['officer'] }}</option>
                           @endforeach
                     </select>
                 </div>

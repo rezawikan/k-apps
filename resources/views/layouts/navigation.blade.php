@@ -41,9 +41,11 @@
         <ul class="nav nav-second-level collapse">
           <li class="{{ isActiveRoute('manage/distribution-target') }}"><a href="{{ route('distribution-target.index') }}">Distribution Target</a></li>
         </ul>
+        @can('hide')
         <ul class="nav nav-second-level collapse">
           <li class="{{ isActiveRoute('manage/officer') }}"><a href="{{ route('officer.index') }}">Officer</a></li>
         </ul>
+        @endcan
         <ul class="nav nav-second-level collapse">
           <li class="{{ isActiveRoute('manage/price-type') }}"><a href="{{ route('price-type.index') }}">Price Type</a></li>
         </ul>

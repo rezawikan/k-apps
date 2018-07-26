@@ -18,7 +18,7 @@
 <div class="form-group {{ $errors->has('year') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Year</label>
   <div class="col-lg-10">
-    <input type="integer" name="year" placeholder="Year" class="form-control" value="{{ $project->year ?? old('year') }}">
+    {{-- <input type="integer" name="year" placeholder="Year" class="form-control" value="{{ $project->year ?? old('year') }}"> --}}
     @if ($errors->has('year'))
       <span class="help-block m-b-none">{{ $errors->first('year') }}</span>
     @endif
@@ -66,8 +66,8 @@
   <div class="col-lg-10">
     <select data-placeholder="Choose one" class="form-control chosen-select" name="officer">
       <option value="">Select</option>
-      @foreach ($mappings['filters']['officer'] as $value)
-        <option value="{{ $value['name'] }}" {{  checkOldValue($project->officer ?? null, $value['name'], 'officer') }} >{{ $value['name'] }}</option>
+      @foreach ($mappings['filters']['users'] as $value)
+        <option value="{{ $value['first_name'].' '.$value['last_name'] }}" {{  checkOldValue($project->officer ?? null, $value['first_name'] .' '. $value['last_name'], 'officer') }} >{{ $value['first_name'].' '.$value['last_name'] }}</option>
       @endforeach
     </select>
     @if ($errors->has('officer'))

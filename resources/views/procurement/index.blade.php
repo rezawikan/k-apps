@@ -154,7 +154,6 @@
                 <li><span class="m-l-xs">Please reconcile your fund advance in timely fashion as accordance with the Operations Manual (page 49)</a>
                   </span>
                 </li>
-
               </ul>
             </div>
           </div>
@@ -162,6 +161,8 @@
             <div class="ibox-content">
               <h2><span class="badge badge-warning">2</span> Lost/Missing Receipt</h2>
               <ul class="todo-list m-t small-list">
+                <li><span class="m-l-xs">Fill the Lost/Missing Receipt Form <a href="https://docs.google.com/spreadsheets/d/1WhJsZlb2GRTcNci-dviB-uVwD87_i-egt5DHpzoOSNU/edit?usp=sharing" target="_blank"><i class="fa fa-external-link"></i></a></span>
+                </li>
                 <li><span class="m-l-xs">Please report it to supervisor and request approval for replacement receipt by email and CCing finance team</span></li>
                 <li><span class="m-l-xs">Once approved by the finance team, you need to request further approval from the COO</span>
                 </li>

@@ -9,6 +9,8 @@ use App\Models\ProjectTechnology;
 use App\Models\TechnologyType;
 use App\Models\Project;
 use App\Rules\Titlecase;
+use App\Rules\UserFullName;
+use Illuminate\Support\Carbon;
 
 class ProjectController extends Controller
 {
@@ -55,14 +57,14 @@ class ProjectController extends Controller
         $this->validate($request, [
           'project_name' => ['required','unique:projects,project_name', new Titlecase],
           'start_date'   => 'required|date_format:Y-m-d',
-          'year'         => 'required|digits:4|integer|min:1900|max:'.(date('Y')+1),
           'country'      => ['required','string', new Titlecase],
           'price_type'   => 'required|exists:price_types,name',
           'project_type' => 'required|exists:project_types,name',
-          'officer'      => 'required|exists:officers,name',
+          'officer'      => ['required', 'string', new UserFullName],
         ]);
 
-        $project = Project::create($request->all());
+        $date    = new Carbon( $request->start_date );
+        $project = Project::create(array_merge($request->all(),['year' => $date->format("Y")]));
 
         return redirect()->route('impact-tracker.index');
     }
@@ -108,15 +110,15 @@ class ProjectController extends Controller
         $this->validate($request, [
           'project_name' => ['required', Rule::unique('projects')->ignore($request->project_name, 'project_name'), new Titlecase],
           'start_date'   => 'required|date_format:Y-m-d',
-          'year'         => 'required|integer',
           'country'      => ['required','string', new Titlecase],
           'price_type'   => 'required|exists:price_types,name',
           'project_type' => 'required|exists:project_types,name',
-          'officer'      => 'required|exists:officers,name',
+          'officer'      => ['required', 'string', new UserFullName],
         ]);
 
         $project = Project::findOrFail($id);
-        $project->update($request->all());
+        $date    = new Carbon( $request->start_date );
+        $project->update(array_merge($request->all(),['year' => $date->format("Y")]));
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }

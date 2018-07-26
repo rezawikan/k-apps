@@ -5,14 +5,14 @@ namespace App\Filters\Project\Filter;
 use App\Filters\FilterAbstract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
-use App\Models\Officer;
+use App\Models\Project;
 
 class OfficerFilter extends FilterAbstract
 {
     public function mappings()
     {
         return Cache::remember('OfficerFilter', 20, function () {
-            return Officer::select('name')->orderBy('name', 'asc')->get()->toArray();
+            return Project::select('officer')->orderBy('officer', 'asc')->distinct()->get()->toArray();
         });
     }
 
