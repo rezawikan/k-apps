@@ -11,40 +11,6 @@
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <div class="ibox float-e-margins">
-        <div class="ibox-content">
-          <h3>Kopernik Operations Manual</h3>
-          <div>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a href="https://drive.google.com/file/d/1Le8K93cQW-7FM3_iy7fDf1W1Vgri8BzW/view?usp=sharing" target="_blank">Operation Manual (EN)</a>
-              </li>
-              <li class="list-group-item">
-                <a href="https://drive.google.com/file/d/1rEKQxNOptgS5DK2oQ46Taq9-xvqegf2f/view?usp=sharing" target="_blank">Panduan Operasional (IN)</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="ibox-content">
-        <h3>Kopernik Regulations</h3>
-        <div>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <a href="https://drive.google.com/file/d/1EMaWRKojBaLCyZX71oPgHgqWsaE3s3Qa/view?usp=sharing" target="_blank">Staff Handbook</a>
-            </li>
-            <li class="list-group-item">
-              &nbsp;
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6">
       <div class="ibox-content">
         <h3>Kopernik Policies</h3>
         <div>
@@ -64,20 +30,35 @@
             <li class="list-group-item">
               <a href="https://drive.google.com/file/d/1GUbzZXypnbpMlqxE7TRozgBdwpwe_EER/view?usp=sharing" target="_blank">Workplace discrimination and harassment policy </a>
             </li>
+            <li class="list-group-item">
+              &nbsp;
+            </li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col-lg-6">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <h3>Kopernik Operations Manual</h3>
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a href="https://drive.google.com/file/d/1Le8K93cQW-7FM3_iy7fDf1W1Vgri8BzW/view?usp=sharing" target="_blank">Operation Manual (EN)</a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/file/d/1rEKQxNOptgS5DK2oQ46Taq9-xvqegf2f/view?usp=sharing" target="_blank">Panduan Operasional (IN)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="ibox-content">
-        <h3>Kopernik Templates</h3>
+        <h3>Kopernik Regulations</h3>
         <div>
           <ul class="list-group">
             <li class="list-group-item">
-              <a href="https://docs.google.com/document/d/1s9rtH-QI8Dg4509qBYExW6zLIPbiRQNifta2r6OQWzk/edit?ts=5b39bd89#heading=h.gjdgxs">MOU EN</a>
-            </li>
-            <li class="list-group-item">
-              <a href="https://docs.google.com/document/d/1KvIa56OthxGFfM5s3-kVbdqzyIZo2Nf-KwGqBMaaNwo/edit">TOR EN</a>
+              <a href="https://drive.google.com/file/d/1EMaWRKojBaLCyZX71oPgHgqWsaE3s3Qa/view?usp=sharing" target="_blank">Staff Handbook</a>
             </li>
           </ul>
         </div>

@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::put('impact-tracker/{impact_tracker}', 'ProjectController@update')->name('impact-tracker.update');
         });
         Route::group(['middleware' => 'role:administrator,delete project'], function () {
-            Route::delete('impact-tracker', 'ProjectController@destroy')->name('impact-tracker.destroy');
+            Route::delete('impact-tracker/{impact_tracker}', 'ProjectController@destroy')->name('impact-tracker.destroy');
         });
 
         //Technology Project
@@ -65,7 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('k-feedback', function () {
         return view('k-feedback.index');
     })->name('k-feedback.index');
-    // Route::post('k-feedback','FeedbackController')->name('k-feedback.send');
+    Route::post('k-feedback','FeedbackController@store')->name('k-feedback.send');
 
     Route::get('travel', function () {
         return view('travel.index');

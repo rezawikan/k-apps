@@ -9,7 +9,7 @@
     <div class="col-lg-4">
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <span class="label label-primary pull-right">Impact</span>
+          <span class="label label-primary pull-right">Distributed</span>
           <h5>#Technology</h5>
         </div>
         <div class="ibox-content">
@@ -31,7 +31,7 @@
     <div class="col-lg-4">
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <span class="label label-warning pull-right">Distributed</span>
+          <span class="label label-warning pull-right">Impact</span>
           <h5>#People</h5>
         </div>
         <div class="ibox-content">

@@ -24,7 +24,7 @@
 
     </head>
 
-    <body class="gray-bg">
+    <body class="gray-bg" style="background-image: url({{ URL::asset('css/patterns/shattered.png') }});margin-top: 8%;">
       <div id="app">
 
         @yield('content')

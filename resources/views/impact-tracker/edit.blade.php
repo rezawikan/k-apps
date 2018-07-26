@@ -2,6 +2,7 @@
 
 @section('title', 'Edit Project - {{ $project->project_name }}')
 
+
 @section('content')
   <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">

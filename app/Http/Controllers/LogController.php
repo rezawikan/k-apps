@@ -15,8 +15,8 @@ class LogController extends Controller
     public function index()
     {
 
-        $logs = Logging::latest()->paginate(15);
+        $logs = Log::latest()->paginate(15);
 
-        return view('logging.index')->with(compact('logs'));
+        return view('log.index')->with(compact('logs'));
     }
 }

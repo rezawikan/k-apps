@@ -43,6 +43,23 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3>
+            Kopernik Templates
+            </h3>
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a href="https://docs.google.com/document/d/1s9rtH-QI8Dg4509qBYExW6zLIPbiRQNifta2r6OQWzk/edit?ts=5b39bd89#heading=h.gjdgxs">MOU EN</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="https://docs.google.com/document/d/1KvIa56OthxGFfM5s3-kVbdqzyIZo2Nf-KwGqBMaaNwo/edit">TOR EN</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

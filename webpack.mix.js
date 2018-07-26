@@ -31,6 +31,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .styles([
     'resources/assets/css/plugins/chosen/bootstrap-chosen.css'
   ], 'public/css/chosen.min.css')
+  .styles([
+    'resources/assets/css/plugins/datapicker/datepicker3.css'
+  ], 'public/css/datepicker3.min.css')
   .scripts([
     'resources/assets/js/plugins/metisMenu/jquery.metisMenu.js',
   ], 'public/js/plugins/metisMenu/jquery.metisMenu.min.js')
@@ -54,7 +57,10 @@ mix.js('resources/assets/js/app.js', 'public/js')
   ], 'public/js/plugins/chosen/chosen.all.min.js')
   .scripts([
     'resources/assets/js/plugins/easypiechart/jquery.easypiechart.js',
-  ], 'public/js/plugins//easypiechart/jquery.easypiechart.js')
+  ], 'public/js/plugins/easypiechart/jquery.easypiechart.js')
+  .scripts([
+    'resources/assets/js/plugins/datapicker/bootstrap-datepicker.js',
+  ], 'public/js/plugins/datapicker/bootstrap-datepicker.min.js')
 mix.copyDirectory('resources/assets/font-awesome/fonts', 'public/font-awesome/fonts')
 mix.copyDirectory('resources/assets/img', 'public/img')
 mix.copyDirectory('resources/assets/css/patterns', 'public/css/patterns')

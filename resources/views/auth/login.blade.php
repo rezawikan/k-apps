@@ -7,7 +7,7 @@
               <img src="{{ asset('img/logo.png')}}" class="img-responsive" alt="">
           </div>
           <h4>Intranet System</h4>
-          <p>Login in. To see it in action.</p>
+          <p>Authorize Personal Only</p>
           <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
               <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
@@ -25,7 +25,7 @@
               <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
               <a href="{{ route('password.request') }}"><small>Forgot password?</small></a>
           </form>
-          <p class="m-t"> <small>K-apps, we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+          <p class="m-t"> <small>Kopernik &copy; 2018</small> </p>
       </div>
   </div>
 @endsection

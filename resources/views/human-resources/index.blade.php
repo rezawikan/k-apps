@@ -11,11 +11,24 @@
   </div>
   <div class="row">
     <div class="col-lg-12">
+      <div class="ibox-content">
+        <h3>
+            Leave Management
+        </h3>
+        <div class="hr-line-dashed"></div>
+        <p><a href="https://hr.sleekr.co/login"><img src="https://hr.sleekr.co/packs/design/src/assets/images/pages/svg/sleekr_hr-fc53c7728648918bc570b3172b1efda7.svg"></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-content">
           <div class="row">
             <div class="col-lg-6">
-              <h3>Manulife claim forms</h3>
+              <h3>
+                        Manulife claim forms
+                    </h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
@@ -29,11 +42,14 @@
                     <a href="https://drive.google.com/file/d/1r-GitwPUEGc-z6wBIKMXNqM54_L5yD-F/view?usp=sharing" target="_blank">Hospitalization and surgical claim form</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1P77d1-HfVOgVXWUcoZYvLB-FkiU2dEB1/view?usp=sharing" target="_blank">Outpatient claim form</a>
+                    <a href="https://drive.google.com/file/d/1P77d1-HfVOgVXWUcoZYvLB-FkiU2dEB1/view?usp=sharing" target="_blank">Outpatient claim form
+                          </a>
                   </li>
                 </ul>
               </div>
-              <h3>How to claim insurance coverage</h3>
+              <h3>
+                        How to claim insurance coverage
+                    </h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
@@ -44,7 +60,9 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <h3>Kopernik Culture and MBTI Spirit Animals</h3>
+              <h3>
+                        Kopernik Culture and MBTI Spirit Animals
+                    </h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
@@ -68,12 +86,14 @@
         <div class="ibox-content">
           <div class="row">
             <div class="col-lg-6">
-              <h3>Staff Movement-Related</h3>
+              <h3>
+                      Staffing Request
+                  </h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="https://docs.google.com/spreadsheets/d/1LH_UwYwqQu6gcEZcQg8mlapI4GwxeaelV0eSeNkbssw/edit?usp=sharing" target="_blank">Template for PMS (spreadsheet)</a>
+                    <a href="https://docs.google.com/document/d/1m8zznNYZ3Iu-IdxLP3-5OHhMoXAL15WWCbq62Nb4Ca4/edit?usp=sharing" target="_blank">Staffing Request Form</a>
                   </li>
                   <li class="list-group-item">
                     &nbsp;
@@ -82,7 +102,9 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <h3>Staff Performance Review</h3>
+              <h3>
+                     Staff Performance Review
+                </h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">

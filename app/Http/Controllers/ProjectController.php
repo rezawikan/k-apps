@@ -55,7 +55,7 @@ class ProjectController extends Controller
         $this->validate($request, [
           'project_name' => ['required','unique:projects,project_name', new Titlecase],
           'start_date'   => 'required|date_format:Y-m-d',
-          'year'         => 'required|integer',
+          'year'         => 'required|digits:4|integer|min:1900|max:'.(date('Y')+1),
           'country'      => ['required','string', new Titlecase],
           'price_type'   => 'required|exists:price_types,name',
           'project_type' => 'required|exists:project_types,name',

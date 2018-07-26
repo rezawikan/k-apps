@@ -17,7 +17,7 @@ class ProjectObserver
      */
     public function created(Project $model)
     {
-        $logs = Logs::createLog('Project', $model->name, auth()->user()->email);
+        $logs = Logs::createLog('Project', $model->project_name, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -29,7 +29,7 @@ class ProjectObserver
      */
     public function updated(Project $model)
     {
-        $logs = Logs::updateLog('Project', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $logs = Logs::updateLog('Project', $model->getOriginal('project_name'), $model->project_name, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -41,7 +41,7 @@ class ProjectObserver
      */
     public function deleted(Project $model)
     {
-        $logs = Logs::deleteLog('Project', $model->name, auth()->user()->email);
+        $logs = Logs::deleteLog('Project', $model->project_name, auth()->user()->email);
         Log::create($logs);
     }
 }

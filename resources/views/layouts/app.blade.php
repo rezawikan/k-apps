@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ mix('css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/chosen.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
-
+    <link rel="stylesheet" href="{{ mix('css/datepicker3.min.css') }}">
 
     @stack('t-scripts')
 
@@ -69,6 +69,7 @@
     <!-- Custom and plugin javascript -->
     <script src="{{ mix('js/inspinia.min.js') }}"></script>
     <script src="{{ mix('js/plugins/pace/pace.min.js') }}"></script>
+    <script src="{{ mix('js/plugins/datapicker/bootstrap-datepicker.min.js') }}"></script>
     {{-- <script src="{{ mix('js/vendor.min.js') }}"></script> --}}
 
     <!-- Custom -->

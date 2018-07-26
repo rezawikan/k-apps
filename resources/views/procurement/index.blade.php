@@ -33,13 +33,13 @@
   <div class="row">
     <div class="col-md-12">
       <div class="ibox-content">
-        <h2><i class="fa fa-shopping-cart"></i> How to procure stuff</h2>
+        <h2><i class="fa fa-shopping-cart"></i> How to procure items</h2>
         <div class="row">
           <div class="col-md-6">
             <div class="ibox-content">
               <h2><span class="badge badge-warning">1</span> Create Procurement Request</h2>
               <ul class="todo-list m-t small-list">
-                <li><span class="m-l-xs">Filling out the procurement request form</span>
+                <li><span class="m-l-xs">Fill out the procurement request form</span>
                 </li>
                 <li><span class="m-l-xs">Yayasan Kopernik procurement request form (IDR)</span> <a href="https://docs.google.com/spreadsheets/d/1pI22QXkforkZs955ZBgQSyH1REgtp79rGi5tPfIHbm0/edit?usp=sharing" target="_blank"><i class="fa fa-external-link"></i></a>
                 </li>
@@ -49,7 +49,7 @@
                 </li>
                 <li><span class="m-l-xs">PT Kopernik procurement request form (USD)</span> <a href="https://docs.google.com/spreadsheets/d/1Y6K416GGhLiwQzUqTiMnU6gw721Q0-0nsO7iqwceMaA/edit?usp=sharing" target="_blank"><i class="fa fa-external-link"></i></a>
                 </li>
-                <li><span class="m-l-xs">Send the form to your supervisor to get approval and cc supply chain (supplychain@kopernik.info)</span> <a href="https://docs.google.com/spreadsheets/d/1Y6K416GGhLiwQzUqTiMnU6gw721Q0-0nsO7iqwceMaA/edit?usp=sharing"
+                <li><span class="m-l-xs">Send the form to your supervisor to get approval and cc supply chain (supplychain@kopernik.info) </span> <a href="https://docs.google.com/spreadsheets/d/1Y6K416GGhLiwQzUqTiMnU6gw721Q0-0nsO7iqwceMaA/edit?usp=sharing"
                     target="_blank"><i class="fa fa-external-link"></i></a>
                 </li>
               </ul>
@@ -60,16 +60,10 @@
               <h2><span class="badge badge-warning">2</span> Get approval from your supervisor</h2>
               <ul class="todo-list m-t small-list">
                 <li>
-                  <span class="m-l-xs">Supervisor need to approved the request </span>
-                </li>
-                <li>
-                  <span class="m-l-xs">Once approved, supply chain will provide 3 quotations from 3 different vendors </span>
+                  <span class="m-l-xs">Once the request is approved by the supervisor, supply chain will provide 3 quotations from 3 different vendors</span>
                 </li>
                 <li>
                   <span class="m-l-xs">Supply Chain will send it to the supervisor to get approval (cc requestor)</span>
-                </li>
-                <li>
-                  <span class="m-l-xs">Supervisor approval required</span>
                 </li>
               </ul>
             </div>
@@ -81,13 +75,13 @@
               <h2><span class="badge badge-warning">3</span> PO and received by Supply Chain</h2>
               <ul class="todo-list m-t small-list">
                 <li>
-                  <span class="m-l-xs ">Supply chain will create and send the Purchase Order (PO) to vendor</span>
+                  <span class="m-l-xs ">Supply chain will create and send the Purchase Order (PO) to the vendor</span>
                 </li>
                 <li>
                   <span class="m-l-xs">Vendor will deliver the goods with invoice</span>
                 </li>
                 <li>
-                  <span class="m-l-xs">Supply chain will received the goods and process the payment</span>
+                  <span class="m-l-xs">Supply chain will receive the goods and process the payment</span>
                 </li>
               </ul>
             </div>
@@ -149,17 +143,18 @@
             <div class="ibox-content">
               <h2><span class="badge badge-warning">1</span> Fund Advance</h2>
               <ul class="todo-list m-t small-list">
-                <li><span class="m-l-xs">Filling the Fund Advance Form <a href="https://docs.google.com/spreadsheets/d/1pI22QXkforkZs955ZBgQSyH1REgtp79rGi5tPfIHbm0/edit?usp=sharing" target="_blank"><i class="fa fa-external-link"></i></a></span>
+                <li><span class="m-l-xs">Fill the Fund Advance Form <a href="https://docs.google.com/spreadsheets/d/1pI22QXkforkZs955ZBgQSyH1REgtp79rGi5tPfIHbm0/edit?usp=sharing" target="_blank"><i class="fa fa-external-link"></i></a></span>
                 </li>
-                <li><span class="m-l-xs">Maximum amount of fund advance is Rp. 1,000,000 and required approval from your supervisor or budget holder</span>
+                <li><span class="m-l-xs">Maximum amount of fund advance is Rp. 1,000,000 and requires approval from your supervisor or budget holder</span>
                 </li>
                 <li><span class="m-l-xs">
                 Once approved, please bring the form to finance and they will provide you with the amount of money requested from Petty Cash
                 </span>
                 </li>
-                <li><span class="m-l-xs">Please reconcile your fund advance in timely fashion as according to OPS Manual </a>
+                <li><span class="m-l-xs">Please reconcile your fund advance in timely fashion as accordance with the Operations Manual (page 49)</a>
                   </span>
                 </li>
+
               </ul>
             </div>
           </div>
@@ -167,10 +162,10 @@
             <div class="ibox-content">
               <h2><span class="badge badge-warning">2</span> Lost/Missing Receipt</h2>
               <ul class="todo-list m-t small-list">
-                <li><span class="m-l-xs">Please report it to supervisor and request approval for replacement receipt by email and ccing finance team.</span></li>
-                <li><span class="m-l-xs">Once approved, you have to request other approval from COO </span>
+                <li><span class="m-l-xs">Please report it to supervisor and request approval for replacement receipt by email and CCing finance team</span></li>
+                <li><span class="m-l-xs">Once approved by the finance team, you need to request further approval from the COO</span>
                 </li>
-                <li><span class="m-l-xs">Once all approval process is completed, you could process reconciliation with the finance and supplied the replacement receipt</span></li>
+                <li><span class="m-l-xs">Once the approval process is completed, you can process reconciliation with the finance team and supply the replacement receipt</span></li>
               </ul>
             </div>
           </div>

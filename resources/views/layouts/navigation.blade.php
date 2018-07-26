@@ -8,7 +8,7 @@
                   </span>
           <span class="clear">
                     <span class="block m-t-xs">
-                      <strong class="font-bold">{{ Auth::user()->full_name }} </strong>
+                      <strong class="font-bold" style="color:white;">{{ Auth::user()->full_name }} </strong>
                     </span> {{-- <span class="text-muted text-xs block">Art Director </span> --}}
           </span>
           <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -65,10 +65,10 @@
         <a href="{{ route('procurement.index') }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Procurement & Advance</span></a>
       </li>
       <li class="{{ isActiveRoute('financial') }}">
-        <a href="{{ route('financial.index') }}"><i class="fa fa fa-money"></i> <span class="nav-label">Financial Doc</span></a>
+        <a href="{{ route('financial.index') }}"><i class="fa fa fa-money"></i> <span class="nav-label">Finance & Legal</span></a>
       </li>
       <li class="{{ isActiveRoute('k-mrpt') }}">
-        <a href="{{ route('k-mrpt.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">K-MRPT</span></a>
+        <a href="{{ route('k-mrpt.index') }}"><i class="fa fa-cogs"></i> <span class="nav-label">K-Policies</span></a>
       </li>
       <li class="{{ isActiveRoute('human-resources') }}">
         <a href="{{ route('human-resources.index') }}"><i class="fa fa-users"></i> <span class="nav-label">Human Resources</span></a>
@@ -78,7 +78,7 @@
       </li>
       @role('administrator')
       <li class="{{ isActiveRoute('log') }}">
-        <a href="{{ route('log.index') }}"><i class="fa fa-history"></i> <span class="nav-label">Log</span></a>
+        <a href="{{ route('log.index') }}"><i class="fa fa-history"></i> <span class="nav-label">Activity Log</span></a>
       </li>
       @endrole
     </ul>

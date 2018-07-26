@@ -10,11 +10,9 @@
 </div>
 <div class="form-group {{ $errors->has('start_date') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Start Date</label>
-  <div class="col-lg-10">
+  <div class="col-lg-10 input-group date">
+        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
     <input type="text" name="start_date" placeholder="Start Date" class="form-control" value="{{ $project->start_date ?? old('start_date') }}">
-    @if ($errors->has('start_date'))
-      <span class="help-block m-b-none">{{ $errors->first('start_date') }}</span>
-    @endif
   </div>
 </div>
 <div class="form-group {{ $errors->has('year') ? 'has-error' : '' }}">
