@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits\Logging;
+namespace App\Traits\Log;
 
 trait Logs
 {

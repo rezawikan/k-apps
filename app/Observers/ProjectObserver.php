@@ -3,8 +3,8 @@
 namespace App\Observers;
 
 use App\Models\Project;
-use App\Models\Logging;
-use App\Traits\Logging\Logs;
+use App\Models\Log;
+use App\Traits\Log\Logs;
 
 class ProjectObserver
 {
@@ -18,7 +18,7 @@ class ProjectObserver
     public function created(Project $model)
     {
         $logs = Logs::createLog('Project', $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 
     /**
@@ -30,7 +30,7 @@ class ProjectObserver
     public function updated(Project $model)
     {
         $logs = Logs::updateLog('Project', $model->getOriginal('name'), $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 
     /**
@@ -42,6 +42,6 @@ class ProjectObserver
     public function deleted(Project $model)
     {
         $logs = Logs::deleteLog('Project', $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 }

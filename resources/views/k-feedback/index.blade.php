@@ -17,12 +17,20 @@
               </blockquote>
               <p>In Kopernik, every feedback is highly appriciated. We believe every feedback are valuable to improve our organization. We are encouraging you to send us your feedback. Please use the form below if you have any and if you think you need privacy,
                 you could be anonymous when send it.</p>
-              <form method="post" action="">
+              <form method="POST" action="{{ route('k-feedback.send') }}">
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Sender</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
+                  <label>Sender</label>
+                  <select class="form-control">
+                    <option value="">Select One</option>
                     <option value="anonymous">Anonymous</option>
-                    <option value="reza@wikan.dito">reza@wikan.dito</option>
+                    <option value="{{ auth()->user()->email }}">{{auth()->user()->full_name}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Receiver</label>
+                  <select class="form-control">
+                    <option value="">Select One</option>
+                    <option value=""></option>
                   </select>
                 </div>
                 <div class="form-group">

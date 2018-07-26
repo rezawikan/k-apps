@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Logging;
+use App\Models\Log;
 
-class LoggingController extends Controller
+class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class LoggingController extends Controller
      */
     public function index()
     {
-      
+
         $logs = Logging::latest()->paginate(15);
 
         return view('logging.index')->with(compact('logs'));

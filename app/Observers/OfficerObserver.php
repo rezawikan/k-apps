@@ -3,8 +3,8 @@
 namespace App\Observers;
 
 use App\Models\Officer;
-use App\Models\Logging;
-use App\Traits\Logging\Logs;
+use App\Models\Log;
+use App\Traits\Log\Logs;
 
 class OfficerObserver
 {
@@ -29,7 +29,7 @@ class OfficerObserver
     public function created(Officer $mode)
     {
         $logs = Logs::createLog('Officer', $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 
     /**
@@ -41,7 +41,7 @@ class OfficerObserver
     public function updated(Officer $mode)
     {
         $logs = Logs::updateLog('Officer', $model->getOriginal('name'), $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 
     /**
@@ -53,6 +53,6 @@ class OfficerObserver
     public function deleted(Officer $mode)
     {
         $logs = Logs::deleteLog('Officer', $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 }

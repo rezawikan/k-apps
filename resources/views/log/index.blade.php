@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Logging')
+@section('title', 'Log')
 
 @section('content')
 
@@ -25,7 +25,7 @@
                     <th data-sort-ignore="true" data-hide="phone">New Value</th>
                     <th data-sort-ignore="true" data-hide="phone">Delete Value</th>
                     <th data-sort-ignore="true" data-hide="phone,tablet">Email</th>
-                    <th data-sort-ignore="true" data-hide="phone,tablet">Created At</th>
+                    <th data-sort-ignore="true" data-hide="phone,tablet">Time</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -43,7 +43,7 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td colspan="5">
+                    <td colspan="7">
                       <div class="text-center">
                         {{ $logs->appends(request()->query())->links() }}
                       </div>

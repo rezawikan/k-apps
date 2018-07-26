@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Permissions\HasPermissionTrait;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasPermissionTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'nick_name', 'dob', 'entity', 'email', 'password',
     ];
 
     /**
@@ -26,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+   * Get the user's full name.
+   *
+   * @return string
+   */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
 }

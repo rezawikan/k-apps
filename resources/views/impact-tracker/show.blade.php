@@ -12,8 +12,12 @@
             <div class="ibox-tools">
               <form class="form-inline" action="{{  route('impact-tracker.destroy',['id' => $project->id]) }}" method="POST" style="display: inline-block;">
                 {{ method_field('DELETE') }} {{ csrf_field() }}
-                <a href="{{ route('impact-tracker.edit',['id' => $project->id]) }}" class="btn btn-primary btn-sm">Edit</a>
-                <button type="submit" class="btn btn-sm btn-primary">Delete Forever</button>
+                @can('edit project')
+                  <a href="{{ route('impact-tracker.edit',['id' => $project->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+                @endcan
+                @can('delete project')
+                  <button type="submit" class="btn btn-sm btn-primary">Delete Forever</button>
+                @endcan
               </form>
             </div>
           </div>
@@ -31,7 +35,9 @@
           </div>
           <div class="ibox-content">
             <div class="m-b-xs">
-              <a href="{{ route('impact-tracker-tech.create',['id' => $project->id ]) }}" class="btn btn-sm btn-primary">Add Technology</a>
+              @can('create technology on project')
+                <a href="{{ route('impact-tracker-tech.create',['id' => $project->id ]) }}" class="btn btn-sm btn-primary">Add Technology</a>
+              @endcan
             </div>
             <table class="table table-bordered">
               <thead>
@@ -58,8 +64,12 @@
                       <form class="" action="{{ route('impact-tracker-tech.destroy', ['id' => $project->id, 'idTech' => $value->pivot->id]) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                      <a href="{{ route('impact-tracker-tech.edit',['id' => $project->id, 'idTech' => $value->pivot->id]) }}" class="btn btn-primary btn-xs">Edit</a>
-                      <input type="submit" value="Delete"class="btn btn-primary btn-xs">
+                        @can('edit technology on project')
+                          <a href="{{ route('impact-tracker-tech.edit',['id' => $project->id, 'idTech' => $value->pivot->id]) }}" class="btn btn-primary btn-xs">Edit</a>
+                        @endcan
+                        @can('delete technology on project')
+                          <input type="submit" value="Delete"class="btn btn-primary btn-xs">
+                        @endcan
                       </form>
                     </td>
                   </tr>
@@ -70,7 +80,7 @@
                   <td colspan="3"><strong>TOTAL</strong></td>
                   <td><strong>{{ sumProjects($technology,'distribution_unit')}}</strong></td>
                   <td><strong>{{ sumProjects($technology,'per_unit')}}</strong></td>
-                  <td><strong>{{ sumProjects($technology,'total_reach')}}</strong></td>
+                  <td colspan="2"><strong>{{ sumProjects($technology,'total_reach')}}</strong></td>
                 </tr>
               </tfoot>
             </table>

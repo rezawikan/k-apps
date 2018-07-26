@@ -3,8 +3,8 @@
 namespace App\Observers;
 
 use App\Models\FundingType;
-use App\Models\Logging;
-use App\Traits\Logging\Logs;
+use App\Models\Log;
+use App\Traits\Log\Logs;
 
 class FundingTypeObserver
 {
@@ -29,7 +29,7 @@ class FundingTypeObserver
     public function created(FundingType $model)
     {
         $logs = Logs::createLog('Funding Type', $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 
     /**
@@ -41,7 +41,7 @@ class FundingTypeObserver
     public function updated(FundingType $model)
     {
         $logs = Logs::updateLog('Funding Type', $model->getOriginal('name'), $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 
     /**
@@ -53,6 +53,6 @@ class FundingTypeObserver
     public function deleted(FundingType $model)
     {
         $logs = Logs::deleteLog('Funding Type', $model->name, auth()->user()->email);
-        Logging::create($logs);
+        Log::create($logs);
     }
 }
