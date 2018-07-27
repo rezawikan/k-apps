@@ -15,15 +15,15 @@
     <input type="text" name="start_date" placeholder="Start Date" class="form-control" value="{{ $project->start_date ?? old('start_date') }}">
   </div>
 </div>
-<div class="form-group {{ $errors->has('year') ? 'has-error' : '' }}">
+{{-- <div class="form-group {{ $errors->has('year') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Year</label>
   <div class="col-lg-10">
-    {{-- <input type="integer" name="year" placeholder="Year" class="form-control" value="{{ $project->year ?? old('year') }}"> --}}
+    <input type="integer" name="year" placeholder="Year" class="form-control" value="{{ $project->year ?? old('year') }}">
     @if ($errors->has('year'))
       <span class="help-block m-b-none">{{ $errors->first('year') }}</span>
     @endif
   </div>
-</div>
+</div> --}}
 <div class="form-group {{ $errors->has('country') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Country</label>
   <div class="col-lg-10">

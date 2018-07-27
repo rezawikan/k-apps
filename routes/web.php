@@ -65,6 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('k-feedback', function () {
         return view('k-feedback.index');
     })->name('k-feedback.index');
+
     Route::post('k-feedback','FeedbackController@store')->name('k-feedback.send');
 
     Route::get('travel', function () {

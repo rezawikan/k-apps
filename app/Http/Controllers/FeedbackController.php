@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Notifications\FeedbackMessage;
+use Illuminate\Support\Facades\Notification;
 
 class FeedbackController extends Controller
 {
@@ -14,12 +17,15 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
-      'name' => ['required','unique:funding_types,name']
-    ]);
+          'sender'     => 'required|String',
+          'receiver'   => 'required|email',
+          'message'    => 'required|string'
+        ]);
 
-        $project = FundingType::create($request->all());
+        Notification::route('mail', $request->receiver)->notify(new FeedbackMessage($request->sender, $request->message));
 
-        return redirect()->route('funding-type.index');
+        return redirect('k-feedback')->with('status', 'Feedback has sent!');
     }
 }
