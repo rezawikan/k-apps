@@ -36,7 +36,7 @@
                     <option value="ewa.wojkowska@kopernik.info">Ewa</option>
                     <option value="toshi.nakamura@kopernik.info">Toshi</option>
                     <option value="tomohiro.hamakawa@kopernik.info">Tomo</option>
-                    <option value="romy.tubagus@kopernik.info">Romy </option>
+                    {{-- <option value="romy.tubagus@kopernik.info">Romy </option> --}}
                     <option value="slamet.pribadi@kopernik.info">Slamet</option>
                     <option value="werner.brandt@kopernik.info">Werner</option>
                     <option value="nonie.kaban@kopernik.info">Nonie</option>
