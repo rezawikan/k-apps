@@ -7,10 +7,8 @@
           <div class="col-md-12">
               <div class="ibox-content">
 
-                  <h2 class="font-bold">Forgot password</h2>
-                  <p>
-                      Enter your email address and your password will be reset and emailed to you.
-                  </p>
+                  <h2 class="font-bold">Reset Password</h2>
+                  <p>Enter your email with new password.</p>
                   <div class="row">
 
                       <div class="col-lg-12">
@@ -33,7 +31,7 @@
                                   <span class="help-block m-b-none">{{ $errors->first('email') }}</span>
                               </div>
                               @endif
-                              <button type="submit" class="btn btn-primary block full-width m-b">Send new password</button>
+                              <button type="submit" class="btn btn-primary block full-width m-b">Reset Password</button>
                           </form>
                       </div>
                   </div>

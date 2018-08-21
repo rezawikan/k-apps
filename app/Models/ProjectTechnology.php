@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Observers\ProjectTechnologyObserver;
 
 class ProjectTechnology extends Model
 {
@@ -19,4 +20,15 @@ class ProjectTechnology extends Model
        * @var string
        */
     protected $table = 'project_technology';
+
+    /**
+      * Bootstrap any application services.
+      *
+      * @return void
+      */
+    public static function boot()
+    {
+        parent::boot();
+        self::observe(ProjectTechnologyObserver::class);
+    }
 }

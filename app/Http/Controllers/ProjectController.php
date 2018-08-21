@@ -80,7 +80,7 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project    = Project::find($id);
-        $technology = $project->technologies()->get();
+        $technology = $project->technologies()->orderByRaw('created_at DESC')->get();
 
         return view('impact-tracker.show')->with(compact('project', 'technology'));
     }

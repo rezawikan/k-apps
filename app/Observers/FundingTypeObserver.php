@@ -28,7 +28,8 @@ class FundingTypeObserver
      */
     public function created(FundingType $model)
     {
-        $logs = Logs::createLog('Funding Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->createLog('Funding Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -40,7 +41,10 @@ class FundingTypeObserver
      */
     public function updated(FundingType $model)
     {
-        $logs = Logs::updateLog('Funding Type', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $old = ['name' => $model->getOriginal('name')];
+        $new = ['name' => $model->name];
+
+        $logs = $this->updateLog('Funding Type', $old, $new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -52,7 +56,8 @@ class FundingTypeObserver
      */
     public function deleted(FundingType $model)
     {
-        $logs = Logs::deleteLog('Funding Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->deleteLog('Funding Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

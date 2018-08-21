@@ -8,13 +8,13 @@ use App\Traits\Log\Logs;
 
 class PriceTypeObserver
 {
-
-  /**
-   * Listen to the Category creating event.
-   *
-   * @param  Category  $categories
-   * @return void
-   */
+    use Logs;
+    /**
+     * Listen to the Category creating event.
+     *
+     * @param  Category  $categories
+     * @return void
+     */
     public function saving(PriceType $model)
     {
         $model->slug = str_slug($model->name);
@@ -27,7 +27,8 @@ class PriceTypeObserver
      */
     public function created(PriceType $model)
     {
-        $logs = Logs::createLog('Price Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->createLog('Price Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -39,7 +40,9 @@ class PriceTypeObserver
      */
     public function updated(PriceType $model)
     {
-        $logs = Logs::updateLog('Price Type', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $old = ['name' => $model->getOriginal('name')];
+        $new = ['name' => $model->name];
+        $logs = $this->updateLog('Price Type', $old, $new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -51,7 +54,8 @@ class PriceTypeObserver
      */
     public function deleted(PriceType $model)
     {
-        $logs = Logs::deleteLog('Price Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->deleteLog('Price Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

@@ -8,13 +8,14 @@ use App\Traits\Log\Logs;
 
 class ProjectTypeObserver
 {
+    use Logs;
 
-  /**
-   * Listen to the Project Type creating event.
-   *
-   * @param  ProjectType  $categories
-   * @return void
-   */
+    /**
+     * Listen to the Project Type creating event.
+     *
+     * @param  ProjectType  $categories
+     * @return void
+     */
     public function saving(ProjectType $model)
     {
         $model->slug = str_slug($model->name);
@@ -27,7 +28,8 @@ class ProjectTypeObserver
      */
     public function created(ProjectType $model)
     {
-        $logs = Logs::createLog('Project Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->createLog('Project Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -39,7 +41,9 @@ class ProjectTypeObserver
      */
     public function updated(ProjectType $model)
     {
-        $logs = Logs::updateLog('Project Type', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $old = ['name' => $model->getOriginal('name')];
+        $new = ['name' => $model->name];
+        $logs = $this->updateLog('Project Type', $old, $new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -51,7 +55,8 @@ class ProjectTypeObserver
      */
     public function deleted(ProjectType $model)
     {
-        $logs = Logs::deleteLog('Project Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = Log::deleteLog('Project Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

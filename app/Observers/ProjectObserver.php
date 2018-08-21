@@ -17,7 +17,17 @@ class ProjectObserver
      */
     public function created(Project $model)
     {
-        $logs = Logs::createLog('Project', $model->project_name, auth()->user()->email);
+        $data = [
+          'project name' => $model->project_name,
+          'start date'   => $model->start_date,
+          'country'      => $model->country,
+          'price type'   => $model->price_type,
+          'project type' => $model->project_type,
+          'officer'      => $model->officer,
+          'year'         => $model->year
+        ];
+
+        $logs = Logs::createLog('Project', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -29,7 +39,28 @@ class ProjectObserver
      */
     public function updated(Project $model)
     {
-        $logs = Logs::updateLog('Project', $model->getOriginal('project_name'), $model->project_name, auth()->user()->email);
+        $old = [
+          'project name' => $model->getOriginal('project_name'),
+          'start date'   => $model->getOriginal('start_date'),
+          'country'      => $model->getOriginal('country'),
+          'price type'   => $model->getOriginal('price_type'),
+          'project type' => $model->getOriginal('project_type'),
+          'officer'      => $model->getOriginal('officer'),
+          'year'         => $model->getOriginal('year')
+        ];
+
+        $new = [
+          'project name' => $model->project_name,
+          'start date'   => $model->start_date,
+          'country'      => $model->country,
+          'price type'   => $model->price_type,
+          'project type' => $model->project_type,
+          'officer'      => $model->officer,
+          'year'         => $model->year
+        ];
+        $diff_old = array_diff($old,$new); //before
+        $diff_new = array_diff($new,$old); // new
+        $logs = Logs::updateLog('Project', $diff_old, $diff_new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -41,7 +72,16 @@ class ProjectObserver
      */
     public function deleted(Project $model)
     {
-        $logs = Logs::deleteLog('Project', $model->project_name, auth()->user()->email);
+        $data = [
+          'project name' => $model->project_name,
+          'start date'   => $model->start_date,
+          'country'      => $model->country,
+          'price type'   => $model->price_type,
+          'project type' => $model->project_type,
+          'officer'      => $model->officer,
+          'year'         => $model->year
+        ];
+        $logs = Logs::deleteLog('Project', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

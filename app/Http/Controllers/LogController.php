@@ -19,4 +19,5 @@ class LogController extends Controller
 
         return view('log.index')->with(compact('logs'));
     }
+
 }

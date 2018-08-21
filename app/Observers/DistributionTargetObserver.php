@@ -8,6 +8,7 @@ use App\Models\DistributionTarget;
 
 class DistributionTargetObserver
 {
+    use Logs;
     /**
      * Listen to the Category creating event.
      *
@@ -27,7 +28,8 @@ class DistributionTargetObserver
      */
     public function created(DistributionTarget $model)
     {
-        $logs = Logs::createLog('Distribution Target', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->createLog('Distribution Target', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -39,7 +41,10 @@ class DistributionTargetObserver
      */
     public function updated(DistributionTarget $model)
     {
-        $logs = Logs::updateLog('Distribution Target', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $old = ['name' => $model->getOriginal('name')];
+        $new = ['name' => $model->name];
+
+        $logs = $this->updateLog('Distribution Target', $old, $new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -51,7 +56,9 @@ class DistributionTargetObserver
      */
     public function deleted(DistributionTarget $model)
     {
-        $logs = Logs::deleteLog('Distribution Target', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+
+        $logs = $this->deleteLog('Distribution Target', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

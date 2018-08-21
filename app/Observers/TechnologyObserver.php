@@ -8,13 +8,13 @@ use App\Traits\Log\Logs;
 
 class TechnologyObserver
 {
-
-  /**
-   * Listen to the Technology creating event.
-   *
-   * @param  Technology  $categories
-   * @return void
-   */
+    use Logs;
+    /**
+     * Listen to the Technology creating event.
+     *
+     * @param  Technology  $categories
+     * @return void
+     */
     public function saving(Technology $model)
     {
         $model->slug = str_slug($model->name);
@@ -27,7 +27,11 @@ class TechnologyObserver
      */
     public function created(Technology $model)
     {
-        $logs = Logs::createLog('Technology', $model->name, auth()->user()->email);
+        $data = [
+          'name' => $model->name,
+          'type' => $model->type
+        ];
+        $logs = $this->createLog('Technology', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -39,7 +43,17 @@ class TechnologyObserver
      */
     public function updated(Technology $model)
     {
-        $logs = Logs::updateLog('Technology', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $old = [
+        'name' => $model->getOriginal('name'),
+        'type' => $model->getOriginal('type')
+      ];
+
+        $new = [
+        'name' => $model->name,
+        'type' => $model->type
+      ];
+
+        $logs = $this->updateLog('Technology', $old, $new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -51,7 +65,12 @@ class TechnologyObserver
      */
     public function deleted(Technology $model)
     {
-        $logs = Logs::deleteLog('Technology', $model->name, auth()->user()->email);
+        $data = [
+        'name' => $model->name,
+        'type' => $model->type
+        ];
+
+        $logs = $this->deleteLog('Technology', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

@@ -8,13 +8,13 @@ use App\Traits\Log\Logs;
 
 class TechnologyTypeObserver
 {
-
-  /**
-   * Listen to the Technology Type creating event.
-   *
-   * @param  TechnologyType  $categories
-   * @return void
-   */
+    use Logs;
+    /**
+     * Listen to the Technology Type creating event.
+     *
+     * @param  TechnologyType  $categories
+     * @return void
+     */
     public function saving(TechnologyType $model)
     {
         $model->slug = str_slug($model->name);
@@ -28,7 +28,8 @@ class TechnologyTypeObserver
      */
     public function created(TechnologyType $model)
     {
-        $logs = Logs::createLog('Technology Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->createLog('Technology Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -40,7 +41,9 @@ class TechnologyTypeObserver
      */
     public function updated(TechnologyType $model)
     {
-        $logs = Logs::updateLog('Technology Type', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $old = ['name' => $model->getOriginal('name')];
+        $new = ['name' => $model->name];
+        $logs = $this->updateLog('Technology Type', $old, $new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -52,7 +55,8 @@ class TechnologyTypeObserver
      */
     public function deleted(TechnologyType $model)
     {
-        $logs = Logs::deleteLog('Technology Type', $model->name, auth()->user()->email);
+        $data = [ 'name' => $model->name ];
+        $logs = $this->deleteLog('Technology Type', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

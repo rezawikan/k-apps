@@ -7,7 +7,7 @@
               <img src="{{ asset('img/logo.png')}}" class="img-responsive" alt="">
           </div>
           <h4>Intranet System</h4>
-          <p>Authorize Personal Only</p>
+          <p>Authorized Personnel Only</p>
           <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
               <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">

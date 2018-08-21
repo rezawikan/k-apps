@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLoggingsTable extends Migration
+class CreateLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,9 +17,9 @@ class CreateLoggingsTable extends Migration
             $table->increments('id');
             $table->string('page');
             $table->string('type'); // create, update, delete
-            $table->string('old_value')->nullable(); // old data
-            $table->string('new_value')->nullable(); // new data
-            $table->string('delete_value')->nullable(); // new data
+            $table->json('old_value')->nullable(); // old data
+            $table->json('new_value')->nullable(); // new data
+            $table->json('delete_value')->nullable(); // new data
             $table->string('email');
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateLoggingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loggings');
+        Schema::dropIfExists('logs');
     }
 }

@@ -21,11 +21,11 @@
                 <tr>
                   <th data-sort-ignore="true">Page</th>
                   <th data-sort-ignore="true" data-hide="phone">Type</th>
-                  <th data-sort-ignore="true" data-hide="phone">Old Value</th>
-                  <th data-sort-ignore="true" data-hide="phone">New Value</th>
-                  <th data-sort-ignore="true" data-hide="phone">Delete Value</th>
-                  <th data-sort-ignore="true" data-hide="phone,tablet">Email</th>
-                  <th data-sort-ignore="true" data-hide="phone,tablet">Time</th>
+                  <th data-sort-ignore="true" data-hide="phone,tablet">Old Value</th>
+                  <th data-sort-ignore="true" data-hide="phone,tablet">New Value</th>
+                  <th data-sort-ignore="true" data-hide="phone,tablet">Delete Value</th>
+                  <th data-sort-ignore="true" data-hide="phone">Email</th>
+                  <th data-sort-ignore="true" data-hide="phone">Time</th>
                 </tr>
               </thead>
               <tbody>
@@ -33,11 +33,47 @@
                 <tr>
                   <td>{{ $value->page}}</td>
                   <td>{{ $value->type }}</td>
-                  <td>{{ $value->old_value }}</td>
-                  <td>{{ $value->new_value }}</td>
-                  <td>{{ $value->delete_value }}</td>
+                  <td>
+                    <table>
+                      @forelse ($value->old_value ?: [] as $ovk => $ovv)
+                      <tr>
+                        <td>{{ title_case($ovk) }} &nbsp;</td>
+                        <td>&nbsp;:&nbsp;</td>
+                        <td>&nbsp;{{ $ovv }}</td>
+                      </tr>
+                      @empty
+                        -
+                      @endforelse
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      @forelse ($value->new_value ?: [] as $nvk => $nvv)
+                      <tr>
+                        <td>{{ title_case($nvk) }} &nbsp;</td>
+                        <td>&nbsp;:&nbsp;</td>
+                        <td>&nbsp;{{ $nvv }}</td>
+                      </tr>
+                      @empty
+                        -
+                      @endforelse
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      @forelse ($value->delete_value ?: [] as $dvk => $dvv)
+                      <tr>
+                        <td>{{ title_case($dvk) }} &nbsp;</td>
+                        <td>&nbsp;:&nbsp;</td>
+                        <td>&nbsp;{{ $dvv }}</td>
+                      </tr>
+                      @empty
+                        -
+                      @endforelse
+                    </table>
+                  </td>
                   <td>{{ $value->email }}</td>
-                  <td>{{ $value->created_at}}</td>
+                  <td>{{ $value->created_at->diffForHumans()}}</td>
                 </tr>
                 @endforeach
               </tbody>
@@ -58,3 +94,15 @@
   </div>
 </div>
 @endsection
+
+@push('b-scripts')
+<!-- Page-Level Scripts -->
+<script>
+  $(document).ready(function() {
+    $('.footable').footable({
+      paginate: false
+    });
+    $('.chosen-select').chosen();
+  });
+</script>
+@endpush
