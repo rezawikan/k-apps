@@ -47,7 +47,7 @@
                     <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHMXRjNDlkTkh6clE" target="_blank">Video</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://docs.google.com/presentation/d/14WrMeACpQk7ncWQ14eNHDSZrgfmkfXxDLJchlUz6Wfo/edit?usp=sharing" target="_blank">About</a>
+                    <a href="https://drive.google.com/open?id=1I_HTO59o9YrUPX2HdG_JU01mWbhDMkPR" target="_blank">Kopernik organization profile stack</a>
                   </li>
                 </ul>
               </div>
