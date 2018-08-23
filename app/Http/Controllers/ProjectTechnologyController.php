@@ -56,9 +56,7 @@ class ProjectTechnologyController extends Controller
           'total_reach'         => 'required|integer'
         ]);
 
-        $a = ProjectTechnology::create($request->all());
-
-        dd($a);
+        ProjectTechnology::create($request->all());
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }

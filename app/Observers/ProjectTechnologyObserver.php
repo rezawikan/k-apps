@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\Models\ProjectTechnology;
-use App\Models\project;
+use App\Models\Project;
 use App\Models\Technology;
 use App\Models\Log;
 use App\Traits\Log\Logs;
