@@ -28,7 +28,6 @@
                   <li class="list-group-item">
                     <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHYXhtX0x4aU4tcDA" target="_blank">Letter Head</a>
                   </li>
-
                 </ul>
               </div>
             </div>
@@ -47,7 +46,8 @@
                   <li class="list-group-item">
                     <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHMXRjNDlkTkh6clE" target="_blank">Video</a>
                   </li>
-                  <li class="list-group-item">&nbsp;
+                  <li class="list-group-item">
+                    <a href="https://docs.google.com/presentation/d/14WrMeACpQk7ncWQ14eNHDSZrgfmkfXxDLJchlUz6Wfo/edit?usp=sharing" target="_blank">About</a>
                   </li>
                 </ul>
               </div>
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  {{-- <div class="row">
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-content">
@@ -149,6 +149,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 </div>
 @endsection

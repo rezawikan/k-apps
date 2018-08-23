@@ -45,9 +45,7 @@
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <h3>
-            Kopernik Templates
-            </h3>
+            <h3>Kopernik Templates</h3>
             <div>
               <ul class="list-group">
                 <li class="list-group-item">

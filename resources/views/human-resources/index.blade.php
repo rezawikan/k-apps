@@ -12,9 +12,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="ibox-content">
-        <h3>
-            Leave Management
-        </h3>
+        <h3>Leave Management</h3>
         <div class="hr-line-dashed"></div>
         <p><a href="https://hr.sleekr.co/login"><img src="https://hr.sleekr.co/packs/design/src/assets/images/pages/svg/sleekr_hr-fc53c7728648918bc570b3172b1efda7.svg"></a></p>
       </div>
@@ -26,9 +24,7 @@
         <div class="ibox-content">
           <div class="row">
             <div class="col-lg-6">
-              <h3>
-                        Manulife claim forms
-                    </h3>
+              <h3>Manulife claim forms</h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
@@ -42,14 +38,11 @@
                     <a href="https://drive.google.com/file/d/1r-GitwPUEGc-z6wBIKMXNqM54_L5yD-F/view?usp=sharing" target="_blank">Hospitalization and surgical claim form</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1P77d1-HfVOgVXWUcoZYvLB-FkiU2dEB1/view?usp=sharing" target="_blank">Outpatient claim form
-                          </a>
+                    <a href="https://drive.google.com/file/d/1P77d1-HfVOgVXWUcoZYvLB-FkiU2dEB1/view?usp=sharing" target="_blank">Outpatient claim form</a>
                   </li>
                 </ul>
               </div>
-              <h3>
-                        How to claim insurance coverage
-                    </h3>
+              <h3>How to claim insurance coverage</h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
@@ -60,9 +53,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <h3>
-                        Kopernik Culture and MBTI Spirit Animals
-                    </h3>
+              <h3>Kopernik Culture and Spirit Animals</h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
@@ -70,13 +61,13 @@
                     <a href="https://drive.google.com/file/d/1Tki9tt4nqukAE62WL3nLw6OAPyzp7p7t/view?usp=sharing" target="_blank">Kopernik culture</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://docs.google.com/spreadsheets/d/1KCtsXd44LdZ2b5xgWkGAdO6JHSXZfynRCn85xmPtwR8/edit?usp=sharing" target="_blank">Spirit animals (EN) </a>
+                    <a href="https://docs.google.com/spreadsheets/d/1KCtsXd44LdZ2b5xgWkGAdO6JHSXZfynRCn85xmPtwR8/edit?usp=sharing" target="_blank">Spirit animals (EN)</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://docs.google.com/spreadsheets/d/1cH4q0HWtWnr0vdw07FtJGnA2pdxIjLg_AI7bFCysOzI/edit?usp=sharing" target="_blank">Spirit animals (IN) </a>
+                    <a href="https://docs.google.com/spreadsheets/d/1cH4q0HWtWnr0vdw07FtJGnA2pdxIjLg_AI7bFCysOzI/edit?usp=sharing" target="_blank">Spirit animals (IN)</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1MaKHwrqT_cEZq6qphEW0YlC77NszyR3P/view?usp=sharing" target="_blank">Tips to working with people based on spirit animals (EN) </a>
+                    <a href="https://drive.google.com/file/d/1MaKHwrqT_cEZq6qphEW0YlC77NszyR3P/view?usp=sharing" target="_blank">Tips to working with people based on spirit animals (EN)</a>
                   </li>
                 </ul>
               </div>
@@ -86,9 +77,7 @@
         <div class="ibox-content">
           <div class="row">
             <div class="col-lg-6">
-              <h3>
-                      Staffing Request
-                  </h3>
+              <h3>Staffing Request</h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
@@ -102,9 +91,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <h3>
-                     Staff Performance Review
-                </h3>
+              <h3>Staff Performance Review</h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">

@@ -4,12 +4,13 @@
       <li class="nav-header">
         <div class="dropdown profile-element">
           <span>
-                    {{-- <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}}" /> --}}
-                  </span>
+            <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}}" />
+          </span>
           <span class="clear">
-                    <span class="block m-t-xs">
-                      <strong class="font-bold" style="color:white;">{{ Auth::user()->full_name }} </strong>
-                    </span> {{-- <span class="text-muted text-xs block">Art Director </span> --}}
+            <span class="block m-t-xs">
+              <strong class="font-bold" style="color:white;">{{ Auth::user()->full_name }} </strong>
+            </span>
+            {{-- <span class="text-muted text-xs block">Art Director </span> --}}
           </span>
           <ul class="dropdown-menu animated fadeInRight m-t-xs">
             <li><a href="profile.html">Profile</a></li>
