@@ -29,6 +29,7 @@ class ProjectTechnologyObserver
           'distribution unit'   => $model->distribution_unit,
           'per unit'            => $model->per_unit,
           'total reach'         => $model->total_reach,
+          'year'                => $model->year
         ];
 
         $logs = Logs::createLog('Project Technology', $data, auth()->user()->email);
@@ -55,7 +56,8 @@ class ProjectTechnologyObserver
           'distribution target' => $model->getOriginal('distribution_target'),
           'distribution unit'   => $model->getOriginal('distribution_unit'),
           'per unit'            => $model->getOriginal('per_unit'),
-          'total reach'         => $model->getOriginal('total_reach')
+          'total reach'         => $model->getOriginal('total_reach'),
+          'year'                => $model->getOriginal('year'),
         ];
 
         $new = [
@@ -64,7 +66,8 @@ class ProjectTechnologyObserver
           'distribution target' => $model->distribution_target,
           'distribution unit'   => $model->distribution_unit,
           'per unit'            => $model->per_unit,
-          'total reach'         => $model->total_reach
+          'total reach'         => $model->total_reach,
+          'year'                => $model->year
         ];
         $diff_old = array_diff($old, $new); //before
         $diff_new = array_diff($new, $old); // new
@@ -90,6 +93,7 @@ class ProjectTechnologyObserver
           'distribution unit'   => $model->distribution_unit,
           'per unit'            => $model->per_unit,
           'total reach'         => $model->total_reach,
+          'year'                => $model->year
         ];
         $logs = Logs::deleteLog('Project Technology', $data, auth()->user()->email);
         Log::create($logs);

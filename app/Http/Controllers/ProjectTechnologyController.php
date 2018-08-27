@@ -53,7 +53,8 @@ class ProjectTechnologyController extends Controller
           'distribution_target' => 'required|string',
           'distribution_unit'   => 'required|integer',
           'per_unit'            => 'required|integer',
-          'total_reach'         => 'required|integer'
+          'total_reach'         => 'required|integer',
+          'year'                => 'required|integer'
         ]);
 
         ProjectTechnology::create($request->all());
@@ -101,7 +102,8 @@ class ProjectTechnologyController extends Controller
           'distribution_target' => 'required|string',
           'distribution_unit'   => 'required|integer',
           'per_unit'            => 'required|integer',
-          'total_reach'         => 'required|integer'
+          'total_reach'         => 'required|integer',
+          'year'                => 'required|integer'
         ]);
 
         $technology = ProjectTechnology::findOrFail($idTech);

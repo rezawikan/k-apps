@@ -39,16 +39,17 @@
                 <a href="{{ route('impact-tracker-tech.create',['id' => $project->id ]) }}" class="btn btn-sm btn-primary">Add Technology</a>
               @endcan
             </div>
-            <table class="table table-bordered">
+            <table class="table table-bordered footable">
               <thead>
                 <tr>
-                  <th>Technology Name</th>
-                  <th>Technology Type</th>
-                  <th>Distribution Target</th>
-                  <th>Distribution Unit</th>
-                  <th>People Reach</th>
-                  <th>Total Reached</th>
-                  <th>Action</th>
+                  <th data-sort-ignore="true">Technology Name</th>
+                  <th data-sort-ignore="true">Technology Type</th>
+                  <th data-sort-ignore="true" data-hide="phone">Distribution Target</th>
+                  <th data-sort-ignore="true" data-hide="phone">Distribution Unit</th>
+                  <th data-sort-ignore="true" data-hide="phone">People Reach</th>
+                  <th data-sort-ignore="true" data-hide="phone">Total Reached Multiplier</th>
+                  <th data-sort-ignore="true" data-hide="phone, tablet">Year</th>
+                  <th data-sort-ignore="true">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -60,6 +61,7 @@
                     <td>{{ $value->pivot->distribution_unit }}</td>
                     <td>{{ $value->pivot->per_unit }}</td>
                     <td>{{ $value->pivot->total_reach }}</td>
+                    <td>{{ $value->pivot->year ?? '' }}</td>
                     <td>
                       <form class="" action="{{ route('impact-tracker-tech.destroy', ['id' => $project->id, 'idTech' => $value->pivot->id]) }}" method="POST">
                         {{ csrf_field() }}
@@ -80,7 +82,9 @@
                   <td colspan="3"><strong>TOTAL</strong></td>
                   <td><strong>{{ sumProjects($technology,'distribution_unit')}}</strong></td>
                   <td><strong>{{ sumProjects($technology,'per_unit')}}</strong></td>
-                  <td colspan="2"><strong>{{ sumProjects($technology,'total_reach')}}</strong></td>
+                  <td><strong>{{ sumProjects($technology,'total_reach')}}</strong></td>
+                  <td></td>
+                  <td></td>
                 </tr>
               </tfoot>
             </table>
@@ -90,3 +94,15 @@
     </div>
   </div>
 @endsection
+
+@push('b-scripts')
+<!-- Page-Level Scripts -->
+<script>
+  $(document).ready(function() {
+    $('.footable').footable({
+      paginate: false
+    });
+    $('.chosen-select').chosen();
+  });
+</script>
+@endpush
