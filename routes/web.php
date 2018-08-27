@@ -20,6 +20,23 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('impact-tracker', 'ProjectController@index')->name('impact-tracker.index');
     Route::get('impact-tracker/{impact_tracker}/view', 'ProjectController@show')->name('impact-tracker.show');
 
+    Route::get('users', 'UserController@index')->name('users.index');
+
+    Route::group(['middleware' => 'role:administrator,create user'], function () {
+        Route::get('user/create', 'UserController@create')->name('users.create');
+        Route::post('user/create', 'UserController@store')->name('users.store');
+    });
+
+    Route::group(['middleware' => 'role:administrator,edit user'], function () {
+        Route::get('user/{id}/edit', 'UserController@edit')->name('users.edit');
+        Route::put('user/{id}/update', 'UserController@update')->name('users.update');
+    });
+
+
+    Route::group(['middleware' => 'role:administrator,delete user'], function () {
+        Route::delete('user/{id}/delete', 'UserController@destroy')->name('users.destroy');
+    });
+
     //Project
     Route::group(['middleware' => 'role:administrator,create project'], function () {
         Route::get('impact-tracker/create', 'ProjectController@create')->name('impact-tracker.create');

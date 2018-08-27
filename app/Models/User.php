@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Permissions\HasPermissionTrait;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -36,5 +37,16 @@ class User extends Authenticatable
     public function getFullNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    /**
+     * Get the user's first name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->attributes['dob'])->age;
     }
 }

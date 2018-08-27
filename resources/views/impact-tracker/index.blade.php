@@ -166,9 +166,9 @@
               <thead>
                 <tr>
                   <th data-sort-ignore="true">Project </th>
-                  <th data-sort-ignore="true" data-hide="phone,tablet">Project Type</th>
-                  <th data-sort-ignore="true" data-hide="phone,tablet">Total Reached</th>
-                  <th data-sort-ignore="true" data-hide="phone,tablet">Total Distributed</th>
+                  <th data-sort-ignore="true" data-hide="phone">Project Type</th>
+                  <th data-sort-ignore="true" data-hide="phone">Total Reached</th>
+                  <th data-sort-ignore="true" data-hide="phone">Total Distributed</th>
                   <th data-sort-ignore="true" data-hide="phone">Details</th>
                 </tr>
               </thead>

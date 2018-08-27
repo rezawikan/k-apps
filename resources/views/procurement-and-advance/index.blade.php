@@ -99,7 +99,7 @@
                 </li>
                 <li><span class="m-l-xs">PT Kopernik payment request form (IDR)</span> <a href="https://docs.google.com/spreadsheets/d/1pkKafsTNNuipf_UFT3e-2eSpYxRq8upxGjqNgVM87O8/edit?usp=sharing" target="_blank"><i class="fa fa-external-link"></i></a>
                 </li>
-                <li><span class="m-l-xs">PT Kopernik payment request form (USD)</span> <a href="#" target="_blank"><i class="fa fa-external-link"></i></a>
+                <li><span class="m-l-xs">PT Kopernik payment request form (USD)</span> <a href="https://drive.google.com/open?id=1juONiUxXwst8WrbzG54u3CzWB0tTW8m_bemRSi27A-k" target="_blank"><i class="fa fa-external-link"></i></a>
                 </li>
                 <li>
                   <span class="m-l-xs">Supervisor must approved the payment request</span>

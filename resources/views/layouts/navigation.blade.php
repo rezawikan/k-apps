@@ -79,6 +79,9 @@
       <li class="{{ isActiveRoute('comms-assets') }}">
         <a href="{{ route('comms-assets.index') }}" title="Comms Assets"><i class="fa fa-picture-o"></i> <span class="nav-label">Comms Assets</span></a>
       </li>
+      <li class="{{ isActiveRoute('users') }}">
+        <a href="{{ route('users.index') }}" title="K-Feedback"><i class="fa fa-comments"></i> <span class="nav-label">Users</span></a>
+      </li>
       @can('view log')
       <li class="{{ isActiveRoute('log') }}">
         <a href="{{ route('log.index') }}" title="Log"><i class="fa fa-history"></i> <span class="nav-label">Log</span></a>
