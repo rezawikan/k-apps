@@ -53,6 +53,7 @@
                 </tr>
               </thead>
               <tbody>
+                {{-- {{dd($technology[3])}} --}}
                 @foreach ($technology as $value)
                   <tr>
                     <td>{{ $value->name }}</td>

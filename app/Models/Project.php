@@ -120,7 +120,7 @@ class Project extends Model
        */
     public function technologies()
     {
-        return $this->belongsToMany('App\Models\Technology')->withPivot('id', 'distribution_target', 'per_unit', 'distribution_unit', 'total_reach');
+        return $this->belongsToMany('App\Models\Technology')->withPivot('id', 'distribution_target', 'per_unit', 'distribution_unit', 'total_reach','year');
     }
 
     /**

@@ -211,6 +211,7 @@
     $('.footable').footable({
       paginate: false
     });
+    $('.chosen-select').chosen();
   });
 </script>
 @endpush

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\ProjectTechnology;
+use Illuminate\Support\Facades\Cache;
 
 class ProjectTechnologyController extends Controller
 {
@@ -59,6 +60,8 @@ class ProjectTechnologyController extends Controller
 
         ProjectTechnology::create($request->all());
 
+        Cache::flush();
+
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }
 
@@ -109,6 +112,8 @@ class ProjectTechnologyController extends Controller
         $technology = ProjectTechnology::findOrFail($idTech);
         $technology->update($request->all());
 
+        Cache::flush();
+
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }
 
@@ -121,6 +126,8 @@ class ProjectTechnologyController extends Controller
     public function destroy($id, $idTech)
     {
         $project = ProjectTechnology::find($idTech)->delete();
+
+        Cache::flush();
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }

@@ -35,7 +35,7 @@ class ProjectFilters extends FiltersAbstract
 
     public static function mappings()
     {
-        // return Cache::remember('mappingsFilters', 100, function () {
+        return Cache::remember('mappingsFilters', 100, function () {
             return $map = [
               'filters'     => [
                     'years'         => Project::distinct()->orderBy('year', 'desc')->get(['year']),
@@ -49,7 +49,7 @@ class ProjectFilters extends FiltersAbstract
                     'distributions' => DistributionTarget::select('name')->orderBy('name', 'asc')->get(),
               ]
             ];
-        // });
+        });
     }
 
     public static function calculations()
