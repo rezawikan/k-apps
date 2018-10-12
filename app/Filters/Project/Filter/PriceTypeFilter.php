@@ -12,26 +12,20 @@ class PriceTypeFilter extends FilterAbstract
     public function mappings()
     {
         return Cache::remember('PriceTypeFilter', 20, function () {
-            return PriceType::select('name','slug')->orderBy('name', 'asc')->get()->toArray();
+            return PriceType::select('id', 'name', 'slug')->orderBy('name', 'asc')->get()->toArray();
         });
     }
 
     public function filter(Builder $builder, $value)
     {
-        $values = $this->resolveFilterValue($value);
-
-        $values = array_map(function ($value) use ($values) {
-            if (in_array($value['slug'], $values)) {
-                $vals = $value['name'];
-                return $vals;
-            }
-        }, $this->mappings());
-
-
         if ($value == null) {
             return $builder;
         }
 
-        return $builder->whereIn('price_type', array_filter($values));
+        $values = $this->resolveFilterValue($value);
+
+        $builder->whereHas('price_type', function (Builder $builder) use ($value) {
+            $builder->whereIn('slug', $value);
+        });
     }
 }

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ mix('css/chosen.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/datepicker3.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/sweetalert2.min.css') }}">
 
     @stack('t-scripts')
 
@@ -70,7 +71,7 @@
     <script src="{{ mix('js/inspinia.min.js') }}"></script>
     <script src="{{ mix('js/plugins/pace/pace.min.js') }}"></script>
     <script src="{{ mix('js/plugins/datapicker/bootstrap-datepicker.min.js') }}"></script>
-    {{-- <script src="{{ mix('js/vendor.min.js') }}"></script> --}}
+    <script src="{{ mix('js/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 
     <!-- Custom -->
     @stack('b-scripts')

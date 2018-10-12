@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Technology;
 use App\Models\TechnologyType;
-use Illuminate\Validation\Rule;
+use App\Http\Requests\TechnologyRequest;
 
 class TechnologyController extends Controller
 {
@@ -14,9 +14,13 @@ class TechnologyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $technologies = Technology::latest()->paginate(15);
+
+        if ($request->only('q')) {
+            $technologies = Technology::where('name','LIKE', '%'.$request->q.'%')->latest()->paginate(15);
+        }
 
         return view('manage.technology.index')->with(compact('technologies'));
     }
@@ -28,7 +32,7 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        $techtype = TechnologyType::select('name')->orderBy('name', 'asc')->get();
+        $techtype = TechnologyType::select('id','name')->orderBy('name', 'asc')->get();
         return view('manage.technology.create')->with(compact('techtype'));
     }
 
@@ -38,12 +42,9 @@ class TechnologyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TechnologyRequest $request)
     {
-        $this->validate($request, [
-          'name' => ['required','unique:technologies,name']
-        ]);
-
+        // dd($request->all());
         $technologies = Technology::create($request->all());
 
         return redirect()->route('technology.index');
@@ -68,7 +69,7 @@ class TechnologyController extends Controller
      */
     public function edit($id)
     {
-        $techtype = TechnologyType::select('name')->orderBy('name', 'asc')->get()->toArray();
+        $techtype = TechnologyType::select('name','id')->orderBy('name', 'asc')->get()->toArray();
         $data = Technology::find($id);
         return view('manage.technology.edit')->with(compact('data','techtype'));
     }
@@ -80,12 +81,8 @@ class TechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TechnologyRequest $request, $id)
     {
-        $this->validate($request, [
-        'name' => ['required', Rule::unique('technologies')->ignore($request->name, 'name')],
-      ]);
-
         $data = Technology::findOrFail($id);
         $data->update($request->all());
 

@@ -6,24 +6,25 @@ use App\Filters\FilterAbstract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
 use App\Models\Project;
+use Illuminate\Support\Facades\DB;
 
 class YearFilter extends FilterAbstract
 {
     public function mappings()
     {
         return Cache::remember('YearFilter', 20, function () {
-            return Project::distinct()->orderBy('year', 'desc')->get(['year'])->toArray();
+            return DB::table('project_technology')->select('year')->distinct()->get()->toArray();
         });
     }
 
     public function filter(Builder $builder, $value)
     {
-        $value = $this->resolveFilterValue($value);
-
         if ($value == null) {
             return $builder;
         }
 
-        $builder->whereIn('year', $value);
+        $builder->whereHas('technologies', function (Builder $builder) use ($value) {
+          $builder->whereIn('year',$value);
+        });
     }
 }

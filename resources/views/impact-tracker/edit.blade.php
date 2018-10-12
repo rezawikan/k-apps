@@ -35,6 +35,8 @@
 @push('b-scripts')
 <script>
   $(document).ready(function() {
+    $('.chosen-select').chosen();
+    
     $('.input-group.date').datepicker({
       format: 'yyyy-mm-dd',
       todayBtn: "linked",

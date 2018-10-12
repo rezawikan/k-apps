@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Impact Tracker')
+@section('title',  'Impact Tracker')
 
 @section('content')
-
+{{-- {{ dd($calculations) }} --}}
 <div class="wrapper wrapper-content animated fadeInRight">
   <div class="row">
     <div class="col-lg-4">
@@ -50,19 +50,20 @@
           <h5>Projects</h5>
           <div class="ibox-tools">
             @can('create project')
-              <a href="{{ route('impact-tracker.create') }}" class="btn btn-xs btn-primary">Add Project</a>
+            <a href="{{ route('impact-tracker.create') }}" class="btn btn-xs btn-primary">Add Project</a>
             @endcan
           </div>
+
         </div>
         <div class="ibox-content">
           <div class="row">
             <form class="" action="{{ route('impact-tracker.index') }}" method="GET">
               <div class="col-sm-4 col-xs-12 m-b-sm">
                 <div class="form-group">
-                  <label class="control-label" for="year">Year</label>
-                  <select data-placeholder="Choose one or more" class="chosen-select" multiple name="year[]">
-                        @foreach ($mappings['filters']['years'] as $value)
-                            <option value="{{ $value['year'] }}" {{ convertSlug($value['year'], request('year')) }}>{{ $value['year'] }}</option>
+                  <label class="control-label" for="year">Start Date</label>
+                  <select data-placeholder="Choose one or more" class="chosen-select" multiple name="start_date[]">
+                        @foreach ($mappings['filters']['start_date'] as $value)
+                            <option value="{{ $value['start_date'] }}" {{ convertSlug($value['start_date'], request('start_date')) }}>{{ $value['start_date'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -86,7 +87,7 @@
                   <label class="control-label" for="country">Country</label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="country[]">
                         @foreach ($mappings['filters']['countries'] as $value)
-                          <option value="{{  str_slug($value['country']) }}" {{ convertSlugPlus($value['country'], request('country')) }}>{{ $value['country'] }}</option>
+                          <option value="{{  str_slug($value['code']) }}" {{ convertSlugPlus($value['code'], request('country')) }}>{{ $value['name'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -150,6 +151,16 @@
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
                 <div class="form-group">
+                  <label class="control-label" for="year">Year Technology</label>
+                  <select data-placeholder="Choose one or more" class="chosen-select" multiple name="years[]">
+                        @foreach ($mappings['filters']['years'] as $value)
+                            <option value="{{ $value->year }}" {{ convertSlug($value->year, request('years')) }}>{{ $value->year }}</option>
+                        @endforeach
+                    </select>
+                </div>
+              </div>
+              <div class="col-sm-4 col-xs-12 m-b-sm">
+                <div class="form-group">
                   <label class="control-label" for="price_type">Search</label>
                   <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ request('search') }}">
@@ -173,11 +184,11 @@
                 </tr>
               </thead>
               <tbody>
-                {{-- {{ dd(request('techtype')) }} --}}
-                @foreach ($projects as $key => $value)
+
+                @foreach  ($projects as $key => $value)
                 <tr>
                   <td>{{ $value->project_name }}</td>
-                  <td>{{ $value->project_type }}</td>
+                  <td>{{ $value->project_type->name }}</td>
                   <td>{{ $value->additional_total_reached }}</td>
                   <td>{{ $value->additional_total_distributed }}</td>
                   <td>
@@ -196,6 +207,10 @@
                 </tr>
               </tfoot>
             </table>
+            <div class="btn-group pull-right">
+              <a href="{{ route('impact-tracker.export_project',request()->all()) }}" class="btn btn-xs btn-info">Export Project</a>
+              <a href="{{ route('impact-tracker.export_technology',request()->all()) }}" class="btn btn-xs btn-danger">Export Technology</a>
+            </div>
           </div>
         </div>
       </div>
@@ -213,5 +228,6 @@
     });
     $('.chosen-select').chosen();
   });
+
 </script>
 @endpush

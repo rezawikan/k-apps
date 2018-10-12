@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\DistributionTarget;
-use Illuminate\Validation\Rule;
+use App\Http\Requests\DistributionTargetRequest;
 
 class DistributionTargetController extends Controller
 {
@@ -36,12 +35,8 @@ class DistributionTargetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DistributionTargetRequest $request)
     {
-        $this->validate($request, [
-        'name' => ['required','unique:distribution_targets,name']
-      ]);
-
         $distribution = DistributionTarget::create($request->all());
 
         return redirect()->route('distribution-target.index');
@@ -77,12 +72,8 @@ class DistributionTargetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DistributionTargetRequest $request, $id)
     {
-        $this->validate($request, [
-          'name' => ['required', Rule::unique('distribution_targets')->ignore($request->name, 'name')],
-        ]);
-
         $data = DistributionTarget::findOrFail($id);
         $data->update($request->all());
 

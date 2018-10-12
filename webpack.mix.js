@@ -34,6 +34,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .styles([
     'resources/assets/css/plugins/datapicker/datepicker3.css'
   ], 'public/css/datepicker3.min.css')
+  .styles([
+    'node_modules/sweetalert2/dist/sweetalert2.min.css'
+  ], 'public/css/sweetalert2.min.css')
   .scripts([
     'resources/assets/js/plugins/metisMenu/jquery.metisMenu.js',
   ], 'public/js/plugins/metisMenu/jquery.metisMenu.min.js')
@@ -61,6 +64,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .scripts([
     'resources/assets/js/plugins/datapicker/bootstrap-datepicker.js',
   ], 'public/js/plugins/datapicker/bootstrap-datepicker.min.js')
+  .scripts([
+    'node_modules/sweetalert2/dist/sweetalert2.min.js'
+  ], 'public/js/plugins/sweetalert2/sweetalert2.min.js')
 mix.copyDirectory('resources/assets/font-awesome/fonts', 'public/font-awesome/fonts')
 mix.copyDirectory('resources/assets/img', 'public/img')
 mix.copyDirectory('resources/assets/css/patterns', 'public/css/patterns')

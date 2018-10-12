@@ -3,6 +3,10 @@
 namespace App\Observers;
 
 use App\Models\Project;
+use App\Models\ProjectType;
+use App\Models\PriceType;
+use App\Models\FundingType;
+use App\Models\Country;
 use App\Models\Log;
 use App\Traits\Log\Logs;
 
@@ -18,13 +22,13 @@ class ProjectObserver
     public function created(Project $model)
     {
         $data = [
-          'project name' => $model->project_name,
-          'start date'   => $model->start_date,
-          'country'      => $model->country,
-          'price type'   => $model->price_type,
-          'project type' => $model->project_type,
-          'officer'      => $model->officer,
-          'year'         => $model->year
+          'project name'  => $model->project_name,
+          'start date'    => $model->start_date,
+          'country'       => $model->country->name,
+          'price type'    => $model->price_type->name,
+          'project type'  => $model->project_type->name,
+          'officer'       => $model->officer,
+          'year'          => $model->year,
         ];
 
         $logs = Logs::createLog('Project', $data, auth()->user()->email);
@@ -42,9 +46,9 @@ class ProjectObserver
         $old = [
           'project name' => $model->getOriginal('project_name'),
           'start date'   => $model->getOriginal('start_date'),
-          'country'      => $model->getOriginal('country'),
-          'price type'   => $model->getOriginal('price_type'),
-          'project type' => $model->getOriginal('project_type'),
+          'country'      => Country::find($model->getOriginal('country_id'))->name,
+          'price type'   => ProjectType::find($model->getOriginal('price_type_id'))->name,
+          'project type' => ProjectType::find($model->getOriginal('project_type_id'))->name,
           'officer'      => $model->getOriginal('officer'),
           'year'         => $model->getOriginal('year')
         ];
@@ -52,14 +56,14 @@ class ProjectObserver
         $new = [
           'project name' => $model->project_name,
           'start date'   => $model->start_date,
-          'country'      => $model->country,
-          'price type'   => $model->price_type,
-          'project type' => $model->project_type,
+          'country'      => Country::find($model->country_id)->name,
+          'price type'   => PriceType::find($model->price_type_id)->name,
+          'project type' => ProjectType::find($model->project_type_id)->name,
           'officer'      => $model->officer,
           'year'         => $model->year
         ];
-        $diff_old = array_diff($old,$new); //before
-        $diff_new = array_diff($new,$old); // new
+        $diff_old = array_diff($old, $new); //before
+        $diff_new = array_diff($new, $old); // new
         $logs = Logs::updateLog('Project', $diff_old, $diff_new, auth()->user()->email);
         Log::create($logs);
     }
@@ -75,12 +79,13 @@ class ProjectObserver
         $data = [
           'project name' => $model->project_name,
           'start date'   => $model->start_date,
-          'country'      => $model->country,
-          'price type'   => $model->price_type,
-          'project type' => $model->project_type,
+          'country'      => Country::find($model->country_id)->name,
+          'price type'   => PriceType::find($model->price_type_id)->name,
+          'project type' => ProjectType::find($model->project_type_id)->name,
           'officer'      => $model->officer,
           'year'         => $model->year
         ];
+
         $logs = Logs::deleteLog('Project', $data, auth()->user()->email);
         Log::create($logs);
     }

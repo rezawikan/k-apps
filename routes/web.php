@@ -17,6 +17,8 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+    Route::get('impact-tracker/export/project', 'ProjectController@export_project')->name('impact-tracker.export_project');
+    Route::get('impact-tracker/export/technology', 'ProjectController@export_technology')->name('impact-tracker.export_technology');
     Route::get('impact-tracker', 'ProjectController@index')->name('impact-tracker.index');
     Route::get('impact-tracker/{impact_tracker}/view', 'ProjectController@show')->name('impact-tracker.show');
 

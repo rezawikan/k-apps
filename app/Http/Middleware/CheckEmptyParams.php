@@ -24,12 +24,12 @@ class CheckEmptyParams
             }
         }
 
-        // if ($querycount > count($query)) {
-        //     if (class_basename(url()->current()) == 'impact-tracker') {
-        //       $path = url()->current() . (!empty($query) ? '/?' . http_build_query($query) : '');
-        //       return redirect()->to($path);
-        //     }
-        // }
+        if ($querycount > count($query)) {
+            // if (class_basename(url()->current()) == 'impact-tracker' or class_basename(url()->current()) == 'technology') {
+              $path = url()->current() . (!empty($query) ? '/?' . http_build_query($query) : '');
+              return redirect()->to($path);
+            // }
+        }
 
         return $next($request);
     }

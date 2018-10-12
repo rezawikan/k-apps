@@ -42,6 +42,7 @@
   </div>
   <div class="row">
     <div class="col-lg-12">
+      <h2><a href="https://docs.google.com/spreadsheets/d/1zq_JeP7-JRITbhbOzhPCUVenCq78TJZO94dJAYq6rJ8/edit?usp=sharing">2018 Organizational KPI's</a></h2>
       <h2>Kopernik Culture</h2>
       <span>
         <h4>Our culture shapes the way we work. The problems we are attempting to solve are massive therefore we want Kopernik to be a great organisation that attracts, develops and excites exceptional people who want to play a part in solving some of the biggest challenges facing the world today.

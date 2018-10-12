@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TechnologyType;
-use Illuminate\Validation\Rule;
+use App\Http\Requests\TechnologyTypeRequest;
+
 
 class TechnologyTypeController extends Controller
 {
@@ -36,12 +37,8 @@ class TechnologyTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TechnologyTypeRequest $request)
     {
-        $this->validate($request, [
-        'name' => ['required','unique:technology_types,name']
-      ]);
-
         $data = TechnologyType::create($request->all());
 
         return redirect()->route('technology-type.index');
@@ -77,12 +74,8 @@ class TechnologyTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TechnologyTypeRequest $request, $id)
     {
-        $this->validate($request, [
-        'name' => ['required', Rule::unique('technology_types')->ignore($request->name, 'name')],
-      ]);
-
         $data = TechnologyType::findOrFail($id);
         $data->update($request->all());
 

@@ -31,6 +31,10 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
+      // $client = new \GuzzleHttp\Client();
+      // $res = $client->request('GET', 'https://restcountries.eu/rest/v2/all');
+      // return $res->getBody();
+
         // $yearList           = Project::distinct()->orderBy('year', 'desc')->get(['year']);
         // $projectTypeList    = ProjectType::select('name')->orderBy('name', 'asc')->get();
         // $countryList        = Project::distinct()->orderBy('country', 'asc')->get(['country']);

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\ProjectType;
-use Illuminate\Validation\Rule;
+use App\Http\Requests\ProjectTypeRequest;
 
 class ProjectTypeController extends Controller
 {
@@ -36,12 +35,8 @@ class ProjectTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectTypeRequest $request)
     {
-        $this->validate($request, [
-          'name' => ['required','unique:project_types,name']
-        ]);
-
         $data = ProjectType::create($request->all());
 
         return redirect()->route('project-type.index');
@@ -77,12 +72,8 @@ class ProjectTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectTypeRequest $request, $id)
     {
-        $this->validate($request, [
-          'name' => ['required', Rule::unique('project_types')->ignore($request->name, 'name')],
-        ]);
-
         $data = ProjectType::findOrFail($id);
         $data->update($request->all());
 

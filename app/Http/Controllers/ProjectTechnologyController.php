@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
-use App\Models\ProjectTechnology;
+use App\Http\Requests\ProjectTechnologyRequest;
 
 class ProjectTechnologyController extends Controller
 {
@@ -45,19 +45,18 @@ class ProjectTechnologyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(ProjectTechnologyRequest $request, $id)
     {
-        $this->validate($request, [
-          'project_id'          => 'required|exists:projects,id',
-          'technology_id'       => 'required|exists:technologies,id',
-          'distribution_target' => 'required|string',
-          'distribution_unit'   => 'required|integer',
-          'per_unit'            => 'required|integer',
-          'total_reach'         => 'required|integer',
-          'year'                => 'required|integer'
+        $project = Project::findOrFail($id);
+        $project->technologies()->attach([
+          $request->technology_id => $request->only([
+            'distribution_target_id',
+            'per_unit',
+            'distribution_unit',
+            'total_reach',
+            'year'
+          ])
         ]);
-
-        ProjectTechnology::create($request->all());
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }
@@ -79,10 +78,10 @@ class ProjectTechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, $idTech)
+    public function edit($id, $pivotID)
     {
         $project    = Project::findOrFail($id);
-        $technology = ProjectTechnology::findOrFail($idTech);
+        $technology = $project->technologies()->wherePivot('id', $pivotID)->first();
 
         return view('impact-tracker.additionals.edit')->with(compact('project', 'technology'));
     }
@@ -94,20 +93,18 @@ class ProjectTechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, $idTech)
+    public function update(ProjectTechnologyRequest $request, $id, $pivotID)
     {
-        $this->validate($request, [
-          'project_id'          => 'required|exists:projects,id',
-          'technology_id'       => 'required|exists:technologies,id',
-          'distribution_target' => 'required|string',
-          'distribution_unit'   => 'required|integer',
-          'per_unit'            => 'required|integer',
-          'total_reach'         => 'required|integer',
-          'year'                => 'required|integer'
-        ]);
-
-        $technology = ProjectTechnology::findOrFail($idTech);
-        $technology->update($request->all());
+        $project  = Project::findOrFail($id);
+        $project->technologies()->updateExistingPivot($pivotID, $request->only([
+            'technology_id',
+            'distribution_target_id',
+            'per_unit',
+            'distribution_unit',
+            'total_reach',
+            'year'
+          ])
+        );
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }
@@ -118,9 +115,10 @@ class ProjectTechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, $idTech)
+    public function destroy($id, $pivotID)
     {
-        $project = ProjectTechnology::find($idTech)->delete();
+        $project  = Project::findOrFail($id);
+        $project->technologies()->wherePivot('id', $pivotID)->delete();
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PriceTypeRequest;
 use App\Models\PriceType;
-use Illuminate\Validation\Rule;
+
 
 class PriceTypeController extends Controller
 {
@@ -36,12 +36,8 @@ class PriceTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PriceTypeRequest $request)
     {
-        $this->validate($request, [
-        'name' => ['required','unique:price_types,name']
-      ]);
-
         $data = PriceType::create($request->all());
 
         return redirect()->route('price-type.index');
@@ -77,12 +73,8 @@ class PriceTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PriceTypeRequest $request, $id)
     {
-        $this->validate($request, [
-          'name' => ['required', Rule::unique('price_types')->ignore($request->name, 'name')],
-        ]);
-
         $data = PriceType::findOrFail($id);
         $data->update($request->all());
 

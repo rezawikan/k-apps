@@ -6,49 +6,49 @@
     <select data-placeholder="Choose one" class="form-control chosen-select" name="technology_id">
       <option value="">Select</option>
       @foreach ($mappings['filters']['technologies'] as $value)
-        <option value="{{ $value['id'] }}" {{ checkOldValue($technology->technology_id ?? null, $value['id'], 'technology_id') }}>{{ $value['name'] }}</option>
+        <option value="{{ $value['id'] }}" {{ checkOldValue($technology->pivot->technology_id ?? null, $value['id'], 'technology_id') }}>{{ $value['name'] }}</option>
       @endforeach
     </select>
     @if ($errors->has('technology_id'))
       <span class="help-block m-b-none">{{ $errors->first('technology_id') }}</span>
     @endif
   </div>
-  <div class="col-lg-4 col-sm-4 {{ $errors->has('distribution_target') ? 'has-error' : '' }}">
+  <div class="col-lg-4 col-sm-4 {{ $errors->has('distribution_target_id') ? 'has-error' : '' }}">
     <label class="m-t">Distribution Target</label>
-    <select data-placeholder="Choose one" class="form-control chosen-select" name="distribution_target">
+    <select data-placeholder="Choose one" class="form-control chosen-select" name="distribution_target_id">
       <option value="">Select</option> --}}
       @foreach ($mappings['filters']['distributions'] as $value)
-        <option value="{{ $value['name'] }}" {{ checkOldValue($technology->distribution_target ?? null, $value['name'], 'distribution_target') }}>{{ $value['name'] }}</option>
+        <option value="{{ $value['id'] }}" {{ checkOldValue($technology->pivot->distribution_target_id ?? null, $value['id'], 'distribution_target_id') }}>{{ $value['name'] }}</option>
       @endforeach
     </select>
-    @if ($errors->has('distribution_target'))
-      <span class="help-block m-b-none">{{ $errors->first('distribution_target') }}</span>
+    @if ($errors->has('distribution_target_id'))
+      <span class="help-block m-b-none">{{ $errors->first('distribution_target_id') }}</span>
     @endif
   </div>
   <div class="col-lg-4 col-sm-4 {{ $errors->has('distribution_unit') ? 'has-error' : '' }}">
     <label class="m-t">Distribution Unit</label>
-    <input id="distribution_unit" type="text" name="distribution_unit" placeholder="Distribution Unit" class="form-control" value="{{ $technology->distribution_unit ?? old('distribution_unit') }}" >
+    <input id="distribution_unit" type="text" name="distribution_unit" placeholder="Distribution Unit" class="form-control" value="{{ $technology->pivot->distribution_unit ?? old('distribution_unit') }}" >
     @if ($errors->has('distribution_unit'))
       <span class="help-block m-b-none">{{ $errors->first('distribution_unit') }}</span>
     @endif
   </div>
   <div class="col-lg-4 col-sm-4 {{ $errors->has('per_unit') ? 'has-error' : '' }}">
-    <label class="m-t">People Reached</label>
-    <input id="per_unit" type="text" name="per_unit" placeholder="People Reached" class="form-control" value="{{ $technology->per_unit ?? old('per_unit') }}">
+    <label class="m-t">People Reached Multiplier</label>
+    <input id="per_unit" type="text" name="per_unit" placeholder="People Reached" class="form-control" value="{{ $technology->pivot->per_unit ?? old('per_unit') }}">
     @if ($errors->has('per_unit'))
       <span class="help-block m-b-none">{{ $errors->first('per_unit') }}</span>
     @endif
   </div>
   <div class="col-lg-4 col-sm-4 {{ $errors->has('total_reach') ? 'has-error' : '' }}">
-    <label class="m-t">Total Reached Multiplier</label>
-    <input id="total_reach" type="text" name="total_reach" placeholder="Total Reached Multiplier" class="form-control" value="{{ $technology->total_reach ?? old('total_reach') }}" readonly="readonly">
+    <label class="m-t">Total Reached</label>
+    <input id="total_reach" type="text" name="total_reach" placeholder="Total Reached Multiplier" class="form-control" value="{{ $technology->pivot->total_reach ?? old('total_reach') }}" readonly="readonly">
     @if ($errors->has('total_reach'))
       <span class="help-block m-b-none">{{ $errors->first('total_reach') }}</span>
     @endif
   </div>
   <div class="col-lg-4 col-sm-4 {{ $errors->has('year') ? 'has-error' : '' }}">
     <label class="m-t">Year</label>
-    <input type="text" name="year" placeholder="Year" class="form-control" value="{{ $technology->year ?? old('year') }}">
+    <input type="text" name="year" placeholder="Year" class="form-control" value="{{ $technology->pivot->year ?? old('year') }}">
     @if ($errors->has('year'))
       <span class="help-block m-b-none">{{ $errors->first('year') }}</span>
     @endif

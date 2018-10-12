@@ -11,12 +11,13 @@
 <div class="form-group {{ $errors->has('type') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Technology Type</label>
   <div class="col-lg-10">
-    <select name="type" class="form-control">
+
+    <select name="technology_types_id" class="form-control">
       @foreach ($techtype as $value)
-        @if ($value['name'] == ($data->type ?? ''))
-          <option value="{{ $value['name'] }}" selected>{{ $value['name'] }}</option>
+        @if ($value['id'] == ($data->technology_types_id ?? ''))
+          <option value="{{ $value['id'] }}" selected>{{ $value['name'] }}</option>
         @else
-          <option value="{{ $value['name'] }}">{{ $value['name'] }}</option>
+          <option value="{{ $value['id'] }}">{{ $value['name'] }}</option>
         @endif
       @endforeach
     </select>

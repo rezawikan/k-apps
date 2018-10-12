@@ -48,6 +48,7 @@
                   </td>
                   <td>
                     <table>
+                      {{-- {{dd($value->new_value)}} --}}
                       @forelse ($value->new_value ?: [] as $nvk => $nvv)
                       <tr>
                         <td>{{ title_case($nvk) }} &nbsp;</td>

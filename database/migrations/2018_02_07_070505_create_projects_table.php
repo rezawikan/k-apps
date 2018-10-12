@@ -18,9 +18,9 @@ class CreateProjectsTable extends Migration
             $table->string('project_name');
             $table->date('start_date');
             $table->year('year');
-            $table->string('country');
-            $table->string('price_type');
-            $table->string('project_type');
+            // $table->string('country'); // deleted
+            // $table->string('price_type'); // deleted
+            // $table->string('project_type');  // deleted
             $table->string('officer');
             $table->timestamps();
         });

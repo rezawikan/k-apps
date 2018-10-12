@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FundingType;
-use App\Rules\Titlecase;
-use Illuminate\Validation\Rule;
+use App\Http\Requests\FundingTypeRequest;
+
 
 class FundingTypeController extends Controller
 {
@@ -37,12 +37,8 @@ class FundingTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FundingTypeRequest $request)
     {
-        $this->validate($request, [
-        'name' => ['required','unique:funding_types,name']
-      ]);
-
         $project = FundingType::create($request->all());
 
         return redirect()->route('funding-type.index');
@@ -78,12 +74,8 @@ class FundingTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FundingTypeRequest $request, $id)
     {
-        $this->validate($request, [
-        'name' => ['required', Rule::unique('funding_types')->ignore($request->name, 'name')],
-      ]);
-
         $data = FundingType::findOrFail($id);
         $data->update($request->all());
 

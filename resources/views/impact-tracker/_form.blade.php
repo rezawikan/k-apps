@@ -24,40 +24,50 @@
     @endif
   </div>
 </div> --}}
-<div class="form-group {{ $errors->has('country') ? 'has-error' : '' }}">
+
+{{-- {{dd($mappings['filters']['countries'])}} --}}
+<div class="form-group {{ $errors->has('country_id') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Country</label>
   <div class="col-lg-10">
-    <input type="text" name="country" placeholder="Country" class="form-control" value="{{ $project->country ?? old('country') }}">
-    @if ($errors->has('country'))
-      <span class="help-block m-b-none">{{ $errors->first('country') }}</span>
+    <select data-placeholder="Choose one" class="form-control chosen-select" name="country_id">
+      <option value="">Select</option>
+      @foreach ($mappings['filters']['countries'] as $value)
+        <option value="{{ $value['id'] }}" {{ checkOldValue($project->country_id ?? null, $value['id'], 'country_id') }}>{{ $value['name'] }}</option>
+      @endforeach
+    </select>
+    @if ($errors->has('country_id'))
+      <span class="help-block m-b-none">{{ $errors->first('country_id') }}</span>
     @endif
   </div>
 </div>
-<div class="form-group {{ $errors->has('price_type') ? 'has-error' : '' }}">
+
+<div class="form-group {{ $errors->has('price_type_id') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Price Type</label>
   <div class="col-lg-10">
-    <select data-placeholder="Choose one" class="form-control chosen-select" name="price_type">
+    <select data-placeholder="Choose one" class="form-control chosen-select" name="price_type_id">
       <option value="">Select</option>
       @foreach ($mappings['filters']['pricetype'] as $value)
-        <option value="{{ $value['name'] }}" {{ checkOldValue($project->price_type ?? null, $value['name'], 'price_type') }}>{{ $value['name'] }}</option>
+        <option value="{{ $value['id'] }}" {{ checkOldValue($project->price_type_id ?? null, $value['id'], 'price_type_id') }}>{{ $value['name'] }}</option>
       @endforeach
     </select>
-    @if ($errors->has('price_type'))
-      <span class="help-block m-b-none">{{ $errors->first('price_type') }}</span>
+    @if ($errors->has('price_type_id'))
+      <span class="help-block m-b-none">{{ $errors->first('price_type_id') }}</span>
     @endif
   </div>
 </div>
-<div class="form-group {{ $errors->has('project_type') ? 'has-error' : '' }}">
+<div class="form-group {{ $errors->has('project_type_id') ? 'has-error' : '' }}">
   <label class="col-lg-2 control-label">Project Type</label>
   <div class="col-lg-10">
-    <select data-placeholder="Choose one" class="form-control chosen-select" name="project_type" value="{{ $project->project_type ?? old('project_type') }}">
+
+    <select data-placeholder="Choose one" class="form-control chosen-select" name="project_type_id" value="{{ $project->project_type_id ?? old('project_type_id') }}">
       <option value="">Select</option>
+
       @foreach ($mappings['filters']['project_type'] as $value)
-          <option value="{{ $value['name'] }}" {{ checkOldValue($project->project_type ?? null, $value['name'], 'project_type') }}>{{ $value['name'] }}</option>
+          <option value="{{ $value['id'] }}" {{ checkOldValue($project->project_type_id ?? null, $value['id'], 'project_type_id') }}>{{ $value['name'] }}</option>
       @endforeach
     </select>
-    @if ($errors->has('project_type'))
-      <span class="help-block m-b-none">{{ $errors->first('project_type') }}</span>
+    @if ($errors->has('project_type_id'))
+      <span class="help-block m-b-none">{{ $errors->first('project_type_id') }}</span>
     @endif
   </div>
 </div>
@@ -72,6 +82,22 @@
     </select>
     @if ($errors->has('officer'))
       <span class="help-block m-b-none">{{ $errors->first('officer') }}</span>
+    @endif
+  </div>
+</div>
+{{-- {{dd($project->funding_types()->get()->map())}} --}}
+{{-- {{ dd($project->funding_types_list())}} --}}
+<div class="form-group {{ $errors->has('funding_type_id') ? 'has-error' : '' }}">
+  <label class="col-lg-2 control-label">Funding Type</label>
+  <div class="col-lg-10">
+    <select data-placeholder="Choose one" class="form-control chosen-select" multiple name="funding_type_id[]">
+      <option value="">Select</option>
+      @foreach ($mappings['filters']['funding_type'] as $value)
+        <option value="{{ $value['id'] }}" {{ convertSlug($value['id'], funding_types_list($project->funding_types ?? null)) }}>{{ $value['name']}}</option>
+      @endforeach
+    </select>
+    @if ($errors->has('funding_type_id'))
+      <span class="help-block m-b-none">{{ $errors->first('funding_type_id') }}</span>
     @endif
   </div>
 </div>

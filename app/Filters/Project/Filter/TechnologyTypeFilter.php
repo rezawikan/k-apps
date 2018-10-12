@@ -11,20 +11,22 @@ class TechnologyTypeFilter extends FilterAbstract
 {
     public function mappings()
     {
-        return Cache::remember('TechnologyTypeFilter', 20, function () {
-            return  TechnologyType::select('name')->orderBy('name', 'asc')->get()->toArray();
-        });
+        // return Cache::remember('TechnologyTypeFilter', 20, function () {
+            return  TechnologyType::select('name','id')->orderBy('name', 'asc')->get()->toArray();
+        // });
     }
     public function filter(Builder $builder, $value)
     {
-        $value = $this->resolveSlug($value);
+
+
+        // $value = $this->resolveSlug($value);
 
         if ($value == null) {
             return $builder;
         }
 
-        $builder->whereHas('technologies', function (Builder $builder) use ($value) {
-            $builder->whereIn('type', $value);
+        $builder->whereHas('technologies.technology_types', function (Builder $builder) use ($value) {
+            $builder->whereIn('slug', $value);
         });
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Observers\DistributionTargetObserver;
+use App\Models\Project;
 
 class DistributionTarget extends Model
 {
@@ -13,6 +14,11 @@ class DistributionTarget extends Model
      * @var array
      */
     protected $fillable = ['name'];
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
 
     /**
       * Bootstrap any application services.

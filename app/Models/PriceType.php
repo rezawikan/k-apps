@@ -13,7 +13,7 @@ class PriceType extends Model
      * @var array
      */
     protected $fillable = ['name'];
-
+    
     /**
       * Bootstrap any application services.
       *

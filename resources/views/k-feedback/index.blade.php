@@ -32,11 +32,10 @@
                   <label for="exampleFormControlSelect1">Feedback To</label>
                   <select class="form-control" name="receiver">
                     {{-- <option value="reza.wikan.dito@gmail.com">Test</option> --}}
-                    <option value="leadershipteam@kopernik.info">Kopernik Leadership</option>
+                    <option value="leadershipteam">Kopernik Leadership</option>
                     <option value="ewa.wojkowska@kopernik.info">Ewa</option>
                     <option value="toshi.nakamura@kopernik.info">Toshi</option>
                     <option value="tomohiro.hamakawa@kopernik.info">Tomo</option>
-                    {{-- <option value="romy.tubagus@kopernik.info">Romy </option> --}}
                     <option value="slamet.pribadi@kopernik.info">Slamet</option>
                     <option value="werner.brandt@kopernik.info">Werner</option>
                     <option value="nonie.kaban@kopernik.info">Nonie</option>

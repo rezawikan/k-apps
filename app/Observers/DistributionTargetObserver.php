@@ -20,45 +20,45 @@ class DistributionTargetObserver
         $model->slug = str_slug($model->name);
     }
 
-    /**
-     * Listen to the Category creating event.
-     *
-     * @param  Category  $categories
-     * @return void
-     */
-    public function created(DistributionTarget $model)
-    {
-        $data = [ 'name' => $model->name ];
-        $logs = $this->createLog('Distribution Target', $data, auth()->user()->email);
-        Log::create($logs);
-    }
-
-    /**
-     * Listen to the Category deleting event.
-     *
-     * @param  Category  $categories
-     * @return void
-     */
-    public function updated(DistributionTarget $model)
-    {
-        $old = ['name' => $model->getOriginal('name')];
-        $new = ['name' => $model->name];
-
-        $logs = $this->updateLog('Distribution Target', $old, $new, auth()->user()->email);
-        Log::create($logs);
-    }
-
-    /**
-     * Listen to the Category deleting event.
-     *
-     * @param  Category  $categories
-     * @return void
-     */
-    public function deleted(DistributionTarget $model)
-    {
-        $data = [ 'name' => $model->name ];
-
-        $logs = $this->deleteLog('Distribution Target', $data, auth()->user()->email);
-        Log::create($logs);
-    }
+    // /**
+    //  * Listen to the Category creating event.
+    //  *
+    //  * @param  Category  $categories
+    //  * @return void
+    //  */
+    // public function created(DistributionTarget $model)
+    // {
+    //     $data = [ 'name' => $model->name ];
+    //     $logs = $this->createLog('Distribution Target', $data, auth()->user()->email);
+    //     Log::create($logs);
+    // }
+    //
+    // /**
+    //  * Listen to the Category deleting event.
+    //  *
+    //  * @param  Category  $categories
+    //  * @return void
+    //  */
+    // public function updated(DistributionTarget $model)
+    // {
+    //     $old = ['name' => $model->getOriginal('name')];
+    //     $new = ['name' => $model->name];
+    //
+    //     $logs = $this->updateLog('Distribution Target', $old, $new, auth()->user()->email);
+    //     Log::create($logs);
+    // }
+    //
+    // /**
+    //  * Listen to the Category deleting event.
+    //  *
+    //  * @param  Category  $categories
+    //  * @return void
+    //  */
+    // public function deleted(DistributionTarget $model)
+    // {
+    //     $data = [ 'name' => $model->name ];
+    //
+    //     $logs = $this->deleteLog('Distribution Target', $data, auth()->user()->email);
+    //     Log::create($logs);
+    // }
 }

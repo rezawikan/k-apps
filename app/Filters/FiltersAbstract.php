@@ -31,14 +31,17 @@ abstract class FiltersAbstract
     public function filter(Builder $builder)
     {
         foreach ($this->getFilters() as $filter => $value) {
+
             $this->resolveFilter($filter)->filter($builder, $value);
         }
+
 
         return $builder;
     }
 
     protected function resolveFilter($filter)
     {
+      // dd($this->filters[$filter]);
         return new $this->filters[$filter];
     }
 

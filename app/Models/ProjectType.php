@@ -24,4 +24,12 @@ class ProjectType extends Model
         parent::boot();
         self::observe(ProjectTypeObserver::class);
     }
+
+    /**
+       * Get the Project Type record associated with the projects.
+       */
+    public function project_type()
+    {
+        return $this->hasOne('App\Models\Project');
+    }
 }
