@@ -23,7 +23,6 @@ use App\Filters\Project\Filter\TechnologyFilter;
 use App\Filters\Project\Filter\TechnologyTypeFilter;
 use App\Filters\Project\Filter\SearchFilter;
 use Illuminate\Support\Facades\DB;
-use App\Traits\TextCase;
 
 class ProjectFilters extends FiltersAbstract
 {
@@ -102,7 +101,7 @@ class ProjectFilters extends FiltersAbstract
         $projects   = Project::with(['technologies'])->filter(request())->get();
         $technology = request('technology') ?? [];
         $techtype   = request('techtype') ?? [];
-        $year       = request('years') ?? null;
+        $year       = request('years') ?? [];
 
         $projects = $projects->map(function ($project) use ($technology, $techtype, $year) {
             $project['total_reach'] = 0;
@@ -151,7 +150,7 @@ class ProjectFilters extends FiltersAbstract
         $projects   = Project::with(['technologies'])->filter(request())->get();
         $technology = request('technology') ?? [];
         $techtype   = request('techtype') ?? [];
-        $year       = request('years') ?? null;
+        $year       = request('years') ?? [];
 
         $projects = $projects->map(function ($project) use ($technology, $techtype, $year) {
             $project['distribution_unit'] = 0;
