@@ -43,6 +43,14 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox-content">
+        <h2><i class="fa fa-legal"></i> Yayasan Kopernik Registration</h2>
+        <div class="hr-line-dashed"></div>
         <div class="row">
           <div class="col-lg-6">
             <h3>Kopernik Templates</h3>
@@ -57,17 +65,18 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="ibox-content">
-        <h2><i class="fa fa-legal"></i> Financial Capacity</h2>
-        <div class="hr-line-dashed"></div>
-        <div class="row">
-          <div class="col-md-12">
+          <div class="col-lg-6">
+            <h3>Registration</h3>
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a href="https://drive.google.com/open?id=1Z_IjXXu7CvR9McdlKc3OWtkw7z7E97gS">Deed of establishment</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="https://drive.google.com/open?id=1fJkIayCPHcCbeVGOqcclJVsUBoMkQgZz">Surat Tanda Pendaftaran Yayasan Kopernik</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
