@@ -4,7 +4,7 @@
       <li class="nav-header">
         <div class="dropdown profile-element">
           <span>
-            <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}}" />
+            <img alt="image" class="img-circle img-md" src="{{ asset('img/logo-knet.jpg')}}" />
           </span>
           <span class="clear">
             <span class="block m-t-xs">
