@@ -10,9 +10,13 @@ use App\Models\Technology;
 use App\Models\ProjectType;
 use App\Models\PriceType;
 use App\Models\Officer;
+use App\Traits\BirthdayTraits;
+
 
 class HomeController extends Controller
 {
+
+    use BirthdayTraits;
     /**
      * Create a new controller instance.
      *
@@ -30,7 +34,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-
+      $birthday = $this->birthday();
       // $client = new \GuzzleHttp\Client();
       // $res = $client->request('GET', 'https://restcountries.eu/rest/v2/all');
       // return $res->getBody();
@@ -162,7 +166,7 @@ class HomeController extends Controller
         //
         // $projects = $projects->paginate(15);
 
-        return view('home');
+        return view('home')->with(compact('birthday'));
         // ->with(compact('country', 'total_reach', 'distributed', 'projects', 'yearList', 'projectTypeList', 'countryList', 'officerList', 'priceTypeList', 'technologyList','technologyType','getYear', 'getProjectType', 'getCountry', 'getOfficer', 'getPriceType', 'getTechnology','search','getTypeTech'));
     }
 }

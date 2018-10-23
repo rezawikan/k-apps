@@ -22,6 +22,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('impact-tracker', 'ProjectController@index')->name('impact-tracker.index');
     Route::get('impact-tracker/{impact_tracker}/view', 'ProjectController@show')->name('impact-tracker.show');
 
+    Route::get('birthday', 'BirthdayController@index');
+
     Route::get('profile', 'ProfileController@edit')->name('profile.index');
     Route::put('profile', 'ProfileController@update')->name('profile.update');
 

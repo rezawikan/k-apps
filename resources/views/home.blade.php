@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title',  'Dashboard')
 
 @section('content')
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -158,8 +158,8 @@
                 <li>We make sure our work is accurate and always double check it before submission
                 </li>
                 <li>We are proactive and take initiative
-                  <li>We practice our presentations to make sure we perform to the best of our ability.
-                  </li>
+                <li>We practice our presentations to make sure we perform to the best of our ability.
+                </li>
               </ul>
             </div>
           </div>
@@ -197,6 +197,42 @@
     </div>
   </div>
 </div>
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-9">
+    <h2>Birthday</h2>
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    @foreach ($birthday as $value)
+      <div class="col-lg-4">
+        <div class="contact-box">
+          <a href="profile.html">
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <img alt="image" class="img-circle m-t-xs img-responsive" src="{{asset('storage/'.auth()->user()->photo)}}">
+                    {{-- <div class="m-t-xs font-bold">Graphics designer</div> --}}
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <h3><strong>{{ $value['first_name'] . ' ' .$value['last_name'] }}</strong></h3>
+                {{-- <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p> --}}
+                <p>{{ date("d-M-Y",strtotime($value['dob'])) }}</p>
+                {{-- <address>
+                    <strong>Twitter, Inc.</strong><br>
+                    795 Folsom Ave, Suite 600<br>
+                    San Francisco, CA 94107<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address> --}}
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </div>
+      </div>
+    @endforeach
+  </div>
+</div>
+
 @endsection
 
 @push('b-scripts')
