@@ -207,7 +207,7 @@
     @foreach ($birthday as $value)
       <div class="col-lg-4">
         <div class="contact-box">
-          <a href="profile.html">
+          <a href="#">
             <div class="col-sm-4">
                 <div class="text-center">
                     <img alt="image" class="img-circle m-t-xs img-responsive" src="{{asset('storage/'.auth()->user()->photo)}}">

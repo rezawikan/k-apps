@@ -41,7 +41,7 @@ class ProfileController extends Controller
         $data = $request->all();
 
         if ($request->hasFile('photo')) {
-            if (auth()->user()->photo && auth()->user()->photo != 'images/default.jpg') {
+            if (auth()->user()->photo && auth()->user()->photo != 'images/default.png') {
                 Storage::disk('public')->delete(auth()->user()->photo);
             }
             $path = $request->photo->store('images');
