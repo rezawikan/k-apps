@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/datepicker3.min.css') }}">
     <link rel="stylesheet" href="{{ mix('css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/jasny-bootstrap.min.css') }}">
 
     @stack('t-scripts')
 
@@ -56,6 +57,7 @@
   </div>
 
     <!-- Mainly scripts -->
+    <script src="{{ mix('js/jquery-2.1.1.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('js/plugins/metisMenu/jquery.metisMenu.min.js') }}"></script>
     <script src="{{ mix('js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
@@ -72,6 +74,7 @@
     <script src="{{ mix('js/plugins/pace/pace.min.js') }}"></script>
     <script src="{{ mix('js/plugins/datapicker/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ mix('js/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ mix('js/plugins/jasny/jasny-bootstrap.min.js') }}"></script>
 
     <!-- Custom -->
     @stack('b-scripts')

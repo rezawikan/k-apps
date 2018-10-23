@@ -52,6 +52,9 @@
                   <li class="list-group-item">
                     <a href="https://drive.google.com/open?id=1I_HTO59o9YrUPX2HdG_JU01mWbhDMkPR" target="_blank">Kopernik organization profile stack</a>
                   </li>
+                  <li class="list-group-item">
+                    <a href="https://drive.google.com/drive/folders/1GpJIHLYwKgJ095nX43JBjJ4bAYCLc2uK?usp=sharing" target="_blank">Assets</a>
+                  </li>
                 </ul>
               </div>
             </div>

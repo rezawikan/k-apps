@@ -22,6 +22,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('impact-tracker', 'ProjectController@index')->name('impact-tracker.index');
     Route::get('impact-tracker/{impact_tracker}/view', 'ProjectController@show')->name('impact-tracker.show');
 
+    Route::get('profile', 'ProfileController@edit')->name('profile.index');
+    Route::put('profile', 'ProfileController@update')->name('profile.update');
+
     Route::get('users', 'UserController@index')->name('users.index');
 
     Route::group(['middleware' => 'role:administrator,create user'], function () {

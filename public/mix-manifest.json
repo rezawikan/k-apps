@@ -7,8 +7,10 @@
     "/css/style.min.css": "/css/style.min.css",
     "/css/footable.min.css": "/css/footable.min.css",
     "/css/chosen.min.css": "/css/chosen.min.css",
+    "/css/jasny-bootstrap.min.css": "/css/jasny-bootstrap.min.css",
     "/css/datepicker3.min.css": "/css/datepicker3.min.css",
     "/css/sweetalert2.min.css": "/css/sweetalert2.min.css",
+    "/js/jquery-2.1.1.js": "/js/jquery-2.1.1.js",
     "/js/plugins/metisMenu/jquery.metisMenu.min.js": "/js/plugins/metisMenu/jquery.metisMenu.min.js",
     "/js/plugins/slimscroll/jquery.slimscroll.min.js": "/js/plugins/slimscroll/jquery.slimscroll.min.js",
     "/js/inspinia.min.js": "/js/inspinia.min.js",
@@ -17,5 +19,6 @@
     "/js/plugins/chosen/chosen.all.min.js": "/js/plugins/chosen/chosen.all.min.js",
     "/js/plugins/easypiechart/jquery.easypiechart.js": "/js/plugins/easypiechart/jquery.easypiechart.js",
     "/js/plugins/datapicker/bootstrap-datepicker.min.js": "/js/plugins/datapicker/bootstrap-datepicker.min.js",
-    "/js/plugins/sweetalert2/sweetalert2.min.js": "/js/plugins/sweetalert2/sweetalert2.min.js"
+    "/js/plugins/sweetalert2/sweetalert2.min.js": "/js/plugins/sweetalert2/sweetalert2.min.js",
+    "/js/plugins/jasny/jasny-bootstrap.min.js": "/js/plugins/jasny/jasny-bootstrap.min.js"
 }

@@ -32,11 +32,17 @@ mix.js('resources/assets/js/app.js', 'public/js')
     'resources/assets/css/plugins/chosen/bootstrap-chosen.css'
   ], 'public/css/chosen.min.css')
   .styles([
+    'resources/assets/css/plugins/jasny/jasny-bootstrap.min.css'
+  ], 'public/css/jasny-bootstrap.min.css')
+  .styles([
     'resources/assets/css/plugins/datapicker/datepicker3.css'
   ], 'public/css/datepicker3.min.css')
   .styles([
     'node_modules/sweetalert2/dist/sweetalert2.min.css'
   ], 'public/css/sweetalert2.min.css')
+  .scripts([
+    'resources/assets/js/jquery-2.1.1.js',
+  ], 'public/js/jquery-2.1.1.js')
   .scripts([
     'resources/assets/js/plugins/metisMenu/jquery.metisMenu.js',
   ], 'public/js/plugins/metisMenu/jquery.metisMenu.min.js')
@@ -67,7 +73,11 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .scripts([
     'node_modules/sweetalert2/dist/sweetalert2.min.js'
   ], 'public/js/plugins/sweetalert2/sweetalert2.min.js')
+  .scripts([
+    'resources/assets/js/plugins/jasny/jasny-bootstrap.min.js',
+  ], 'public/js/plugins/jasny/jasny-bootstrap.min.js')
 mix.copyDirectory('resources/assets/font-awesome/fonts', 'public/font-awesome/fonts')
+mix.copyDirectory('resources/assets//fonts', 'public/fonts')
 mix.copyDirectory('resources/assets/img', 'public/img')
 mix.copyDirectory('resources/assets/css/patterns', 'public/css/patterns')
 mix.copyDirectory('resources/assets/css/plugins/chosen', 'public/css/img')

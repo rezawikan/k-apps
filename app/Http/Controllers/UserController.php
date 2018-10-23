@@ -57,7 +57,7 @@ class UserController extends Controller
         ]);
 
         $password = bcrypt('lastmile');
-        $user = User::create(array_merge($request->all(),['password' => $password]));
+        $user = User::create(array_merge($request->except('photo'),['password' => $password]));
 
         return redirect()->route('users.index');
     }
@@ -102,7 +102,7 @@ class UserController extends Controller
         ]);
 
         $data = User::findOrFail($id);
-        $data->update($request->all());
+        $data->update($request->except('photo'));
 
         return redirect()->route('users.index');
     }

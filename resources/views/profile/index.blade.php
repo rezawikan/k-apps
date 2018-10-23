@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Travel')
+@section('title', 'Profile')
 
 @section('content')
+
 <div class="wrapper wrapper-content animated fadeInRight">
   <div class="row">
     <div class="col-md-4">
