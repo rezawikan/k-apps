@@ -12,7 +12,7 @@ use App\Traits\Log\Logs;
 
 class ProjectObserver
 {
-
+    use Logs;
     /**
      * Listen to the Category creating event.
      *
@@ -27,11 +27,10 @@ class ProjectObserver
           'country'       => $model->country->name,
           'price type'    => $model->price_type->name,
           'project type'  => $model->project_type->name,
-          'officer'       => $model->officer,
-          'year'          => $model->year,
+          'officer'       => $model->officer
         ];
 
-        $logs = Logs::createLog('Project', $data, auth()->user()->email);
+        $logs = $this->createLog('Project', $data, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -50,7 +49,6 @@ class ProjectObserver
           'price type'   => ProjectType::find($model->getOriginal('price_type_id'))->name,
           'project type' => ProjectType::find($model->getOriginal('project_type_id'))->name,
           'officer'      => $model->getOriginal('officer'),
-          'year'         => $model->getOriginal('year')
         ];
 
         $new = [
@@ -60,11 +58,10 @@ class ProjectObserver
           'price type'   => PriceType::find($model->price_type_id)->name,
           'project type' => ProjectType::find($model->project_type_id)->name,
           'officer'      => $model->officer,
-          'year'         => $model->year
         ];
         $diff_old = array_diff($old, $new); //before
         $diff_new = array_diff($new, $old); // new
-        $logs = Logs::updateLog('Project', $diff_old, $diff_new, auth()->user()->email);
+        $logs = $this->updateLog('Project', $diff_old, $diff_new, auth()->user()->email);
         Log::create($logs);
     }
 
@@ -82,11 +79,10 @@ class ProjectObserver
           'country'      => Country::find($model->country_id)->name,
           'price type'   => PriceType::find($model->price_type_id)->name,
           'project type' => ProjectType::find($model->project_type_id)->name,
-          'officer'      => $model->officer,
-          'year'         => $model->year
+          'officer'      => $model->officer
         ];
 
-        $logs = Logs::deleteLog('Project', $data, auth()->user()->email);
+        $logs = $this->deleteLog('Project', $data, auth()->user()->email);
         Log::create($logs);
     }
 }

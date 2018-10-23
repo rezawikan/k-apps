@@ -109,8 +109,6 @@ class ProjectController extends Controller
 
         $project->funding_types()->sync($request->funding_type_id);
 
-        // event(new UpdatedProject($project));
-
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }
 

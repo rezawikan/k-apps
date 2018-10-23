@@ -7,7 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "barryvdh/laravel-debugbar": "^3.1",
-        "chelout/laravel-relationship-events": "^0.6.1",
+        "chelout/laravel-relationship-events": "dev-master",
         "fico7489/laravel-pivot": "*",
         "fideloper/proxy": "~4.0",
         "guzzlehttp/guzzle": "^6.3",

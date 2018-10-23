@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b00147cb039058a124e019fc06d8a310",
+    "content-hash": "53ae12bb0f661d9d19b81de80079aeef",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -76,7 +76,7 @@
         },
         {
             "name": "chelout/laravel-relationship-events",
-            "version": "v0.6.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chelout/laravel-relationship-events.git",
@@ -4919,7 +4919,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "chelout/laravel-relationship-events": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

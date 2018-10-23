@@ -34,11 +34,11 @@ class Project extends Model
      */
     protected $dates = ['deleted_at'];
 
-    // public static function boot()
-    // {
-    //     parent::boot();
-    //     self::observe(ProjectObserver::class);
-    // }
+    public static function boot()
+    {
+        parent::boot();
+        self::observe(ProjectObserver::class);
+    }
 
     public function country()
     {
@@ -68,7 +68,7 @@ class Project extends Model
     public function technologies()
     {
         return $this->belongsToMany(Technology::class)
-                    ->withPivot('id', 'per_unit', 'distribution_unit', 'total_reach', 'year', 'distribution_target_id');
+                    ->withPivot('id', 'technology_id', 'per_unit', 'distribution_unit', 'total_reach', 'year', 'distribution_target_id');
     }
 
     public function officer()
@@ -105,10 +105,10 @@ class Project extends Model
                 }
             } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
                 if (in_array($value['name'], $this->convertToTitleCase($technology))) {
-                  $value[$string] += $value['pivot'][$string];
+                    $value[$string] += $value['pivot'][$string];
                 }
             } elseif (empty($technology) and empty($techtype) and !empty($year)) { // !T !TT Y
-              // dd($year);
+                // dd($year);
                 if (in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
                     $value[$string] += $value['pivot'][$string];
                 }
@@ -158,7 +158,7 @@ class Project extends Model
                 }
             } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
                 if (in_array($value['name'], $this->convertToTitleCase($technology))) {
-                  $value[$string] += $value['pivot'][$string];
+                    $value[$string] += $value['pivot'][$string];
                 }
             } elseif (empty($technology) and empty($techtype) and !empty($year)) { // !T !TT Y
 

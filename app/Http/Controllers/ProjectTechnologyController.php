@@ -118,7 +118,7 @@ class ProjectTechnologyController extends Controller
     public function destroy($id, $pivotID)
     {
         $project  = Project::findOrFail($id);
-        $project->technologies()->wherePivot('id', $pivotID)->delete();
+        $project->technologies()->detach($pivotID);
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }
