@@ -31,6 +31,11 @@
       <li class="{{ isActiveRoute('impact-tracker') }}">
         <a href="{{ route('impact-tracker.index') }}" title="Impact Tracker"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Impact Tracker</span></a>
       </li>
+      @can('project trash')
+      <li class="{{ isActiveRoute('project-trash') }}">
+        <a href="{{ route('project-trash.index') }}" title="Impact Tracker"><i class="fa fa-trash"></i> <span class="nav-label">Project Trash</span></a>
+      </li>
+      @endcan
       @can('manage project')
       <li class="{{ isActiveRoute(['manage/officer','manage/distribution-target','manage/funding-type','manage/price-type','manage/project-type','manage/technology','manage/technology-type']) }}">
         <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Manage</span><span class="fa arrow"></span></a>

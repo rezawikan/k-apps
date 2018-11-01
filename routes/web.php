@@ -29,6 +29,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('users', 'UserController@index')->name('users.index');
 
+    Route::get('project-trash', 'ProjectTrashController@index')->name('project-trash.index');
+    Route::delete('project-trash/{id}', 'ProjectTrashController@destroy')->name('project-trash.destroy');
+    Route::put('project-trash/{id}', 'ProjectTrashController@restore')->name('project-trash.restore');
+
     Route::group(['middleware' => 'role:administrator,create user'], function () {
         Route::get('user/create', 'UserController@create')->name('users.create');
         Route::post('user/create', 'UserController@store')->name('users.store');
