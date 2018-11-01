@@ -162,12 +162,12 @@
               <div class="col-sm-4 col-xs-12 m-b-sm">
                 <div class="form-group">
                   <label class="control-label" for="price_type">Search</label>
-                  <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ request('search') }}">
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                      </span>
-                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-xs-12 m-b-sm">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </div>
             </form>

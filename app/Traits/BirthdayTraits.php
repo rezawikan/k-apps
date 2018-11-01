@@ -39,6 +39,18 @@ trait BirthdayTraits
             }
         });
 
-        return array_values(array_filter($noFilter->toArray()));
+        $preResults = array_values(array_filter($noFilter->toArray()));
+
+        $preResults = array_map(function ($pre) {
+            $pre['order'] =  Carbon::parse($pre['dob'])->month;
+            $pre['order'] .= '-' . Carbon::parse($pre['dob'])->day;
+            return $pre;
+        }, $preResults);
+
+        usort($preResults, function ($a, $b) {
+            return $a['order'] <=> $b['order'];
+        });
+
+        return $preResults;
     }
 }

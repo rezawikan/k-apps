@@ -210,7 +210,7 @@
           <a href="#">
             <div class="col-sm-4">
                 <div class="text-center">
-                    <img alt="image" class="img-circle m-t-xs img-responsive" src="{{asset('storage/'.auth()->user()->photo)}}">
+                    <img alt="image" class="img-circle m-t-xs img-responsive" src="{{asset('storage/'.$value['photo'])}}">
                     {{-- <div class="m-t-xs font-bold">Graphics designer</div> --}}
                 </div>
             </div>

@@ -66,7 +66,7 @@
                     <span class="m-l-xs">If Kopernik Travel and the Budget Holder agree with the selected flight, the Budget Holder can approve on the Approval column in the Flight Quotation Form</span>
 
                   </li>
-                  
+
                 </ul>
               </div>
             </div>
@@ -84,7 +84,7 @@
                     <span class="m-l-xs"> Travel agent will send invoice, E-ticket and Travel insurance (If any)</span>
 
                   </li>
-                  
+
                 </ul>
               </div>
             </div>
@@ -130,7 +130,7 @@
                   <li>Domestic – other : IDR 220,000 per day </li>
                   <li>International : USD 70 per day </li>
                 </ol>
-                <li>When reconciling the trip expenses it is the responsibility of the traveler to deduct any meals provided by service providers (airlines, hotels, clients )free of charge from the incidental cost as follows: 
+                <li>When reconciling the trip expenses it is the responsibility of the traveler to deduct any meals provided by service providers (airlines, hotels, clients )free of charge from the incidental cost as follows:
                 <ol>
                   <li>Lunch; IDR 55,000 (domestic), USD 20 (international) </li>
                   <li>Dinner: IDR 88,000 (domestic), USD 25 (international) </li>
