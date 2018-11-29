@@ -32,6 +32,6 @@ class CreateRolesTechnologiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles_technologies');
+        Schema::dropIfExists('technology_rules');
     }
 }
