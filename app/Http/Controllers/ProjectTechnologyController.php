@@ -115,10 +115,11 @@ class ProjectTechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, $pivotID)
+    public function destroy($id, $techID)
     {
+
         $project  = Project::findOrFail($id);
-        $project->technologies()->detach($pivotID);
+        $project->technologies()->detach($techID);
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }

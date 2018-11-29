@@ -20,6 +20,7 @@ class ComposerServiceProvider extends ServiceProvider
           'impact-tracker.index',
           'impact-tracker._form',
           'impact-tracker.partials._technology',
+          'manage.technology-rules._form'
         ], ProjectFiltersComposer::class);
 
         View::composer([

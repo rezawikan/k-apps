@@ -41,7 +41,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
     'node_modules/sweetalert2/dist/sweetalert2.min.css'
   ], 'public/css/sweetalert2.min.css')
   .scripts([
-    'resources/assets/js/jquery-2.1.1.js',
+    'resources/assets/js/additional/jquery-2.1.1.js',
   ], 'public/js/jquery-2.1.1.js')
   .scripts([
     'resources/assets/js/plugins/metisMenu/jquery.metisMenu.js',
@@ -50,7 +50,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
     'resources/assets/js/plugins/slimscroll/jquery.slimscroll.min.js',
   ], 'public/js/plugins/slimscroll/jquery.slimscroll.min.js')
   .scripts([
-    'resources/assets/js/inspinia.js',
+    'resources/assets/js/additional/inspinia.js',
   ], 'public/js/inspinia.min.js')
   .scripts([
     'resources/assets/js/plugins/pace/pace.min.js',

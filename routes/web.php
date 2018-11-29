@@ -22,16 +22,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('impact-tracker', 'ProjectController@index')->name('impact-tracker.index');
     Route::get('impact-tracker/{impact_tracker}/view', 'ProjectController@show')->name('impact-tracker.show');
 
-    Route::get('birthday', 'BirthdayController@index');
+    // Route::get('birthday', 'BirthdayController@index');
 
     Route::get('profile', 'ProfileController@edit')->name('profile.index');
     Route::put('profile', 'ProfileController@update')->name('profile.update');
 
     Route::get('users', 'UserController@index')->name('users.index');
 
-    Route::get('project-trash', 'ProjectTrashController@index')->name('project-trash.index');
-    Route::delete('project-trash/{id}', 'ProjectTrashController@destroy')->name('project-trash.destroy');
-    Route::put('project-trash/{id}', 'ProjectTrashController@restore')->name('project-trash.restore');
+    Route::group(['middleware' => 'role:administrator'], function () {
+      Route::get('project-trash', 'ProjectTrashController@index')->name('project-trash.index');
+      Route::delete('project-trash/{id}', 'ProjectTrashController@destroy')->name('project-trash.destroy');
+      Route::put('project-trash/{id}', 'ProjectTrashController@restore')->name('project-trash.restore');
+    });
+
 
     Route::group(['middleware' => 'role:administrator,create user'], function () {
         Route::get('user/create', 'UserController@create')->name('users.create');
@@ -82,6 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('manage/project-type', 'ProjectTypeController');
         Route::resource('manage/technology', 'TechnologyController');
         Route::resource('manage/technology-type', 'TechnologyTypeController');
+        Route::resource('manage/technology-rules', 'TechnologyRulesController');
     });
 
     Route::group(['middleware' => 'role:administrator,view log'], function () {

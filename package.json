@@ -21,6 +21,8 @@
     "dependencies": {
         "bootstrap": "^4.1.0",
         "loadash": "^1.0.0",
-        "sweetalert2": "^7.28.2"
+        "popper.js": "^1.14.4",
+        "sweetalert2": "^7.28.2",
+        "vue-router": "^3.0.1"
     }
 }

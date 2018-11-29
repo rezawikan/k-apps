@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Observers\TechnologyTypeObserver;
+use App\Models\DistributionTarget;
 
 class TechnologyType extends Model
 {
@@ -23,5 +24,15 @@ class TechnologyType extends Model
     {
         parent::boot();
         self::observe(TechnologyTypeObserver::class);
+    }
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function distribution_targets()
+    {
+        return $this->belongsToMany(DistributionTarget::class,'technology_rules','technology_type_id','distribution_target_id')->withPivot([
+          'multiplier','id'
+        ]);
     }
 }

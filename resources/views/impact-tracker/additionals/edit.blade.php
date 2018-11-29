@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Technology - {{ $project->project_name }}')
+@section('title', 'Edit Technology')
 
 @section('content')
-  <div class="wrapper wrapper-content animated fadeInRight">
+  {{-- <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
       <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -28,5 +28,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
+  <router-view></router-view>
 @endsection

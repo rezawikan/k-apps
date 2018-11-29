@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Add Technology - {{ $project->project_name }}')
+@section('title', 'Add Technology')
 
 @section('content')
-  <div class="wrapper wrapper-content animated fadeInRight">
+  {{-- <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
       <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -14,8 +14,9 @@
             <div class="row">
               <div class="col-lg-12">
                 <form class="form-horizontal" action="{{ route('impact-tracker-tech.store', ['id' => $project->id]) }}" method="POST">
-                  @include('impact-tracker.partials._technology')
-                  <div class="form-group">
+                  @include('impact-tracker.partials._technology') --}}
+                  <router-view></router-view>
+                  {{-- <div class="form-group">
                     <div class="col-lg-12 col-sm-12">
                       <button type="submit" class="btn btn-sm btn-primary">Save</button>
                     </div>
@@ -27,5 +28,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 @endsection

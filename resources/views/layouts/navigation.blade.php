@@ -37,7 +37,7 @@
       </li>
       @endcan
       @can('manage project')
-      <li class="{{ isActiveRoute(['manage/officer','manage/distribution-target','manage/funding-type','manage/price-type','manage/project-type','manage/technology','manage/technology-type']) }}">
+      <li class="{{ isActiveRoute(['manage/officer','manage/distribution-target','manage/funding-type','manage/price-type','manage/project-type','manage/technology','manage/technology-type','manage/technology-rules']) }}">
         <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Manage</span><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level collapse">
           <li class="{{ isActiveRoute('manage/funding-type') }}"><a href="{{ route('funding-type.index') }}" title="Funding Type">Funding Type</a></li>
@@ -61,6 +61,9 @@
         </ul>
         <ul class="nav nav-second-level collapse">
           <li class="{{ isActiveRoute('manage/technology-type') }}"><a href="{{ route('technology-type.index') }}" title="Technology Type">Technology Type</a></li>
+        </ul>
+        <ul class="nav nav-second-level collapse">
+          <li class="{{ isActiveRoute('manage/technology-rules') }}"><a href="{{ route('technology-rules.index') }}" title="Technology Rules">Technology Rules</a></li>
         </ul>
       </li>
     @endcan
