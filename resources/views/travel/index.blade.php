@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/drive/folders/1KpPOA4TGQ93onpe6St-qV7h4G3DbP1rR?usp=sharing">
+              <a href="https://drive.google.com/drive/folders/1KpPOA4TGQ93onpe6St-qV7h4G3DbP1rR?usp=sharing" target="_blank">
                 <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
                     <i class="fa fa-file fa-3x"></i>
@@ -53,7 +53,7 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/drive/folders/1KsAjfqMAWIg3v6u21gAJt8u_hwqTI1sH?usp=sharing">
+              <a href="https://drive.google.com/drive/folders/1KsAjfqMAWIg3v6u21gAJt8u_hwqTI1sH?usp=sharing" target="_blank">
                 <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
                     <i class="fa fa-copy fa-3x"></i>
@@ -65,7 +65,7 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/drive/folders/1Kzn21wrJVpeLH9uJwsvX6QwKCWpA1kN7?usp=sharing">
+              <a href="https://drive.google.com/drive/folders/1Kzn21wrJVpeLH9uJwsvX6QwKCWpA1kN7?usp=sharing" target="_blank">
                 <div class="widget blue-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
                     <i class="fa fa-plane fa-3x"></i>

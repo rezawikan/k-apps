@@ -7,27 +7,27 @@
   <div class="row">
     <div class="col-md-12">
       <div class="ibox-content">
-        <h2><i class="fa fa-file"></i> Procurement & Advance</h2>
-        <p>For the process on how to use & submit the forms below, Please see section 1 for funds advance and 2 for procurement of the <a href="https://docs.google.com/document/d/1d3warAg9UHyielvPV5nCv1ENDGA1v7y3O06VaWnCgf8/edit?usp=sharing">operations manual</a></p>
+        <h2><i class="fa fa-file-text-o"></i> Procurement</h2>
+        <p>For the process on how to use & submit the forms below, Please see section 2 for procurement of the <a href="https://docs.google.com/document/d/1d3warAg9UHyielvPV5nCv1ENDGA1v7y3O06VaWnCgf8/edit?usp=sharing">operations manual</a></p>
         <div class="row">
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1KeyxGKxoJCrcVT5kiP_KMQMVb0cyH5ok">
+              <a href="https://drive.google.com/open?id=1KeyxGKxoJCrcVT5kiP_KMQMVb0cyH5ok" target="_blank">
                 <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Payment Request Forms</h3>
                   </div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="col-md-4">
+          {{-- <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1KtiXnztg9I4rXenQVzQQ7_QfxsAFZ-Zv">
+              <a href="https://drive.google.com/open?id=1KtiXnztg9I4rXenQVzQQ7_QfxsAFZ-Zv" target="_blank">
                 <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Funds Advance Forms</h3>
                   </div>
                 </div>
@@ -36,22 +36,22 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1Kw1svrAbMn3UynnL-vdqFy4d_OD96wVV">
+              <a href="https://drive.google.com/open?id=1Kw1svrAbMn3UynnL-vdqFy4d_OD96wVV" target="_blank">
                 <div class="widget blue-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Funds Advance Reconciliation Forms</h3>
                   </div>
                 </div>
               </a>
             </div>
-          </div>
+          </div> --}}
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1OTrXcX7zoAsOAvHvx7jBSHk5rhpI5kw1">
+              <a href="https://drive.google.com/open?id=1OTrXcX7zoAsOAvHvx7jBSHk5rhpI5kw1" target="_blank">
                 <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Missing Receipt Forms</h3>
                   </div>
                 </div>
@@ -60,10 +60,10 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1KW4zLtFkJV9OLXyHuvvjoE3XT3C8-XkU">
-                <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
+              <a href="https://drive.google.com/open?id=1KW4zLtFkJV9OLXyHuvvjoE3XT3C8-XkU" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Procurment Request Forms</h3>
                   </div>
                 </div>
@@ -72,10 +72,10 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1KcnrJbtIHpyvBFHVD3A-jCTDwjxsDND4">
-                <div class="widget blue-bg p-lg text-center" style="margin-top: 0px;">
+              <a href="https://drive.google.com/open?id=1KcnrJbtIHpyvBFHVD3A-jCTDwjxsDND4" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Bid Analysis Summary Forms</h3>
                   </div>
                 </div>
@@ -84,10 +84,10 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1KeUTzGn7UkRTWpW3R575d_KiUzZPQNl8">
+              <a href="https://drive.google.com/open?id=1KeUTzGn7UkRTWpW3R575d_KiUzZPQNl8" target="_blank">
                 <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Purchase Order Forms</h3>
                   </div>
                 </div>
@@ -96,10 +96,10 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1wertVA_DBS9YJQiEbs7zu9yuCGMVtCCO">
-                <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
+              <a href="https://drive.google.com/open?id=1wertVA_DBS9YJQiEbs7zu9yuCGMVtCCO" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Service Contract Templates</h3>
                   </div>
                 </div>
@@ -108,10 +108,10 @@
           </div>
           <div class="col-md-4">
             <div class="ibox-content">
-              <a href="https://drive.google.com/open?id=1KfctRx3ttaBL0D1enyHyHdSv1P4dYfwX">
-                <div class="widget blue-bg p-lg text-center" style="margin-top: 0px;">
+              <a href="https://drive.google.com/open?id=1KfctRx3ttaBL0D1enyHyHdSv1P4dYfwX" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
-                    <i class="fa fa-file fa-3x"></i>
+                    <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Goods Received Note</h3>
                   </div>
                 </div>
@@ -131,7 +131,7 @@
           <div class="col-md-4">
             <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
               <div class="m-b-md">
-                <i class="fa fa-file fa-3x"></i>
+                <i class="fa fa-file-text-o fa-3x"></i>
                 <h3 class="m-xs">Approval</h3>
               </div>
             </div>
@@ -292,5 +292,124 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox-content">
+        <h2><i class="fa fa-file-text-o"></i> Funds Advance</h2>
+        <p>For the process on how to use & submit the forms below, Please see section 1 for funds advance of the <a href="https://docs.google.com/document/d/1d3warAg9UHyielvPV5nCv1ENDGA1v7y3O06VaWnCgf8/edit?usp=sharing">operations manual</a></p>
+        <div class="row">
+          {{-- <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1KeyxGKxoJCrcVT5kiP_KMQMVb0cyH5ok" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Payment Request Forms</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div> --}}
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1KtiXnztg9I4rXenQVzQQ7_QfxsAFZ-Zv" target="_blank">
+                <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Funds Advance Forms</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1Kw1svrAbMn3UynnL-vdqFy4d_OD96wVV" target="_blank">
+                <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Funds Advance Reconciliation Forms</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          {{-- <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1OTrXcX7zoAsOAvHvx7jBSHk5rhpI5kw1" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Missing Receipt Forms</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1KW4zLtFkJV9OLXyHuvvjoE3XT3C8-XkU" target="_blank">
+                <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Procurment Request Forms</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1KcnrJbtIHpyvBFHVD3A-jCTDwjxsDND4" target="_blank">
+                <div class="widget blue-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Bid Analysis Summary Forms</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1KeUTzGn7UkRTWpW3R575d_KiUzZPQNl8" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Purchase Order Forms</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1wertVA_DBS9YJQiEbs7zu9yuCGMVtCCO" target="_blank">
+                <div class="widget navy-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Service Contract Templates</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://drive.google.com/open?id=1KfctRx3ttaBL0D1enyHyHdSv1P4dYfwX" target="_blank">
+                <div class="widget blue-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Goods Received Note</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 @endsection
