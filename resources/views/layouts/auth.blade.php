@@ -11,6 +11,11 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="og:title" content="K-Apps"/>
+        <meta name="og:description" content="Internal System of Kopernik"/>
+        <meta name="author" content="Mochammad Rezza Wikandito, reza.wikan.dito@gmail.com">
+        <meta name="owner" content="Kopernik (NGO)">
+        <link rel='fluid-icon' type='image/png' href='https://intranet.kopernik.info/img/k-icon.png'>
 
         {{-- <title>{{ config('app.name') }} @yield('title')</title> --}}
         <title>K-Apps</title>
