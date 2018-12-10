@@ -50,7 +50,7 @@
                     <a href="https://drive.google.com/drive/folders/16QcHU5pQEmuzgg0zNlkY48rklDvXsutl?usp=sharing" target="_blank">Kopernik organization profile stack</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/drive/folders/1ZVLN9l-4cfxXAyV8UtYJshRx3lI4L7MD?usp=sharing" target="_blank">Assets</a>
+                    <a href="https://drive.google.com/drive/folders/1ZVLN9l-4cfxXAyV8UtYJshRx3lI4L7MD?usp=sharing" target="_blank">Photo Library</a>
                   </li>
                 </ul>
               </div>
