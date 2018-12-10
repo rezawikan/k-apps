@@ -22,11 +22,8 @@
                   <li class="list-group-item">
                     <a href="https://drive.google.com/file/d/1ASN3fMPOjnI90__g1VRp4CNH_rAfhOYO/view?usp=sharing" target="_blank">Kopernik brand guideline</a>
                   </li>
-                  <li class="list-group-item ">
-                    <a href="https://drive.google.com/drive/folders/0B0x_sLzkBrpHQnlsNzJ4LUJrVnM?usp=sharing" target="_blank">Power Point</a>
-                  </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHYXhtX0x4aU4tcDA" target="_blank">Letter Head</a>
+                    <a href="https://drive.google.com/drive/folders/164SABK4Nsv1gxH656kKJmOZ8idSVELV5?usp=sharing" target="_blank">Letter Head</a>
                   </li>
                   <li class="list-group-item">
                     <a href="https://drive.google.com/file/d/1fbqpKaWfgRtG_U910gaZw-HsrTpKWnG-/view" target="_blank">Multimedia Request</a>
@@ -38,22 +35,22 @@
               <div>
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHem9GWVBtV2V6RTQ" target="_blank">Logo</a>
+                    <a href="https://drive.google.com/drive/folders/1EiVeWo-P0HDhFBbc1W5fkYB20FKp6G8z?usp=sharing" target="_blank">Logo</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHT1VjN3JBN2JxeUU" target="_blank">Font</a>
+                    <a href="https://drive.google.com/drive/folders/1sIGJ4Fvngm5v73WxzVeSmUYSj_b5SlxV?usp=sharing" target="_blank">Font</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHc0NmcXZYQ2NiMTQ" target="_blank">Consent Form</a>
+                    <a href="https://drive.google.com/drive/folders/1Q9Fp-sYp7YjHySaIotEzjDeHUvBCyxCh?usp=sharing" target="_blank">Consent Form</a>
                   </li>
                   <li class="list-group-item">
                     <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHMXRjNDlkTkh6clE" target="_blank">Video</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/open?id=1I_HTO59o9YrUPX2HdG_JU01mWbhDMkPR" target="_blank">Kopernik organization profile stack</a>
+                    <a href="https://drive.google.com/drive/folders/16QcHU5pQEmuzgg0zNlkY48rklDvXsutl?usp=sharing" target="_blank">Kopernik organization profile stack</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/drive/folders/1GpJIHLYwKgJ095nX43JBjJ4bAYCLc2uK?usp=sharing" target="_blank">Assets</a>
+                    <a href="https://drive.google.com/drive/folders/1ZVLN9l-4cfxXAyV8UtYJshRx3lI4L7MD?usp=sharing" target="_blank">Assets</a>
                   </li>
                 </ul>
               </div>
