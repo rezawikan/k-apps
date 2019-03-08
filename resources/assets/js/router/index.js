@@ -13,7 +13,7 @@ const routes = [
         component: CreateTechnologyIndex,
     },
     {
-        path: '/impact-tracker/:idp/:idt/edit',
+        path: '/impact-tracker/:idp/:pivotID/edit',
         name: 'edit.technology',
         component: EditTechnologyIndex,
     },

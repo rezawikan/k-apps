@@ -32,11 +32,11 @@ class ProjectTechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($idp, $idt)
+    public function edit($idp, $pivotID)
     {
         $project    = Project::findOrFail($idp);
 
-        $technology = $project->technologies()->wherePivot('technology_id', $idt)->get();
+        $technology = $project->technologies()->wherePivot('id', $pivotID)->get();
         return ProjectTechnologyEditResource::collection($technology);
     }
 
@@ -47,12 +47,13 @@ class ProjectTechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idp, $idt)
+    public function update(Request $request, $idp, $pivotID)
     {
         $project  = Project::findOrFail($idp);
-        $project->technologies()->updateExistingPivot(
-            $idt,
+         $project->technologies()->updateExistingPivot(
+            $request->current_tech_id,
             $request->only([
+            'technology_id',
             'distribution_target_id',
             'per_unit',
             'distribution_unit',
@@ -61,7 +62,7 @@ class ProjectTechnologyController extends Controller
           ])
         );
 
-        $result = $project->fresh()->technologies()->wherePivot('technology_id', $idt)->get();
+        $result = $project->fresh()->technologies()->wherePivot('id', $pivotID)->get();
         return ProjectTechnologyEditResource::collection($result);
     }
 }

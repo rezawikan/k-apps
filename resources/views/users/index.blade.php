@@ -27,7 +27,7 @@
                     </span>
                   @if  (request('q'))
                   <span class="input-group-btn">
-                          <a href="{{ route('technology.index') }}" class="btn">Reset</a>
+                          <a href="{{ route('users.index') }}" class="btn">Reset</a>
                       </span>
                   @endif
                 </div>
@@ -46,7 +46,7 @@
                   <th data-sort-ignore="true">Full Name</th>
                   <th data-sort-ignore="true" data-hide="phone,tablet">Email</th>
                   <th data-sort-ignore="true" data-hide="phone,tablet">Company</th>
-                  @can(['edit  user','delete user'])
+                  @can(['edit user','delete user'])
                   <th data-sort-ignore="true" data-hide="phone">Action</th>
                   @endcan
                 </tr>
@@ -57,15 +57,15 @@
                   <td>{{ $value->full_name}}</td>
                   <td>{{ $value->email }}</td>
                   <td>{{ $value->entity }}</td>
-                  @can(['edit  user','delete user'])
+                  @can(['edit user','delete user'])
                   <td>
                     <form class="" action="{{ route('users.destroy', ['id' => $value->id]) }}" method="POST">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
-                      @can('edit  user')
+                      @can('edit user')
                       <a href="{{ route('users.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
                       @endcan
-                      @can('delete  user')
+                      @can('delete user')
                       <input type="submit" value="Delete"class="btn btn-primary btn-xs">
                       @endcan
                     </form>

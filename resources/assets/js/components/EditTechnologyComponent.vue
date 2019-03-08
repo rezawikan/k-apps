@@ -86,9 +86,7 @@ export default {
   },
   methods: {
     currentTechnology() {
-      console.log(this.$route.params.idt);
-      console.log(this.$route.params.idp);
-      axios.get("/api/project-technology/"+this.$route.params.idp+"/"+this.$route.params.idt+"/list")
+      axios.get("/api/project-technology/"+this.$route.params.idp+"/"+this.$route.params.pivotID+"/list")
         .then(response => {
           console.log(response);
           this.current = response.data.data[0]
@@ -138,7 +136,9 @@ export default {
       }
     },
     updateTechnology() {
-      axios.put("/api/project-technology/"+this.$route.params.idp+"/"+this.$route.params.idt+"/update", {
+      axios.put("/api/project-technology/"+this.$route.params.idp+"/"+this.$route.params.pivotID+"/update", {
+          current_tech_id: this.current.technology.id,
+          technology_id: this.technology_id.id,
           distribution_target_id: this.distribution_target_id,
           per_unit: this.per_unit,
           distribution_unit: this.distribution_unit,
@@ -146,6 +146,7 @@ export default {
           year: this.year
         })
         .then(function(response) {
+          console.log(response.data);
           console.log(response.data.data[0]);
           window.location = "/impact-tracker/"+response.data.data[0].project_id+"/view";
         })

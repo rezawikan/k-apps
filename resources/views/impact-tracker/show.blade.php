@@ -63,11 +63,11 @@
                     <td>{{ $value->pivot->total_reach }}</td>
                     <td>{{ $value->pivot->year ?? '' }}</td>
                     <td>
-                      <form action="{{ route('impact-tracker-tech.destroy', ['id' => $project->id, 'idTech' => $value->pivot->technology_id]) }}" method="POST">
+                      <form action="{{ route('impact-tracker-tech.destroy', ['id' => $project->id, 'pivotID' => $value->pivot->id]) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         @can('edit technology on project')
-                          <a href="{{ route('impact-tracker-tech.edit',['id' => $project->id, 'pivot_id' => $value->pivot->technology_id]) }}" class="btn btn-primary btn-xs">Edit</a>
+                          <a href="{{ route('impact-tracker-tech.edit',['id' => $project->id, 'pivotID' => $value->pivot->id]) }}" class="btn btn-primary btn-xs">Edit</a>
                         @endcan
                         @can('delete technology on project')
                           <input type="submit" value="Delete" class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete technology {{$value->name}}">

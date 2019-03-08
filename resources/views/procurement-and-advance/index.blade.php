@@ -8,7 +8,7 @@
     <div class="col-md-12">
       <div class="ibox-content">
         <h2><i class="fa fa-file-text-o"></i> Procurement</h2>
-        <p>For the process on how to use & submit the forms below, Please see section 2 for procurement of the <a href="https://docs.google.com/document/d/1d3warAg9UHyielvPV5nCv1ENDGA1v7y3O06VaWnCgf8/edit?usp=sharing">operations manual</a></p>
+        <p>For the process on how to use & submit the forms below, Please see section 2 for procurement of the <a href="https://docs.google.com/document/d/1Pmq0GKE4ehp2Fd6sL9F-BikRzSKJATPn2AP31quckI8/edit?usp=sharing" target="_blank">operations manual</a></p>
         <div class="row">
           <div class="col-md-4">
             <div class="ibox-content">
@@ -64,7 +64,7 @@
                 <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
                   <div class="m-b-md">
                     <i class="fa fa-file-text-o fa-3x"></i>
-                    <h3 class="m-xs">Procurment Request Forms</h3>
+                    <h3 class="m-xs">Procurement Request Forms</h3>
                   </div>
                 </div>
               </a>
@@ -113,6 +113,18 @@
                   <div class="m-b-md">
                     <i class="fa fa-file-text-o fa-3x"></i>
                     <h3 class="m-xs">Goods Received Note</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ibox-content">
+              <a href="https://docs.google.com/spreadsheets/d/1h8GtksKYQ11x_yPeRzDBJ1DNenq3iMR5dGn-pnivTn8/edit?usp=sharing" target="_blank">
+                <div class="widget yellow-bg p-lg text-center" style="margin-top: 0px;">
+                  <div class="m-b-md">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <h3 class="m-xs">Delegation of Authority</h3>
                   </div>
                 </div>
               </a>
@@ -296,7 +308,7 @@
     <div class="col-md-12">
       <div class="ibox-content">
         <h2><i class="fa fa-file-text-o"></i> Funds Advance</h2>
-        <p>For the process on how to use & submit the forms below, Please see section 1 for funds advance of the <a href="https://docs.google.com/document/d/1d3warAg9UHyielvPV5nCv1ENDGA1v7y3O06VaWnCgf8/edit?usp=sharing">operations manual</a></p>
+        <p>For the process on how to use & submit the forms below, Please see section 1 for funds advance of the <a href="https://docs.google.com/document/d/1Pmq0GKE4ehp2Fd6sL9F-BikRzSKJATPn2AP31quckI8/edit?usp=sharing" target="_blank">operations manual</a></p>
         <div class="row">
           {{-- <div class="col-md-4">
             <div class="ibox-content">

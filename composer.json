@@ -7,11 +7,10 @@
     "require": {
         "php": ">=7.0.0",
         "barryvdh/laravel-debugbar": "^3.1",
-        "chelout/laravel-relationship-events": "dev-master",
-        "fico7489/laravel-pivot": "*",
+        "fico7489/laravel-pivot": "^3.0",
         "fideloper/proxy": "~4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "5.6.*",
+        "laravel/framework": "5.8.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "maatwebsite/excel": "^3.1",
@@ -22,7 +21,7 @@
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
-        "phpunit/phpunit": "~6.0",
+        "phpunit/phpunit": "^7.5",
         "symfony/thanks": "^1.0"
     },
     "autoload": {

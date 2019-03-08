@@ -59,6 +59,8 @@ class UserController extends Controller
         $password = bcrypt('lastmile');
         $user = User::create(array_merge($request->except('photo'),['password' => $password]));
 
+        $user->roles()->attach($request->only('role'));
+
         return redirect()->route('users.index');
     }
 

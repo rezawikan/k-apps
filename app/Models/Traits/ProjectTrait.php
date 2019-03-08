@@ -68,4 +68,112 @@ trait ProjectTrait
         }
         return $result;
     }
+
+    /**
+    * Get the user's full name.
+    *
+    * @return string
+    */
+    public function getAdditionalTotalReachedAttribute()
+    {
+        $values = $this->technologies;
+
+        $string = 'total_reach';
+        $technology = request('technology') ?? [];
+        $techtype   = request('techtype') ?? [];
+        $year       = request('years') ?? [];
+
+        $values = $values->map(function ($value) use ($string, $technology, $techtype, $year) {
+            $value[$string] = 0;
+            if (!empty($technology) and !empty($techtype) and !empty($year)) { // T TT Y
+
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (empty($technology) and empty($techtype) and empty($year)) { // !T !TT !Y
+                $value[$string] += $value['pivot'][$string];
+            } elseif (empty($technology) and !empty($techtype) and !empty($year)) { // !T TT Y
+                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
+                if (in_array($value['name'], $this->convertToTitleCase($technology))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (empty($technology) and empty($techtype) and !empty($year)) { // !T !TT Y
+                // dd($year);
+                if (in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (!empty($technology) and !empty($techtype) and empty($year)) { // T TT !Y
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (!empty($technology) and empty($techtype) and !empty($year)) { // T !TT Y
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (empty($technology) and !empty($techtype) and empty($year)) { // !T TT !Y
+                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            }
+            return $value[$string];
+        }, $values);
+
+        return array_sum($values->toArray());
+    }
+
+    /**
+    * Get the user's full name.
+    *
+    * @return string
+    */
+    public function getAdditionalTotalDistributedAttribute()
+    {
+        $values = $this->technologies;
+        $string = 'distribution_unit';
+        $technology = request('technology') ?? [];
+        $techtype   = request('techtype') ?? [];
+        $year       = request('years') ?? [];
+
+        $values = $values->map(function ($value) use ($string, $technology, $techtype, $year) {
+            $value[$string] = 0;
+            if (!empty($technology) and !empty($techtype) and !empty($year)) { // T TT Y
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (empty($technology) and empty($techtype) and empty($year)) { // !T !TT !Y
+                $value[$string] += $value['pivot'][$string];
+            } elseif (empty($technology) and !empty($techtype) and !empty($year)) { // !T TT Y
+                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
+                if (in_array($value['name'], $this->convertToTitleCase($technology))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (empty($technology) and empty($techtype) and !empty($year)) { // !T !TT Y
+
+                if (in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (!empty($technology) and !empty($techtype) and empty($year)) { // T TT !Y
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (!empty($technology) and empty($techtype) and !empty($year)) { // T !TT Y
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            } elseif (empty($technology) and !empty($techtype) and empty($year)) { // !T TT !Y
+                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                    $value[$string] += $value['pivot'][$string];
+                }
+            }
+            return $value[$string];
+        }, $values);
+
+        return array_sum($values->toArray());
+    }
 }

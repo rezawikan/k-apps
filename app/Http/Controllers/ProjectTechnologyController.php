@@ -96,7 +96,9 @@ class ProjectTechnologyController extends Controller
     public function update(ProjectTechnologyRequest $request, $id, $pivotID)
     {
         $project  = Project::findOrFail($id);
-        $project->technologies()->updateExistingPivot($pivotID, $request->only([
+        $project->technologies()->updateExistingPivot(
+            $pivotID,
+            $request->only([
             'technology_id',
             'distribution_target_id',
             'per_unit',
@@ -115,11 +117,10 @@ class ProjectTechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, $techID)
+    public function destroy($id, $pivotID)
     {
-
         $project  = Project::findOrFail($id);
-        $project->technologies()->detach($techID);
+        $project->technologies()->wherePivot('id', $pivotID)->detach();
 
         return redirect()->route('impact-tracker.show', ['id' => $id]);
     }

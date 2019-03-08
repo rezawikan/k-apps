@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\ViewComposer\ProjectFiltersComposer;
 use App\Http\ViewComposer\ProjectCalculationsComposer;
+use App\Http\ViewComposer\RolesComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,6 +28,8 @@ class ComposerServiceProvider extends ServiceProvider
           'impact-tracker.index',
           'home',
         ], ProjectCalculationsComposer::class);
+
+        View::composer(['users.create','users.edit'],RolesComposer::class);
     }
 
     /**

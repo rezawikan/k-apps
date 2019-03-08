@@ -13,9 +13,9 @@
 
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('default');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
     Route::get('impact-tracker/export/project', 'ProjectController@export_project')->name('impact-tracker.export_project');
     Route::get('impact-tracker/export/technology', 'ProjectController@export_technology')->name('impact-tracker.export_technology');
@@ -70,11 +70,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/impact-tracker/{id}/store', 'ProjectTechnologyController@store')->name('impact-tracker-tech.store');
     });
     Route::group(['middleware' => 'role:administrator,edit technology on project'], function () {
-        Route::get('/impact-tracker/{id}/{idTech}/edit', 'ProjectTechnologyController@edit')->name('impact-tracker-tech.edit');
-        Route::put('/impact-tracker/{id}/{idTech}/update', 'ProjectTechnologyController@update')->name('impact-tracker-tech.update');
+        Route::get('/impact-tracker/{id}/{pivotID}/edit', 'ProjectTechnologyController@edit')->name('impact-tracker-tech.edit');
+        Route::put('/impact-tracker/{id}/{pivotID}/update', 'ProjectTechnologyController@update')->name('impact-tracker-tech.update');
     });
     Route::group(['middleware' => 'role:administrator,delete technology on project'], function () {
-        Route::delete('/impact-tracker/{id}/{idTech}/delete', 'ProjectTechnologyController@destroy')->name('impact-tracker-tech.destroy');
+        Route::delete('/impact-tracker/{id}/{pivotID}/delete', 'ProjectTechnologyController@destroy')->name('impact-tracker-tech.destroy');
     });
 
     Route::group(['middleware' => 'role:administrator,manage project'], function () {
