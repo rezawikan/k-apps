@@ -42,6 +42,8 @@ class OfficerController extends Controller
           'name' => ['required','unique:officers,name']
         ]);
 
+        // dd($request->all());
+
         $officers = Officer::create($request->all());
 
         return redirect()->route('officer.index');

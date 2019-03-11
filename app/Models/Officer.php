@@ -14,14 +14,14 @@ class Officer extends Model
      */
     protected $fillable = ['name'];
 
-    // /**
-    //   * Bootstrap any application services.
-    //   *
-    //   * @return void
-    //   */
-    // public static function boot()
-    // {
-    //     parent::boot();
-    //     self::observe(OfficerObserver::class);
-    // }
+    /**
+      * Bootstrap any application services.
+      *
+      * @return void
+      */
+    public static function boot()
+    {
+        parent::boot();
+        self::observe(OfficerObserver::class);
+    }
 }

@@ -27,7 +27,7 @@ class OfficerObserver
      * @param  Category  $categories
      * @return void
      */
-    public function created(Officer $mode)
+    public function created(Officer $model)
     {
         $logs = $this->createLog('Officer', $model->name, auth()->user()->email);
         Log::create($logs);
@@ -39,7 +39,7 @@ class OfficerObserver
      * @param  Category  $categories
      * @return void
      */
-    public function updated(Officer $mode)
+    public function updated(Officer $model)
     {
         $logs = $this->updateLog('Officer', $model->getOriginal('name'), $model->name, auth()->user()->email);
         Log::create($logs);
@@ -51,7 +51,7 @@ class OfficerObserver
      * @param  Category  $categories
      * @return void
      */
-    public function deleted(Officer $mode)
+    public function deleted(Officer $model)
     {
         $logs = $this->deleteLog('Officer', $model->name, auth()->user()->email);
         Log::create($logs);
