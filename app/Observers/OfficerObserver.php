@@ -29,7 +29,7 @@ class OfficerObserver
      */
     public function created(Officer $model)
     {
-        $logs = $this->createLog('Officer', $model->name, auth()->user()->email);
+        $logs = $this->createLog('Officer', ['name' => $model->name], auth()->user()->email);
         Log::create($logs);
     }
 
@@ -41,7 +41,7 @@ class OfficerObserver
      */
     public function updated(Officer $model)
     {
-        $logs = $this->updateLog('Officer', $model->getOriginal('name'), $model->name, auth()->user()->email);
+        $logs = $this->updateLog('Officer', ['name' => $model->getOriginal('name')] ,['name' => $model->name], auth()->user()->email);
         Log::create($logs);
     }
 
@@ -53,7 +53,7 @@ class OfficerObserver
      */
     public function deleted(Officer $model)
     {
-        $logs = $this->deleteLog('Officer', $model->name, auth()->user()->email);
+        $logs = $this->deleteLog('Officer', ['name' => $model->name], auth()->user()->email);
         Log::create($logs);
     }
 }
