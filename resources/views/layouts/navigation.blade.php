@@ -40,6 +40,9 @@
       <li class="{{ isActiveRoute(['manage/officer','manage/distribution-target','manage/funding-type','manage/price-type','manage/project-type','manage/technology','manage/technology-type','manage/technology-rules']) }}">
         <a href="#"><i class="fa fa-shopping-cart"></i><span class="nav-label">Manage</span><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level collapse">
+          <li class="{{ isActiveRoute('manage/officer') }}"><a href="{{ route('officer.index') }}" title="Officer">Officer</a></li>
+        </ul>
+        <ul class="nav nav-second-level collapse">
           <li class="{{ isActiveRoute('manage/funding-type') }}"><a href="{{ route('funding-type.index') }}" title="Funding Type">Funding Type</a></li>
         </ul>
         <ul class="nav nav-second-level collapse">

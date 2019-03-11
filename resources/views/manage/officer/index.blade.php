@@ -39,7 +39,7 @@
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
                         <a href="{{ route('officer.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
-                        <input type="submit" value="Delete"class="btn btn-primary btn-xs">
+                        <input type="submit" value="Delete"class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete officer {{strtolower($value->name)}}">
                         </form>
                       </td>
                     </tr>
@@ -62,3 +62,34 @@
     </div>
   </div>
 @endsection
+
+@push('b-scripts')
+<!-- Page-Level Scripts -->
+<script>
+  $(document).ready(function() {
+    $('.js-submit-confirm').click(function(e) {
+      e.preventDefault();
+
+      console.log('testing');
+
+      var $form = $(this).closest('form')
+      var $el = $(this)
+      var text = $el.data('confirm-message') ? $el.data('confirm-message') : "You will delete this data"
+
+      swal({
+        title: 'Are you sure?',
+        text: text,
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          $form.submit()
+        }
+      })
+    })
+  })
+  </script>
+@endpush

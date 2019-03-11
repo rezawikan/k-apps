@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TechnologyType;
+use App\Models\TechnologyRule;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\TechnologyRulesRequest;
 use App\Http\Requests\TechnologyRulesEditRequest;
@@ -17,19 +18,11 @@ class TechnologyRulesController extends Controller
      */
     public function index(Request $request)
     {
-        $datas = TechnologyType::with('distribution_targets')->whereHas('distribution_targets')->get()->toArray();
-        $results = [];
-        foreach ($datas as $values) {
-            foreach ($values['distribution_targets'] as $key => $value) {
-                $results[] = [
-                'id' => $value['pivot']['id'],
-                'type' => $values['name'],
-                'target' => $value['name'],
-                'multiplier' => $value['pivot']['multiplier'],
-              ];
-            }
+        $results = TechnologyRule::latest()->paginate(15);
+        if ($request->only('q')) {
+            $results = TechnologyRule::where('name', 'LIKE', '%'.$request->q.'%')->latest()->paginate(15);
         }
-        // dd($results);
+
         return view('manage.technology-rules.index')->with(compact('results'));
     }
 
@@ -52,8 +45,7 @@ class TechnologyRulesController extends Controller
      */
     public function store(TechnologyRulesRequest $request)
     {
-        $technology_type = TechnologyType::find($request->technology_type_id);
-        $technology_type->distribution_targets()->attach($request->distribution_target_id, ['multiplier' => $request->multiplier]);
+        $technology_type = TechnologyRule::create($request->all());
 
         return redirect()->route('technology-rules.index');
     }
@@ -66,7 +58,7 @@ class TechnologyRulesController extends Controller
      */
     public function edit($id)
     {
-        $data = DB::table('technology_rules')->where('id', $id)->first();
+        $data = TechnologyRule::where('id', $id)->first();
         return view('manage.technology-rules.edit')->with(compact('data'));
     }
 
@@ -79,11 +71,10 @@ class TechnologyRulesController extends Controller
      */
     public function update(TechnologyRulesEditRequest $request, $id)
     {
-        dd($request->all());
-        $data = Technology::findOrFail($id);
+        $data = TechnologyRule::findOrFail($id);
         $data->update($request->all());
 
-        return redirect()->route('technology.index');
+        return redirect()->route('technology-rules.index');
     }
 
     /**
@@ -94,7 +85,7 @@ class TechnologyRulesController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('technology_rules')->delete($id);
+        TechnologyRule::find($id)->delete();
 
         return redirect()->route('technology-rules.index');
     }

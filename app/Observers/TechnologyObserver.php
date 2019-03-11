@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Technology;
+use App\Models\TechnologyType;
 use App\Models\Log;
 use App\Traits\Log\Logs;
 
@@ -29,7 +30,7 @@ class TechnologyObserver
     {
         $data = [
           'name' => $model->name,
-          'type' => $model->type
+          'type' => $model->technology_types->name
         ];
         $logs = $this->createLog('Technology', $data, auth()->user()->email);
         Log::create($logs);
@@ -45,12 +46,12 @@ class TechnologyObserver
     {
         $old = [
         'name' => $model->getOriginal('name'),
-        'type' => $model->getOriginal('type')
+        'type' => TechnologyType::find($model->getOriginal('technology_types_id'))->name
       ];
 
         $new = [
         'name' => $model->name,
-        'type' => $model->type
+        'type' => TechnologyType::find($model->technology_types_id)->name
       ];
 
         $logs = $this->updateLog('Technology', $old, $new, auth()->user()->email);
@@ -67,7 +68,7 @@ class TechnologyObserver
     {
         $data = [
         'name' => $model->name,
-        'type' => $model->type
+        'type' => $model->technology_types->name
         ];
 
         $logs = $this->deleteLog('Technology', $data, auth()->user()->email);
