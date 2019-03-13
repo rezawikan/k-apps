@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="og:title" content="K-Apps"/>
+    <meta name="og:title" content="{{ config('app.name') }}"/>
     <meta name="og:description" content="Internal System of Kopernik"/>
     <meta name="author" content="Mochammad Rezza Wikandito, reza.wikan.dito@gmail.com">
     <meta name="owner" content="Kopernik (NGO)">
