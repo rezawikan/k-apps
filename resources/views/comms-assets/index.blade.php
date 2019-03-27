@@ -14,19 +14,22 @@
               <div>
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="https://docs.google.com/document/d/1LLZNeQTL0i-74-mM4vpuqlgFkRQJ7fV9MmBMTmBVwGo/edit?usp=sharing" target="_blank">Kopernik Core Messaging (EN)</a>
+                    <a href="https://drive.google.com/open?id=1oPNBwynKIaGBK6l5rHMdBdAYWehZMeIRpHVU8mudo-4" target="_blank">Core Messaging</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://docs.google.com/document/d/1WzYlBvFFchIpsW27HoTKNhECmgiUMNMqMj34aETHYhg/edit?usp=sharing" target="_blank">Kopernik Panduan Pesan Utama (IN)</a>
+                    <a href="https://drive.google.com/open?id=1lc4L9CpfvAblql-XTselS83lL3WDPQwKJjV7b1WNDZw" target="_blank">Panduan Pesan Utama</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1ASN3fMPOjnI90__g1VRp4CNH_rAfhOYO/view?usp=sharing" target="_blank">Kopernik brand guideline</a>
+                    <a href="https://drive.google.com/open?id=1PSYT8aarq0NWH5xX9EhCgJYTFY8SNH3LYCuSj_sOJCs" target="_blank">Writing Style Guide</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/drive/folders/164SABK4Nsv1gxH656kKJmOZ8idSVELV5?usp=sharing" target="_blank">Letter Head</a>
+                    <a href="https://drive.google.com/drive/folders/1SdMOcQhC4bg189FAs-onpfOlqeLFj1RO?usp=sharing" target="_blank">Branding Guideline</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1fbqpKaWfgRtG_U910gaZw-HsrTpKWnG-/view" target="_blank">Multimedia Request</a>
+                    <a href="https://drive.google.com/open?id=16QcHU5pQEmuzgg0zNlkY48rklDvXsutl" target="_blank">Organization presentation deck</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="https://drive.google.com/drive/folders/1ZVLN9l-4cfxXAyV8UtYJshRx3lI4L7MD?usp=sharing" target="_blank">Photo Library</a>
                   </li>
                 </ul>
               </div>
@@ -44,13 +47,13 @@
                     <a href="https://drive.google.com/drive/folders/1Q9Fp-sYp7YjHySaIotEzjDeHUvBCyxCh?usp=sharing" target="_blank">Consent Form</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/open?id=0B0x_sLzkBrpHMXRjNDlkTkh6clE" target="_blank">Video</a>
+                    <a href="https://drive.google.com/drive/folders/164SABK4Nsv1gxH656kKJmOZ8idSVELV5?usp=sharing" target="_blank">Letterhead</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/drive/folders/16QcHU5pQEmuzgg0zNlkY48rklDvXsutl?usp=sharing" target="_blank">Kopernik organization profile stack</a>
+                    <a href="https://drive.google.com/file/d/1LD8QwSq9rB1aCGlnP2lFRaTdrqjNk82o/view?usp=sharing" target="_blank">Multimedia Request Form</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/drive/folders/1ZVLN9l-4cfxXAyV8UtYJshRx3lI4L7MD?usp=sharing" target="_blank">Photo Library</a>
+                    <a href="https://drive.google.com/drive/folders/19W6pq7ynOm3zzDCrbfkj-Bee4MmsO8N1?usp=sharing" target="_blank">Video</a>
                   </li>
                 </ul>
               </div>
