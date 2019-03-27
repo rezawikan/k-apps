@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Model;
 use App\Observers\PriceTypeObserver;
 
@@ -13,7 +14,7 @@ class PriceType extends Model
      * @var array
      */
     protected $fillable = ['name'];
-    
+
     /**
       * Bootstrap any application services.
       *
@@ -23,5 +24,10 @@ class PriceType extends Model
     {
         parent::boot();
         self::observe(PriceTypeObserver::class);
+    }
+
+    public function projects()
+    {
+      return $this->hasMany(Project::class);
     }
 }

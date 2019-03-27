@@ -30,7 +30,7 @@ class TechnologyObserver
     {
         $data = [
           'name' => $model->name,
-          'type' => $model->technology_types->name
+          'type' => $model->technology_type->name
         ];
         $logs = $this->createLog('Technology', $data, auth()->user()->email);
         Log::create($logs);
@@ -46,12 +46,12 @@ class TechnologyObserver
     {
         $old = [
         'name' => $model->getOriginal('name'),
-        'type' => TechnologyType::find($model->getOriginal('technology_types_id'))->name
+        'type' => TechnologyType::find($model->getOriginal('technology_type_id'))->name
       ];
 
         $new = [
         'name' => $model->name,
-        'type' => TechnologyType::find($model->technology_types_id)->name
+        'type' => TechnologyType::find($model->technology_type_id)->name
       ];
 
         $logs = $this->updateLog('Technology', $old, $new, auth()->user()->email);
@@ -68,7 +68,7 @@ class TechnologyObserver
     {
         $data = [
         'name' => $model->name,
-        'type' => $model->technology_types->name
+        'type' => $model->technology_type->name
         ];
 
         $logs = $this->deleteLog('Technology', $data, auth()->user()->email);

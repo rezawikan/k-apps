@@ -17,7 +17,7 @@ class TechnologyListResource extends JsonResource
         return [
           'id' => $this->id,
           'name' => $this->name,
-          'type' => $this->technology_types->id
+          'type' => $this->technology_type->id
         ];
     }
 }

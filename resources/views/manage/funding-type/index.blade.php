@@ -39,7 +39,8 @@
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
                         <a href="{{ route('funding-type.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
-                        <input type="submit" value="Delete"class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete funding type {{strtolower($value->name)}}">
+                        <input type="submit" value="Delete"class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete funding type {{strtolower($value->name)}}" {{count($value->projects) > 0 ? 'disabled' : ''}}>
+
                         </form>
                       </td>
                     </tr>

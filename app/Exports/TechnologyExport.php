@@ -39,7 +39,7 @@ class TechnologyExport implements FromView
         ->join('technologies', 'technologies.id', '=', 'project_technology.technology_id')
         ->join('distribution_targets', 'distribution_targets.id', '=', 'project_technology.distribution_target_id')
         ->join('project_types', 'projects.project_type_id', '=', 'project_types.id')
-        ->join('technology_types', 'technologies.technology_types_id', '=', 'technology_types.id')
+        ->join('technology_types', 'technologies.technology_type_id', '=', 'technology_types.id')
         ->join('price_types', 'projects.price_type_id', '=', 'price_types.id')
         ->join('countries', 'country_id', '=', 'countries.id')
         ->when($start_date, function ($query, $start_date) {

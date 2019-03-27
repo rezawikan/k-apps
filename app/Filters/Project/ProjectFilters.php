@@ -107,13 +107,13 @@ class ProjectFilters extends FiltersAbstract
             $project['total_reach'] = 0;
             foreach ($project['technologies'] as $value) {
                 if (!empty($technology) and !empty($techtype) and !empty($year)) { // T TT Y
-                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_types->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
+                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_type->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
                         $project['total_reach'] += $value['pivot']['total_reach'];
                     }
                 } elseif (empty($technology) and empty($techtype) and empty($year)) { // !T !TT !Y
                     $project['total_reach'] += $value['pivot']['total_reach'];
                 } elseif (empty($technology) and !empty($techtype) and !empty($year)) { // !T TT Y
-                    if (in_array($value->technology_types->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
+                    if (in_array($value->technology_type->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
                         $project['total_reach'] += $value['pivot']['total_reach'];
                     }
                 } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
@@ -126,7 +126,7 @@ class ProjectFilters extends FiltersAbstract
                         $project['total_reach'] += $value['pivot']['total_reach'];
                     }
                 } elseif (!empty($technology) and !empty($techtype) and empty($year)) { // T TT !Y
-                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_types->name, self::convertToTitleCase($techtype))) {
+                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_type->name, self::convertToTitleCase($techtype))) {
                         $project['total_reach'] += $value['pivot']['total_reach'];
                     }
                 } elseif (!empty($technology) and empty($techtype) and !empty($year)) { // T !TT Y
@@ -134,7 +134,7 @@ class ProjectFilters extends FiltersAbstract
                         $project['total_reach'] += $value['pivot']['total_reach'];
                     }
                 } elseif (empty($technology) and !empty($techtype) and empty($year)) { // !T TT !Y
-                    if (in_array($value->technology_types->name, self::convertToTitleCase($techtype))) {
+                    if (in_array($value->technology_type->name, self::convertToTitleCase($techtype))) {
                         $project['total_reach'] += $value['pivot']['total_reach'];
                     }
                 }
@@ -156,13 +156,13 @@ class ProjectFilters extends FiltersAbstract
             $project['distribution_unit'] = 0;
             foreach ($project['technologies'] as $value) {
                 if (!empty($technology) and !empty($techtype) and !empty($year)) { // T TT Y
-                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_types->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
+                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_type->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
                         $project['distribution_unit'] += $value['pivot']['distribution_unit'];
                     }
                 } elseif (empty($technology) and empty($techtype) and empty($year)) { // !T !TT !Y
                     $project['distribution_unit'] += $value['pivot']['distribution_unit'];
                 } elseif (empty($technology) and !empty($techtype) and !empty($year)) { // !T TT Y
-                    if (in_array($value->technology_types->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
+                    if (in_array($value->technology_type->name, self::convertToTitleCase($techtype)) and in_array($value['pivot']['year'], self::convertToTitleCase($year))) {
                         $project['distribution_unit'] += $value['pivot']['distribution_unit'];
                     }
                 } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
@@ -175,7 +175,7 @@ class ProjectFilters extends FiltersAbstract
                         $project['distribution_unit'] += $value['pivot']['distribution_unit'];
                     }
                 } elseif (!empty($technology) and !empty($techtype) and empty($year)) { // T TT !Y
-                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_types->name, self::convertToTitleCase($techtype))) {
+                    if (in_array($value['name'], self::convertToTitleCase($technology)) and in_array($value->technology_type->name, self::convertToTitleCase($techtype))) {
                         $project['distribution_unit'] += $value['pivot']['distribution_unit'];
                     }
                 } elseif (!empty($technology) and empty($techtype) and !empty($year)) { // T !TT Y
@@ -183,7 +183,7 @@ class ProjectFilters extends FiltersAbstract
                         $project['distribution_unit'] += $value['pivot']['distribution_unit'];
                     }
                 } elseif (empty($technology) and !empty($techtype) and empty($year)) { // !T TT !Y
-                    if (in_array($value->technology_types->name, self::convertToTitleCase($techtype))) {
+                    if (in_array($value->technology_type->name, self::convertToTitleCase($techtype))) {
                         $project['distribution_unit'] += $value['pivot']['distribution_unit'];
                     }
                 }

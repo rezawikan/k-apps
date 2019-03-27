@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Observers\TechnologyTypeObserver;
 use App\Models\DistributionTarget;
+use App\Models\Technology;
 
 class TechnologyType extends Model
 {
@@ -34,5 +35,13 @@ class TechnologyType extends Model
         return $this->belongsToMany(DistributionTarget::class,'technology_rules','technology_type_id','distribution_target_id')->withPivot([
           'multiplier','id'
         ]);
+    }
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function technologies()
+    {
+        return $this->hasMany(Technology::class);
     }
 }

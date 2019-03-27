@@ -14,7 +14,7 @@ class Technology extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','technology_types_id'];
+    protected $fillable = ['name','technology_type_id'];
 
 
     /**
@@ -41,9 +41,9 @@ class Technology extends Model
         return DistributionTarget::findOrFail($this->pivot->distribution_target_id);
     }
 
-    public function technology_types()
+    public function technology_type()
     {
-        return $this->belongsTo('App\Models\TechnologyType');
+        return $this->belongsTo(TechnologyType::class);
     }
 
 

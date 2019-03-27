@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const CreateTechnologyIndex = require('../components/CreateTechnologyComponent.vue')
-const EditTechnologyIndex = require('../components/EditTechnologyComponent.vue')
+const CreateTechnologyIndex = require('../components/CreateTechnologyComponent.vue').default
+const EditTechnologyIndex = require('../components/EditTechnologyComponent.vue').default
 
 const routes = [
     {

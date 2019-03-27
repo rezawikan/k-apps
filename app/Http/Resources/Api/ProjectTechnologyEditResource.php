@@ -18,7 +18,7 @@ class ProjectTechnologyEditResource extends JsonResource
           'technology' => [
             'id' => $this->id,
             'name' => $this->name,
-            'type' => $this->technology_types_id
+            'type' => $this->technology_type_id
           ],
           'project_id' => $this->pivot->project_id,
           'pivot_id' => $this->pivot->id,

@@ -25,7 +25,7 @@ class TechnologyTypeFilter extends FilterAbstract
             return $builder;
         }
 
-        $builder->whereHas('technologies.technology_types', function (Builder $builder) use ($value) {
+        $builder->whereHas('technologies.technology_type', function (Builder $builder) use ($value) {
             $builder->whereIn('slug', $value);
         });
     }

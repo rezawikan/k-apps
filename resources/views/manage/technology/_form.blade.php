@@ -12,9 +12,9 @@
   <label class="col-lg-2 control-label">Technology Type</label>
   <div class="col-lg-10">
 
-    <select name="technology_types_id" class="form-control">
+    <select name="technology_type_id" class="form-control">
       @foreach ($techtype as $value)
-        @if ($value['id'] == ($data->technology_types_id ?? ''))
+        @if ($value['id'] == ($data->technology_type_id ?? ''))
           <option value="{{ $value['id'] }}" selected>{{ $value['name'] }}</option>
         @else
           <option value="{{ $value['id'] }}">{{ $value['name'] }}</option>

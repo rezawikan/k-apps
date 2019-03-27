@@ -89,4 +89,4 @@ class Project extends Model
     }
 }
 
- // {\"id\":2,\"name\":\"Ubs\",\"slug\":\"ubs\",\"technology_types_id\":7,\"created_at\":\"2018-04-04 08:00:00\",\"updated_at\":\"2018-07-04 14:04:01\",\"total_reach\":75816,\"distribution_unit\":324,\"pivot\":{\"project_id\":205,\"technology_id\":2,\"id\":713,\"per_unit\":234,\"distribution_unit\":324,\"total_reach\":75816,\"year\":234,\"distribution_target_id\":1}},
+ // {\"id\":2,\"name\":\"Ubs\",\"slug\":\"ubs\",\"technology_type_id\":7,\"created_at\":\"2018-04-04 08:00:00\",\"updated_at\":\"2018-07-04 14:04:01\",\"total_reach\":75816,\"distribution_unit\":324,\"pivot\":{\"project_id\":205,\"technology_id\":2,\"id\":713,\"per_unit\":234,\"distribution_unit\":324,\"total_reach\":75816,\"year\":234,\"distribution_target_id\":1}},

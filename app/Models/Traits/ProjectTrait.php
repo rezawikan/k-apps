@@ -87,13 +87,13 @@ trait ProjectTrait
             $value[$string] = 0;
             if (!empty($technology) and !empty($techtype) and !empty($year)) { // T TT Y
 
-                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_type->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (empty($technology) and empty($techtype) and empty($year)) { // !T !TT !Y
                 $value[$string] += $value['pivot'][$string];
             } elseif (empty($technology) and !empty($techtype) and !empty($year)) { // !T TT Y
-                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                if (in_array($value->technology_type->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
@@ -106,7 +106,7 @@ trait ProjectTrait
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (!empty($technology) and !empty($techtype) and empty($year)) { // T TT !Y
-                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_type->name, $this->convertToTitleCase($techtype))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (!empty($technology) and empty($techtype) and !empty($year)) { // T !TT Y
@@ -114,7 +114,7 @@ trait ProjectTrait
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (empty($technology) and !empty($techtype) and empty($year)) { // !T TT !Y
-                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                if (in_array($value->technology_type->name, $this->convertToTitleCase($techtype))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             }
@@ -140,13 +140,13 @@ trait ProjectTrait
         $values = $values->map(function ($value) use ($string, $technology, $techtype, $year) {
             $value[$string] = 0;
             if (!empty($technology) and !empty($techtype) and !empty($year)) { // T TT Y
-                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_type->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (empty($technology) and empty($techtype) and empty($year)) { // !T !TT !Y
                 $value[$string] += $value['pivot'][$string];
             } elseif (empty($technology) and !empty($techtype) and !empty($year)) { // !T TT Y
-                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
+                if (in_array($value->technology_type->name, $this->convertToTitleCase($techtype)) and in_array($value['pivot']['year'], $this->convertToTitleCase($year))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (!empty($technology) and empty($techtype) and empty($year)) { // T !TT !Y
@@ -159,7 +159,7 @@ trait ProjectTrait
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (!empty($technology) and !empty($techtype) and empty($year)) { // T TT !Y
-                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                if (in_array($value['name'], $this->convertToTitleCase($technology)) and in_array($value->technology_type->name, $this->convertToTitleCase($techtype))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (!empty($technology) and empty($techtype) and !empty($year)) { // T !TT Y
@@ -167,7 +167,7 @@ trait ProjectTrait
                     $value[$string] += $value['pivot'][$string];
                 }
             } elseif (empty($technology) and !empty($techtype) and empty($year)) { // !T TT !Y
-                if (in_array($value->technology_types->name, $this->convertToTitleCase($techtype))) {
+                if (in_array($value->technology_type->name, $this->convertToTitleCase($techtype))) {
                     $value[$string] += $value['pivot'][$string];
                 }
             }

@@ -56,7 +56,7 @@
                 @foreach ($technology as $value)
                   <tr>
                     <td>{{ $value->name }}</td>
-                    <td>{{ $value->technology_types->name }}</td>
+                    <td>{{ $value->technology_type->name }}</td>
                     <td>{{ $value->distribution_target()->name }}</td>
                     <td>{{ $value->pivot->distribution_unit }}</td>
                     <td>{{ $value->pivot->per_unit }}</td>

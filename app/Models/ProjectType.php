@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Observers\ProjectTypeObserver;
+use App\Models\Project;
 
 class ProjectType extends Model
 {
@@ -28,8 +29,8 @@ class ProjectType extends Model
     /**
        * Get the Project Type record associated with the projects.
        */
-    public function project_type()
+    public function projects()
     {
-        return $this->hasOne('App\Models\Project');
+        return $this->hasMany(Project::class);
     }
 }

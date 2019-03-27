@@ -17,7 +17,7 @@ class CreateTechnologiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->int('technology_types_id')->unsigned();
+            $table->integer('technology_type_id')->unsigned();
             $table->timestamps();
         });
     }

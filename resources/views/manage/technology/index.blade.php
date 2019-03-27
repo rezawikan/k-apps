@@ -50,7 +50,7 @@
                 @forelse  ($technologies as $key => $value)
                 <tr>
                   <td>{{ $value->name}}</td>
-                  <td>{{ $value->technology_types->name }}</td>
+                  <td>{{ $value->technology_type->name }}</td>
                   <td>{{ $value->updated_at }}</td>
                   <td>{{ $value->created_at}}</td>
                   <td>
@@ -58,7 +58,7 @@
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
                       <a href="{{ route('technology.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
-                      <input type="submit" value="Delete"class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete technology  {{strtolower($value->name)}}">
+                      <input type="submit" value="Delete"class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete technology  {{strtolower($value->name)}}" {{count($value->projects) > 0 ? 'disabled' : ''}}>
                     </form>
                   </td>
                 </tr>
