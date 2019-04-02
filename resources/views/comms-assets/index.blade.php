@@ -26,7 +26,7 @@
                     <a href="https://drive.google.com/drive/folders/1SdMOcQhC4bg189FAs-onpfOlqeLFj1RO?usp=sharing" target="_blank">Branding Guideline</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/open?id=16QcHU5pQEmuzgg0zNlkY48rklDvXsutl" target="_blank">Organization presentation deck</a>
+                    <a href="https://drive.google.com/open?id=16QcHU5pQEmuzgg0zNlkY48rklDvXsutl" target="_blank">Organization Presentation Deck</a>
                   </li>
                   <li class="list-group-item">
                     <a href="https://drive.google.com/drive/folders/1ZVLN9l-4cfxXAyV8UtYJshRx3lI4L7MD?usp=sharing" target="_blank">Photo Library</a>
