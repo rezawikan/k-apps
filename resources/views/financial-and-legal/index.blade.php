@@ -42,6 +42,19 @@
               </ul>
             </div>
           </div>
+          <div class="col-lg-6">
+            <h3>General</h3>
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a href="https://drive.google.com/open?id=1kgL3Z0Wnt8p2sON8kre_aUnZ6NUaI-wPoEremt5IxVc" target="_blank">Exchange Rate List</a>
+                </li>
+                <li class="list-group-item">
+                  &nbsp;
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
