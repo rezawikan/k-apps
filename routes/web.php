@@ -116,4 +116,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('comms-assets', function () {
         return view('comms-assets.index');
     })->name('comms-assets.index');
+    Route::get('administrative-templates', function () {
+        return view('administrative-templates.index');
+    })->name('administrative-templates.index');
 });

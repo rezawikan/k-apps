@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',  'Project Trash')
+@section('title', 'Project Trash')
 
 @section('content')
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -24,7 +24,7 @@
               </thead>
               <tbody>
 
-                @foreach  ($projects as $key => $value)
+                @foreach ($projects as $key => $value)
                 <tr>
                   <td>{{ $value->project_name }}</td>
                   <td>{{ $value->project_type->name }}</td>
@@ -35,13 +35,13 @@
                     <form action="{{ route('project-trash.destroy', ['id' => $value->id]) }}" method="POST">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
-                        <input type="submit" value="Delete" class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete project forever {{$value->name}}">
+                      <input type="submit" value="Delete" class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be delete project forever {{$value->name}}">
                     </form>
 
                     <form action="{{ route('project-trash.restore', ['id' => $value->id]) }}" method="POST">
                       {{ csrf_field() }}
                       {{ method_field('PUT') }}
-                        <input type="submit" value="Restore" class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be restore project on impact tracker {{$value->name}}">
+                      <input type="submit" value="Restore" class="btn btn-primary btn-xs js-submit-confirm data" data-confirm-message="You will be restore project on impact tracker {{$value->name}}">
                     </form>
                   </td>
                 </tr>
@@ -98,6 +98,5 @@
       })
     })
   });
-
 </script>
 @endpush

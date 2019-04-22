@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',  'Procurement & Advance')
+@section('title', 'Procurement & Advance')
 
 @section('content')
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -8,7 +8,8 @@
     <div class="col-md-12">
       <div class="ibox-content">
         <h2><i class="fa fa-file-text-o"></i> Procurement</h2>
-        <p>For the process on how to use & submit the forms below, Please see section 2 for procurement of the <a href="https://docs.google.com/document/d/1Pmq0GKE4ehp2Fd6sL9F-BikRzSKJATPn2AP31quckI8/edit?usp=sharing" target="_blank">operations manual</a></p>
+        <p>For the process on how to use & submit the forms below, Please see section 2 for procurement of the <a href="https://docs.google.com/document/d/1Pmq0GKE4ehp2Fd6sL9F-BikRzSKJATPn2AP31quckI8/edit?usp=sharing" target="_blank">operations
+            manual</a></p>
         <div class="row">
           <div class="col-md-4">
             <div class="ibox-content">
@@ -114,7 +115,8 @@
     <div class="col-md-12">
       <div class="ibox-content">
         <h2><i class="fa fa-file-text-o"></i> Funds Advance</h2>
-        <p>For the process on how to use & submit the forms below, Please see section 1 for funds advance of the <a href="https://docs.google.com/document/d/1Pmq0GKE4ehp2Fd6sL9F-BikRzSKJATPn2AP31quckI8/edit?usp=sharing" target="_blank">operations manual</a></p>
+        <p>For the process on how to use & submit the forms below, Please see section 1 for funds advance of the <a href="https://docs.google.com/document/d/1Pmq0GKE4ehp2Fd6sL9F-BikRzSKJATPn2AP31quckI8/edit?usp=sharing" target="_blank">operations
+            manual</a></p>
         <div class="row">
           <div class="col-md-4">
             <div class="ibox-content">

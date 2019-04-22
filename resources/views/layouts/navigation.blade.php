@@ -89,7 +89,10 @@
         <a href="{{ route('comms-assets.index') }}" title="Comms Assets"><i class="fa fa-picture-o"></i> <span class="nav-label">Comms Assets</span></a>
       </li>
       <li class="{{ isActiveRoute('users') }}">
-        <a href="{{ route('users.index') }}" title="K-Feedback"><i class="fa fa-comments"></i> <span class="nav-label">Users</span></a>
+        <a href="{{ route('users.index') }}" title="K-Feedback"><i class="fa fa-user-circle-o"></i> <span class="nav-label">Users</span></a>
+      </li>
+      <li class="{{ isActiveRoute('administrative-templates') }}">
+        <a href="{{ route('administrative-templates.index') }}" title="Administrative Templates"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Administrative Templates</span></a>
       </li>
       @can('view log')
       <li class="{{ isActiveRoute('log') }}">

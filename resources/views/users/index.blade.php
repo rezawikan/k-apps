@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',  'Users')
+@section('title', 'Users')
 
 @section('content')
 
@@ -9,7 +9,7 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <h5>Users</h5>
+          <h2><i class="fa fa-user-circle-o"></i> Users</h2>
           @can('create user')
           <div class="ibox-tools">
             <a href="{{ route('users.create') }}" class="btn btn-xs btn-primary">Add User</a>
@@ -23,12 +23,12 @@
                 <div class="input-group">
                   <input type="text" name="q" class="form-control" placeholder="Search by name" value="{{ request('q') }}">
                   <span class="input-group-btn">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </span>
-                  @if  (request('q'))
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </span>
+                  @if (request('q'))
                   <span class="input-group-btn">
-                          <a href="{{ route('users.index') }}" class="btn">Reset</a>
-                      </span>
+                    <a href="{{ route('users.index') }}" class="btn">Reset</a>
+                  </span>
                   @endif
                 </div>
               </div>
@@ -52,7 +52,7 @@
                 </tr>
               </thead>
               <tbody>
-                @forelse  ($users as $key => $value)
+                @forelse ($users as $key => $value)
                 <tr>
                   <td>{{ $value->full_name}}</td>
                   <td>{{ $value->email }}</td>
@@ -66,7 +66,7 @@
                       <a href="{{ route('users.edit',['id' => $value->id]) }}" class="btn btn-primary btn-xs">Edit</a>
                       @endcan
                       @can('delete user')
-                      <input type="submit" value="Delete"class="btn btn-primary btn-xs">
+                      <input type="submit" value="Delete" class="btn btn-primary btn-xs">
                       @endcan
                     </form>
                   </td>
@@ -74,7 +74,8 @@
                 </tr>
                 @empty
                 <tr>
-                  <td colspan="4" class="text-center"><h4>Not Found</h4>
+                  <td colspan="4" class="text-center">
+                    <h4>Not Found</h4>
                   </td>
                 </tr>
                 @endforelse

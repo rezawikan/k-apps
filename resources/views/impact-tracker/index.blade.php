@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',  'Impact Tracker')
+@section('title', 'Impact Tracker')
 
 @section('content')
 {{-- {{ dd($calculations) }} --}}
@@ -62,10 +62,10 @@
                 <div class="form-group">
                   <label class="control-label" for="year">Start Date</label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="start_date[]">
-                        @foreach ($mappings['filters']['start_date'] as $value)
-                            <option value="{{ $value['start_date'] }}" {{ convertSlug($value['start_date'], request('start_date')) }}>{{ $value['start_date'] }}</option>
-                        @endforeach
-                    </select>
+                    @foreach ($mappings['filters']['start_date'] as $value)
+                    <option value="{{ $value['start_date'] }}" {{ convertSlug($value['start_date'], request('start_date')) }}>{{ $value['start_date'] }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
@@ -76,20 +76,20 @@
                     @endcan
                   </label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="project_type[]">
-                        @foreach ($mappings['filters']['project_type'] as $value)
-                            <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('project_type')) }}>{{ $value['name'] }}</option>
-                        @endforeach
-                    </select>
+                    @foreach ($mappings['filters']['project_type'] as $value)
+                    <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('project_type')) }}>{{ $value['name'] }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
                 <div class="form-group">
                   <label class="control-label" for="country">Country</label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="country[]">
-                        @foreach ($mappings['filters']['countries'] as $value)
-                          <option value="{{  str_slug($value['code']) }}" {{ convertSlugPlus($value['code'], request('country')) }}>{{ $value['name'] }}</option>
-                        @endforeach
-                    </select>
+                    @foreach ($mappings['filters']['countries'] as $value)
+                    <option value="{{  str_slug($value['code']) }}" {{ convertSlugPlus($value['code'], request('country')) }}>{{ $value['name'] }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
@@ -100,11 +100,11 @@
                     @endcan
                   </label>
                   <select data-placeholder="Choose one" class="chosen-select" name="officer">
-                        <option value="">All</option>
-                          @foreach ($mappings['filters']['officer'] as $value)
-                            <option value="{{ str_slug($value['officer']) }}" {{ convertSlugSingle($value['officer'], request('officer')) }}>{{ $value['officer'] }}</option>
-                          @endforeach
-                    </select>
+                    <option value="">All</option>
+                    @foreach ($mappings['filters']['officer'] as $value)
+                    <option value="{{ str_slug($value['officer']) }}" {{ convertSlugSingle($value['officer'], request('officer')) }}>{{ $value['officer'] }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
@@ -115,10 +115,10 @@
                     @endcan
                   </label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="price_type[]">
-                        @foreach ($mappings['filters']['pricetype'] as $value)
-                          <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('price_type')) }}>{{ $value['name'] }}</option>
-                        @endforeach
-                    </select>
+                    @foreach ($mappings['filters']['pricetype'] as $value)
+                    <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('price_type')) }}>{{ $value['name'] }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
@@ -129,10 +129,10 @@
                     @endcan
                   </label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="technology[]">
-                        @foreach ($mappings['filters']['technologies'] as $value)
-                          <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('technology')) }}>{{ $value['name'] }}</option>
-                        @endforeach
-                    </select>
+                    @foreach ($mappings['filters']['technologies'] as $value)
+                    <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('technology')) }}>{{ $value['name'] }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
@@ -143,26 +143,26 @@
                     @endcan
                   </label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="techtype[]">
-                      @foreach ($mappings['filters']['techtype'] as $value)
-                        <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('techtype')) }}>{{ $value['name'] }}</option>
-                      @endforeach
-                    </select>
+                    @foreach ($mappings['filters']['techtype'] as $value)
+                    <option value="{{ str_slug($value['name']) }}" {{ convertSlugPlus($value['name'], request('techtype')) }}>{{ $value['name'] }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
                 <div class="form-group">
                   <label class="control-label" for="year">Year Technology</label>
                   <select data-placeholder="Choose one or more" class="chosen-select" multiple name="years[]">
-                        @foreach ($mappings['filters']['years'] as $value)
-                            <option value="{{ $value->year }}" {{ convertSlug($value->year, request('years')) }}>{{ $value->year }}</option>
-                        @endforeach
-                    </select>
+                    @foreach ($mappings['filters']['years'] as $value)
+                    <option value="{{ $value->year }}" {{ convertSlug($value->year, request('years')) }}>{{ $value->year }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
                 <div class="form-group">
                   <label class="control-label" for="price_type">Search</label>
-                    <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ request('search') }}">
+                  <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{ request('search') }}">
                 </div>
               </div>
               <div class="col-sm-4 col-xs-12 m-b-sm">
@@ -185,7 +185,7 @@
               </thead>
               <tbody>
 
-                @foreach  ($projects as $key => $value)
+                @foreach ($projects as $key => $value)
                 <tr>
                   <td>{{ $value->project_name }}</td>
                   <td>{{ $value->project_type->name }}</td>
@@ -228,6 +228,5 @@
     });
     $('.chosen-select').chosen();
   });
-
 </script>
 @endpush

@@ -9,7 +9,7 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <h5>Logging</h5>
+          <h2><i class="fa fa-history"></i> Log</h2>
         </div>
         <div class="ibox-content">
           <div class="row">
@@ -42,7 +42,7 @@
                         <td>&nbsp;{{ $ovv }}</td>
                       </tr>
                       @empty
-                        -
+                      -
                       @endforelse
                     </table>
                   </td>
@@ -56,7 +56,7 @@
                         <td>&nbsp;{{ $nvv }}</td>
                       </tr>
                       @empty
-                        -
+                      -
                       @endforelse
                     </table>
                   </td>
@@ -69,7 +69,7 @@
                         <td>&nbsp;{{ $dvv }}</td>
                       </tr>
                       @empty
-                        -
+                      -
                       @endforelse
                     </table>
                   </td>

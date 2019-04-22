@@ -6,7 +6,7 @@
 <div class="wrapper wrapper-content animated fadeInRight">
   <div class="row">
     <div class="col-lg-12">
-      <h2><i class="fa fa-cogs"></i>  KOPERNIK MANUAL, REGULATIONS, POLICIES & TEMPLATES</h2>
+      <h2><i class="fa fa-cogs"></i>  Kopernik Manual, Regulations, Policies & Templates</h2>
     </div>
   </div>
   <div class="row">

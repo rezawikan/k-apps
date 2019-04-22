@@ -21,7 +21,7 @@
                   <a href="https://drive.google.com/file/d/0B_ELp5gNCgJTR0hLSjA4aUNVdDRTOXBEQjV3c19hSTI2Q0tn/view?usp=sharing" target="_blank">Yayasan Kopernik Financial Report 2016</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="Audit report YK 2017">Yayasan Kopernik Financial Report 2017</a>
+                  <a href="#">Yayasan Kopernik Financial Report 2017</a>
                 </li>
               </ul>
             </div>
@@ -61,6 +61,9 @@
                 </li>
                 <li class="list-group-item">
                   <a href="https://docs.google.com/document/d/1KvIa56OthxGFfM5s3-kVbdqzyIZo2Nf-KwGqBMaaNwo/edit" target="_blank">TOR EN</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="https://drive.google.com/open?id=1jYfT9RdpQkEzpoPZBpKWnWp5hzcP0z6EQ3s_V_WvJVo" target="_blank">Partnership Agreement Template</a>
                 </li>
               </ul>
             </div>

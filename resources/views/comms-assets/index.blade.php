@@ -8,7 +8,7 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-content">
-          <h2><i class="fa fa-copyright"></i> Comms Assets</h2>
+          <h2><i class="fa fa-picture-o"></i> Comms Assets</h2>
           <div class="row">
             <div class="col-lg-6">
               <div>
@@ -67,7 +67,7 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-content">
-          <h2><i class="fa fa-file-image-o"></i> KOPERNIK PHOTOS STOCK</h2>
+          <h3><i class="fa fa-file-image-o"></i> KOPERNIK PHOTOS STOCK</h3>
           <div class="lightBoxGallery">
             <a href="assets/images/gallery/1.jpg" title="Image from Unsplash" data-gallery=""><img src="{{ asset('img/gallery/1s.jpg')}}"></a>
             <a href="assets/images/gallery/2.jpg" title="Image from Unsplash" data-gallery=""><img src="{{ asset('img/gallery/2s.jpg')}}"></a>

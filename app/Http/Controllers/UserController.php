@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -53,11 +54,20 @@ class UserController extends Controller
           'first_name' => 'required',
           'last_name'  => 'required',
           'dob'        => 'required',
-          'entity'     => 'required'
+          'entity'     => 'required',
         ]);
 
+        $data = $request->except('role');
+
+        if ($request->hasFile('photo')) {
+            $path = $request->photo->store('images');
+            $data['photo'] = $path;
+        } else {
+            $data['photo'] = 'images/default.png';
+        }
+
         $password = bcrypt('lastmile');
-        $user = User::create(array_merge($request->except('photo'),['password' => $password]));
+        $user = User::create(array_merge($data,['password' => $password]));
 
         $user->roles()->attach($request->only('role'));
 
@@ -100,11 +110,24 @@ class UserController extends Controller
           'first_name' => 'required',
           'last_name'  => 'required',
           'dob'        => 'required',
-          'entity'     => 'required'
+          'entity'     => 'required',
+          'role'       => 'required'
         ]);
 
-        $data = User::findOrFail($id);
-        $data->update($request->except('photo'));
+        $user = User::findOrFail($id);
+
+        $data = $request->except('role');
+
+        if ($request->hasFile('photo')) {
+            if ($user->photo && $user->photo != 'images/default.png') {
+                Storage::disk('public')->delete($user->photo);
+            }
+            $path = $request->photo->store('images');
+            $data['photo'] = $path;
+        }
+
+        $user->update($data);
+        $user->roles()->sync($request->only('role'));
 
         return redirect()->route('users.index');
     }

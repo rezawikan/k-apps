@@ -6,7 +6,7 @@
 <div class="wrapper wrapper-content animated fadeInRight">
   <div class="row">
     <div class="col-lg-12">
-      <h2><i class="fa fa-users"></i>Human Resources</h2>
+      <h3><i class="fa fa-users"></i> Human Resources</h3>
     </div>
   </div>
   <div class="row">
