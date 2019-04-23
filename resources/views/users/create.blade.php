@@ -31,7 +31,7 @@
                       </div>
                     </div>
                     <div class="col-lg-2">
-                      <span><img alt="image" class="img-circle img-sm" src="{{ asset('storage/'.auth()->user()->photo)}}"></span>
+                      <span><img alt="image" class="img-circle img-sm" src="{{ asset('storage/images/default.png')}}"></span>
                     </div>
                   </div>
                   <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">

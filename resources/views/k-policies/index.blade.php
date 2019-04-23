@@ -15,20 +15,29 @@
         <h3>Kopernik Policies</h3>
         <div>
           <ul class="list-group">
-            {{-- <li class="list-group-item">
-              <a href="https://drive.google.com/file/d/1oaLG6kVK8VpAgqC2wRVWEDOYDLdJ0-az/view?usp=sharing" target="_blank">Anti fraud and corruption for staff</a>
-            </li> --}}
             <li class="list-group-item">
-              <a href="https://drive.google.com/open?id=1r4Z2KZK-t9AxsLD6_5XABNfrThLeek7Z" target="_blank">Anti fraud and corruption</a>
+              <a href="https://drive.google.com/open?id=15ZobGJ-GoUyjPJEQpFGbFRO-0ASfmIrXXE5iLV30A2Q" target="_blank">Yayasan Kopernik - Workplace Discrimination & Harassment Policy</a>
             </li>
             <li class="list-group-item">
-              <a href="https://drive.google.com/open?id=1EJSBQ1yToTSv4aNLEADbstjbsbRYkKWK" target="_blank">Anti terrorism clause</a>
+              <a href="https://drive.google.com/open?id=1H2TZjhR7hFbPiPoxy_lO1wg-VLmhnMuBB8bYB5xyXBI" target="_blank">PT Kopernik - Workplace Discrimination & Harassment Policy</a>
             </li>
             <li class="list-group-item">
-              <a href="https://drive.google.com/open?id=1g5FZ3QBQo2PkHNnjiT64D9d8Qp7Na5nK" target="_blank">Child protection policy</a>
+              <a href="https://drive.google.com/open?id=1SMJtFcwKE-yBaUhItO6jfoohDLTZxfkcEg136iNmSao" target="_blank">Yayasan Kopernik - Anti Fraud and Anti Corruption Policy</a>
             </li>
             <li class="list-group-item">
-              <a href="https://drive.google.com/file/d/1_mK6utw4ZVLNie7v4nK_efotw5jGDd-2/view?usp=sharing" target="_blank">Workplace discrimination and harassment policy</a>
+              <a href="https://drive.google.com/open?id=19ZWeu3FnimIT_Wfz3X1XRVjz93i5y6x7C9WTjJKnIYU" target="_blank">PT Kopernik - Anti Fraud and Anti Corruption Policy</a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://drive.google.com/open?id=1DJt17QTFRJTKD29VWbSDojUB6FcPd9UREzQiAY65RHQ" target="_blank">Yayasan Kopernik - Anti Terrorism Policy</a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://drive.google.com/open?id=1DlbrNAyy0nFqvBLUtde5P9VAorwTxLN0LZqXI03Jfac" target="_blank">PT Kopernik - Anti Terrorism Policy</a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://drive.google.com/open?id=1o5yDoYTW9zEwB03kWp-8EocimZ5ZuB7eBtiGhxxtzYA" target="_blank">Yayasan Kopernik - Child Protection Policy</a>
+            </li>
+            <li class="list-group-item">
+              <a href="https://drive.google.com/open?id=1KZqJfa2BpMSMLcxtOlbRz7dmcMfcnwscH6olccg4eIU" target="_blank">PT Kopernik - Child Protection Policy </a>
             </li>
             <li class="list-group-item">
               &nbsp;
