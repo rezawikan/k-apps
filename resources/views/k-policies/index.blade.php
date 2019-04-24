@@ -53,11 +53,11 @@
           <div>
             <ul class="list-group">
               <li class="list-group-item">
-                <a href="https://drive.google.com/open?id=12VD0-Gc3AFfdl5aiHOp1savk6ueozfl_" target="_blank">Operation Manual (EN)</a>
+                <a href="https://drive.google.com/open?id=1xBRaLi2WXXECybvkZwVQdo0uR94n2AiWWbxHeYbgUh0" target="_blank">Yayasan Kopernik - Kopernik's Operations Manual</a>
               </li>
-              <li class="list-group-item">
+              {{-- <li class="list-group-item">
                 <a href="https://drive.google.com/open?id=18CGZBRNtWUgy5q1h7b2DOLxYfbVuQYUO" target="_blank">Panduan Operasional (ID)</a>
-              </li>
+              </li> --}}
             </ul>
           </div>
         </div>
