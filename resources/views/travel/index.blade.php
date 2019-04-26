@@ -8,7 +8,7 @@
     <div class="col-md-12">
       <div class="ibox-content">
         <h2><i class="fa fa-plane"></i> Travel</h2>
-        <p>For the process on how to use & submit the forms below, Please see section 3 of the <a href="https://docs.google.com/document/d/1d3warAg9UHyielvPV5nCv1ENDGA1v7y3O06VaWnCgf8/edit?usp=sharing">operations manual</a></p>
+        <p>For the process on how to use & submit the forms below, Please see section 3 of the <a href="https://drive.google.com/open?id=1xBRaLi2WXXECybvkZwVQdo0uR94n2AiWWbxHeYbgUh0" target="_blank">operations manual</a></p>
         <div class="row">
           <div class="col-md-4">
             <div class="ibox-content">
