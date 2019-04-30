@@ -55,9 +55,6 @@
               <li class="list-group-item">
                 <a href="https://drive.google.com/open?id=1xBRaLi2WXXECybvkZwVQdo0uR94n2AiWWbxHeYbgUh0" target="_blank">Yayasan Kopernik - Kopernik's Operations Manual</a>
               </li>
-              {{-- <li class="list-group-item">
-                <a href="https://drive.google.com/open?id=18CGZBRNtWUgy5q1h7b2DOLxYfbVuQYUO" target="_blank">Panduan Operasional (ID)</a>
-              </li> --}}
             </ul>
           </div>
         </div>
@@ -67,7 +64,7 @@
         <div>
           <ul class="list-group">
             <li class="list-group-item">
-              <a href="https://drive.google.com/open?id=1kuTsHGywIJDNQUYuEpL43X8C5VGrvYqH" target="_blank">Staff Handbook</a>
+              <a href="https://drive.google.com/open?id=1M87XDbVB3upDNHAmzl7J2cMpd0cS-d_2" target="_blank">Yayasan Kopernik - Staff Handbook</a>
             </li>
           </ul>
         </div>
