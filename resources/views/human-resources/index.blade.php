@@ -82,7 +82,7 @@
               <div>
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="https://docs.google.com/document/d/1kG3cpYaoARg6SRdQAFMDhVwvduCm8ySEt9yN3-xh34E/edit?usp=sharing" target="_blank">Staffing Request Form</a>
+                    <a href="https://drive.google.com/open?id=1ln-N3J0IZi7fNIcdhvRs6lAjky-jQ8x8LB347ltDkD0" target="_blank">Staffing Request Form</a>
                   </li>
                   <li class="list-group-item">
                     &nbsp;
