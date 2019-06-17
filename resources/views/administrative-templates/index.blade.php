@@ -46,6 +46,27 @@
               <li class="list-group-item">
                 <a href="https://drive.google.com/open?id=1NTsNp0_bEu4z8NGXrvBHBKiolB8uEr-PUYkicWZrvPk" target="_blank">Project Budget Template</a>
               </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1exyKwLP5b5BoMB67_JTw9co60amdlmkxK4FCxs8Iy94" target="_blank">Partnership Agreement Template</a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1K_eoKNYVFQUwMZyB9ouJHQ-snFKI1S401vUCpJuFc4I" target="_blank">Project Selection Criteria</a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1ubMecMPNAByjmFtj6XRnlfpPADR4sTGzgpIFojmYLwc" target="_blank">SolLab's Project Management Process Steps</a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1vxr4kl9zgwYNdsvVrPdzq1m5dq3eGkiukzeFavXptms" target="_blank">SolLab's Project Budget Reconciliation Process</a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1h_uCDWUsZc4Xshjamzqv-UrYwy1RsF597kHvpZelUhk" target="_blank">Kopernik Project Review Team ToR</a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1exyKwLP5b5BoMB67_JTw9co60amdlmkxK4FCxs8Iy94" target="_blank">Partnership Agreement Template</a>
+              </li>
+              <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1_ivsrNvgZnMdjmBmCTwG0fK8wqT0brMIYR01vABGUiY" target="_blank">ToR Template</a>
+              </li>
             </ul>
           </div>
         </div>
