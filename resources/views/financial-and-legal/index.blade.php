@@ -27,10 +27,10 @@
                   <a href="https://drive.google.com/open?id=1H_tgCEI7yJr1F3IQb71s1PZWCTWPzcZo" target="_blank">Yayasan Kopernik Financial Report 2016</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="#" target="_blank">Yayasan Kopernik Financial Report 2017</a>
+                  <a href="https://drive.google.com/open?id=1AiE5tc4XURJLGQ4K6fUa9zCA6inGQ1Ux" target="_blank">Yayasan Kopernik Financial Report 2017</a>
                 </li>
                 <li class="list-group-item">
-                  &nbsp;
+                  <a href="https://drive.google.com/open?id=17Aq-ohh--npDddEdb7fHz7Nb54Ab-cEy" target="_blank">Yayasan Kopernik Financial Report 2018</a>
                 </li>
                 <li class="list-group-item">
                   &nbsp;
