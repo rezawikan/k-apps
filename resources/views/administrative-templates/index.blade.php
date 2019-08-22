@@ -38,6 +38,9 @@
           <div>
             <ul class="list-group">
               <li class="list-group-item">
+                <a href="https://drive.google.com/open?id=1iasRTHho2tSudpo9GcuFosSTfZIXi9id6l-9b7LRw5Y" target="_blank">Project Report Template</a>
+              </li>
+              <li class="list-group-item">
                 <a href="https://drive.google.com/open?id=111yGIB1flYEJp8YIm-KCoH51W3wa32mHgPOQ6VkiglQ" target="_blank">Project Profile Form</a>
               </li>
               <li class="list-group-item">
