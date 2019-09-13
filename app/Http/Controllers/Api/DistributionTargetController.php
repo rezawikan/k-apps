@@ -11,6 +11,6 @@ class DistributionTargetController extends Controller
 {
     public function list()
     {
-        return $technology = DistributionTargetResource::collection(DistributionTarget::all());
+        return $technology = DistributionTargetResource::collection(DistributionTarget::orderby('name')->get());
     }
 }

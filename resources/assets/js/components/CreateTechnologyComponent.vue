@@ -14,18 +14,16 @@
                 <div class="form-group">
                   <div class="col-lg-4 col-sm-4">
                     <label class="m-t">Technology Name</label>
-                    <select data-placeholder="Choose one" class="form-control chosen-select" v-model="technology_id">
-                      <option value="">Select</option>
-                      <option v-for="technology in technologies" :value="technology">{{technology.name }}</option>
-                    </select>
+                    <v-select :options="convertTovueOption(technologies)" v-model="technology_id"></v-select>
                     <span class="help-block m-b-none"></span>
                   </div>
                   <div class="col-lg-4 col-sm-4">
                     <label class="m-t">Distribution Target</label>
-                    <select data-placeholder="Choose one" class="form-control chosen-select" v-model="distribution_target_id">
+                    <v-select label="name" :options="distribution_targets" v-model="distribution_target_id"></v-select>
+                    <!-- <select data-placeholder="Choose one" class="form-control chosen-select" v-model="distribution_target_id">
                       <option value="">Select</option>
                       <option v-for="distribution_target in distribution_targets" :value="distribution_target.id">{{distribution_target.name }}</option>
-                    </select>
+                    </select> -->
                     <span class="help-block m-b-none"></span>
                   </div>
                   <div class="col-lg-4 col-sm-4">
@@ -65,13 +63,14 @@
 </template>
 
 <script>
+import 'vue-select/dist/vue-select.css';
 export default {
   data() {
     return {
       'technologies': [],
       'distribution_targets': [],
-      'technology_id': '',
-      'distribution_target_id': '',
+      'technology_id': null,
+      'distribution_target_id': null,
       'distribution_unit': '',
       'per_unit': '',
       'year': '',
@@ -105,23 +104,40 @@ export default {
           this.distribution_targets = response.data.data
         })
         .catch(response => console.log('error'));
-
+    },
+    convertTovueOption(value){
+      let arr = []
+      value.forEach((x) => {
+        arr.push({
+          label: x.name,
+          code: x.id
+        })
+      })
+      return arr
+    },
+    getType(value) {
+      return this.technologies.find((x) => {
+        if (this.technology_id.code == x.id) {
+            return x.type == value
+        }
+        return false
+      })
     },
     getTotalReached() {
-      if (this.distribution_target_id != '' && this.technology_id != '') {
+      if (this.distribution_target_id !== null && this.technology_id !== null) {
         this.multiplier.find((multi) => {
-          if (multi.distribution_target_id === this.distribution_target_id && multi.technology_type_id === this.technology_id.type) {
-            this.per_unit = multi.multiplier
+          if (multi.distribution_target_id === this.distribution_target_id.id && this.getType(multi.technology_type_id)) {
+            return this.per_unit = multi.multiplier
           }
+          this.per_unit = 0
         })
-
       }
     },
     saveTechnology() {
       axios.post('/api/project-technology', {
           project_id: this.$route.params.id,
-          technology_id: this.technology_id.id,
-          distribution_target_id: this.distribution_target_id,
+          technology_id: this.technology_id.code,
+          distribution_target_id: this.distribution_target_id.id,
           per_unit: this.per_unit,
           distribution_unit: this.distribution_unit,
           total_reach: this.total_reach,

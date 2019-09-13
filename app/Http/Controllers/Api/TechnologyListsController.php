@@ -11,6 +11,6 @@ class TechnologyListsController extends Controller
 {
     public function list()
     {
-      return $technology = TechnologyListResource::collection(Technology::all());
+      return $technology = TechnologyListResource::collection(Technology::orderby('name')->get());
     }
 }

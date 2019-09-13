@@ -1,4 +1,5 @@
 import router from './router'
+import vSelect from 'vue-select'
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -16,6 +17,7 @@ window.Vue = require('vue');
  */
 
 // Vue.component('create-technology-component', require('./components/CreateTechnologyComponent.vue'));
+Vue.component('v-select', vSelect)
 
 const app = new Vue({
     el: '#app',

@@ -14,18 +14,16 @@
                 <div class="form-group">
                   <div class="col-lg-4 col-sm-4">
                     <label class="m-t">Technology Name</label>
-                    <select data-placeholder="Choose one" class="form-control chosen-select" v-model="technology_id">
+                    <v-select :options="convertTovueOption(technologies)" v-model="technology_id"></v-select>
+                    <!-- <select data-placeholder="Choose one" class="form-control chosen-select" v-model="technology_id">
                       <option value="">Select</option>
                       <option v-for="technology in technologies" :value="technology" :selected="current.technology_id == technology.id ">{{technology.name }} </option>
-                    </select>
+                    </select> -->
                     <span class="help-block m-b-none"></span>
                   </div>
                   <div class="col-lg-4 col-sm-4">
                     <label class="m-t">Distribution Target</label>
-                    <select data-placeholder="Choose one" class="form-control chosen-select" v-model="distribution_target_id">
-                      <option value="">Select</option>
-                      <option v-for="distribution_target in distribution_targets" :value="distribution_target.id">{{distribution_target.name }}</option>
-                    </select>
+                    <v-select label="name" :options="distribution_targets" v-model="distribution_target_id"></v-select>
                     <span class="help-block m-b-none"></span>
                   </div>
                   <div class="col-lg-4 col-sm-4">
@@ -65,13 +63,14 @@
 </template>
 
 <script>
+import 'vue-select/dist/vue-select.css';
 export default {
   data() {
     return {
       'technologies': [],
       'distribution_targets': [],
-      'technology_id': '',
-      'distribution_target_id': '',
+      'technology_id': null,
+      'distribution_target_id': null,
       'distribution_unit': '',
       'per_unit': '',
       'year': '',
@@ -88,10 +87,9 @@ export default {
     currentTechnology() {
       axios.get("/api/project-technology/"+this.$route.params.idp+"/"+this.$route.params.pivotID+"/list")
         .then(response => {
-          console.log(response);
           this.current = response.data.data[0]
-          this.technology_id = response.data.data[0].technology
-          this.distribution_target_id = response.data.data[0].distribution_target_id
+          this.technology_id = this.convertSelected(response.data.data[0].technology)
+          this.distribution_target_id = this.convertDisTarget(response.data.data[0].distribution_target_id)
           this.distribution_unit = response.data.data[0].distribution_unit
           this.per_unit = response.data.data[0].per_unit
           this.year = response.data.data[0].year
@@ -102,7 +100,6 @@ export default {
       axios.get('/api/technology/multiplier')
         .then(response => {
           this.multiplier = response.data.data
-          console.log('multiplier');
         })
         .catch(response => console.log('error'));
     },
@@ -110,7 +107,6 @@ export default {
       axios.get('/api/technology/list')
         .then(response => {
           this.technologies = response.data.data
-          console.log('multiplier');
         })
         .catch(response => console.log('error'));
 
@@ -119,35 +115,64 @@ export default {
       axios.get('/api/distribution-target/list')
         .then(response => {
           this.distribution_targets = response.data.data
-          console.log('multiplier');
         })
         .catch(response => console.log('error'));
 
     },
-    getTotalReached() {
-      if (this.distribution_target_id != '' && this.technology_id != '') {
-        this.multiplier.find((multi) => {
-          if (multi.distribution_target_id === this.distribution_target_id && multi.technology_type_id === this.technology_id.type) {
-            this.per_unit = multi.multiplier
-            console.log(multi.multiplier);
-          }
+    convertDisTarget(value){
+      let a = this.distribution_targets.map((x) => {
+        if (x.id == value) {
+            return x
+        }
+      })
+      console.log(a.filter(Boolean)[0]);
+      return a.filter(Boolean)[0]
+    },
+    convertSelected(value){
+      return {
+        label: value.name,
+        code: value.id
+      }
+    },
+    convertTovueOption(value){
+      let arr = []
+      value.forEach((x) => {
+        arr.push({
+          label: x.name,
+          code: x.id
         })
-
+      })
+      return arr
+    },
+    getType(value) {
+      return this.technologies.find((x) => {
+        if (this.technology_id.code == x.id) {
+            return x.type == value
+        }
+        return false
+      })
+    },
+    getTotalReached() {
+      if (this.distribution_target_id !== null && this.technology_id !== null) {
+        this.multiplier.find((multi) => {
+          if (multi.distribution_target_id === this.distribution_target_id.id && this.getType(multi.technology_type_id)) {
+            return this.per_unit = multi.multiplier
+          }
+          this.per_unit = 0
+        })
       }
     },
     updateTechnology() {
       axios.put("/api/project-technology/"+this.$route.params.idp+"/"+this.$route.params.pivotID+"/update", {
           current_tech_id: this.current.technology.id,
-          technology_id: this.technology_id.id,
-          distribution_target_id: this.distribution_target_id,
+          technology_id: this.technology_id.code,
+          distribution_target_id: this.distribution_target_id.id,
           per_unit: this.per_unit,
           distribution_unit: this.distribution_unit,
           total_reach: this.total_reach,
           year: this.year
         })
         .then(function(response) {
-          console.log(response.data);
-          console.log(response.data.data[0]);
           window.location = "/impact-tracker/"+response.data.data[0].project_id+"/view";
         })
         .catch(function(error) {
@@ -155,15 +180,14 @@ export default {
         });
     }
   },
-  created: function(){
-    this.currentTechnology();
-  },
-  mounted() {
 
-    this.getMultiplier();
+  mounted() {
     this.getTechnology();
     this.getDistributionTarget();
+    this.getMultiplier();
+    this.currentTechnology();
   },
+
   watch: {
     'distribution_target_id': function() {
       this.getTotalReached();
