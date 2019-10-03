@@ -24,30 +24,18 @@
         <div class="ibox-content">
           <div class="row">
             <div class="col-lg-6">
-              <h3>Manulife claim forms</h3>
+              <h3>Avrist claim forms</h3>
               <div class="hr-line-dashed"></div>
               <div>
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1PW-Lwnbt1j2QglmwP9ADJ2zvEDePjbpl/view?usp=sharing" target="_blank">Maternity claim form</a>
+                    <a href="https://drive.google.com/open?id=1xHt31ygHdflqEEixdQWN_mEvsJVI0OkY" target="_blank">Accident Chronological Form</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1cnZrxtewP-PXr_ZPxTPqaoi3GEfKjHpL/view?usp=sharing" target="_blank">Accident claim form</a>
+                    <a href="https://drive.google.com/open?id=1LzUJjq2KgBUm1OaaqdsP4JUErQlDCVkS" target="_blank">Inpatient Form</a>
                   </li>
                   <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1r-GitwPUEGc-z6wBIKMXNqM54_L5yD-F/view?usp=sharing" target="_blank">Hospitalization and surgical claim form</a>
-                  </li>
-                  <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/1P77d1-HfVOgVXWUcoZYvLB-FkiU2dEB1/view?usp=sharing" target="_blank">Outpatient claim form</a>
-                  </li>
-                </ul>
-              </div>
-              <h3>How to claim insurance coverage</h3>
-              <div class="hr-line-dashed"></div>
-              <div>
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <a href="https://drive.google.com/file/d/18Z0Ulrre4WBb5zV2TExbj0ZLkIqEwH_x/view?usp=sharing" target="_blank">Manulife claim procedure (from Manulife)</a>
+                    <a href="https://drive.google.com/open?id=14Nkh0gjAOReOdQW1IJbEQrMeQQnBsaNQ" target="_blank">Outpatient - Dental Form</a>
                   </li>
                 </ul>
               </div>
