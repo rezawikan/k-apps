@@ -47,7 +47,7 @@
                 <a href="https://drive.google.com/open?id=1aY9yQwnCNUh7kRZx5FwNU9_8BaXBoKVVQ8wiBK8NTDM" target="_blank">New Partner Form</a>
               </li>
               <li class="list-group-item">
-                <a href="https://drive.google.com/open?id=1NTsNp0_bEu4z8NGXrvBHBKiolB8uEr-PUYkicWZrvPk" target="_blank">Project Budget Template</a>
+                <a href="https://drive.google.com/open?id=1mji0DO4lbhex1ipw9rxm-mfWn_OFWO0_K4ZQ1YKcGwY" target="_blank">Project Budget Template</a>
               </li>
               <li class="list-group-item">
                 <a href="https://drive.google.com/open?id=1K_eoKNYVFQUwMZyB9ouJHQ-snFKI1S401vUCpJuFc4I" target="_blank">Project Selection Criteria</a>
