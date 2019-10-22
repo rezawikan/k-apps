@@ -50,7 +50,7 @@
                 <a href="https://drive.google.com/open?id=1mji0DO4lbhex1ipw9rxm-mfWn_OFWO0_K4ZQ1YKcGwY" target="_blank">Project Budget Template</a>
               </li>
               <li class="list-group-item">
-                <a href="https://drive.google.com/open?id=1w6bojvYE_4Sh_06hFZpvm1u0YojuSYv7e5k-2S50G-k" target="_blank">Project Selection Criteria</a>
+                <a href="https://drive.google.com/open?id=1K_eoKNYVFQUwMZyB9ouJHQ-snFKI1S401vUCpJuFc4I" target="_blank">Project Selection Criteria</a>
               </li>
               <li class="list-group-item">
                 <a href="https://drive.google.com/open?id=1ubMecMPNAByjmFtj6XRnlfpPADR4sTGzgpIFojmYLwc" target="_blank">SolLab's Project Management Process Steps</a>
